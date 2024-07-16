@@ -19,19 +19,19 @@ class PhpGenesisContainer extends IlluminateContainer
         }
 
         if (is_null(static::$instance)) {
-            static::$instance = new static; //@phpstan-ignore-line
+            static::$instance = new static(); //@phpstan-ignore-line
         }
 
         return static::$instance;
     }
 
-    public function isLaravel(): bool
-    {
-        return static::isLaravelApplication();
-    }
-
     protected static function isLaravelApplication(): bool
     {
         return class_exists(Application::class);
+    }
+
+    public function isLaravel(): bool
+    {
+        return static::isLaravelApplication();
     }
 }

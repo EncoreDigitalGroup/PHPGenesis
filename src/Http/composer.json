@@ -5,7 +5,7 @@
     "license": "proprietary",
     "require": {
         "php": "^8.3",
-        "illuminate/http": "^11"
+        "illuminate/http": "^10|^11"
     },
     "autoload": {
         "psr-4": {

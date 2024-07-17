@@ -6,9 +6,9 @@
     "require": {
         "php": "^8.3",
         "phpgenesis/common": "self.version",
-        "illuminate/console": "^11",
-        "illuminate/filesystem": "^11",
-        "illuminate/support": "^11",
+        "illuminate/console": "^10|^11",
+        "illuminate/filesystem": "^10|^11",
+        "illuminate/support": "^10|^11",
         "laravel/prompts": "^0.1",
         "rector/rector": "^1.0",
         "symfony/console": "^6.2|^7.0",

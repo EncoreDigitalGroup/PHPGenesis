@@ -93,6 +93,7 @@ class ExceptionLogger
 
         if (Laravel::installed() && (Config::get('phpgenesis.logger.exception.includeStackTrace'))) {
             $mergedContext['exception.trace'] = $exception->getTrace();
+
             return $mergedContext;
         }
 

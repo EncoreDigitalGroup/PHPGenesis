@@ -13,4 +13,9 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
         'version' => '2010-12-01',
     ],
+    'logger' => [
+        'exception' => [
+            'includeStackTrace' => env('PHPGENESIS_LOGGER_EXCEPTION_INCLUDE_STACK_TRACE', true),
+        ],
+    ],
 ];

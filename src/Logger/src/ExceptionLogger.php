@@ -7,6 +7,8 @@
 namespace PHPGenesis\Logger;
 
 use Exception;
+use Illuminate\Support\Facades\Config;
+use PHPGenesis\Common\Composer\Providers\Laravel;
 
 /** @experimental */
 class ExceptionLogger
@@ -82,12 +84,22 @@ class ExceptionLogger
 
     private static function buildContext(Exception $exception, array $context = []): array
     {
-        return array_merge([
+        $mergedContext = array_merge([
             'exception.message' => $exception->getMessage(),
             'exception.code' => $exception->getCode(),
             'exception.file' => $exception->getFile(),
             'exception.line' => $exception->getLine(),
-            'exception.trace' => $exception->getTraceAsString(),
         ], $context);
+
+        if (Laravel::installed() && (Config::get('phpgenesis.logger.exception.includeStackTrace'))) {
+            $mergedContext['exception.trace'] = $exception->getTrace();
+            return $mergedContext;
+        }
+
+        if (!Laravel::installed()) {
+            $mergedContext['exception.trace'] = $exception->getTrace();
+        }
+
+        return $mergedContext;
     }
 }

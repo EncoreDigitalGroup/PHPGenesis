@@ -12,18 +12,26 @@ use Illuminate\Foundation\Application;
 /** @experimental */
 class PhpGenesisContainer extends IlluminateContainer
 {
-    public function __construct()
+    public static function getInstance(): IlluminateContainer|PhpGenesisContainer
     {
-        if (!$this->isLaravel()) {
-            // Create a new instance of the Illuminate container
-            $container = new IlluminateContainer();
-            static::setInstance($container);
+        if (static::isLaravelApplication()) {
+            return parent::getInstance();
         }
 
+        if (is_null(static::$instance)) {
+            static::$instance = new static(); //@phpstan-ignore-line
+        }
+
+        return static::$instance;
+    }
+
+    protected static function isLaravelApplication(): bool
+    {
+        return class_exists(Application::class);
     }
 
     public function isLaravel(): bool
     {
-        return class_exists(Application::class);
+        return static::isLaravelApplication();
     }
 }

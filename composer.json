@@ -45,11 +45,6 @@
         "tomasvotruba/cognitive-complexity": "^0.2.3",
         "tomasvotruba/unused-public": "^0.3.7"
     },
-    "scripts": {
-        "post-autoload-dump": [
-            "PHPGenesis\\Common\\Composer\\Scripts::postAutoloadDump"
-        ]
-    },
     "autoload": {
         "files": [
             "src/Common/phpgenesis_helpers.php",
@@ -60,7 +55,9 @@
             "PHPGenesis\\Common\\": "src/Common/src/",
             "PHPGenesis\\Http\\": "src/Http/src/",
             "PHPGenesis\\Logger\\": "src/Logger/src/",
-            "PHPGenesis\\Services\\AmazonWebServices\\": "src/Services/AmazonWebServices/src/"
+            "PHPGenesis\\Services\\AmazonWebServices\\": "src/Services/AmazonWebServices/src/",
+            "PHPGenesis\\Services\\Cloudflare\\": "src/Services/Cloudflare/src/",
+            "PHPGenesis\\Services\\Cloudflare\\\\": "src/Services/Cloudflare/src/"
         }
     },
     "authors": [
@@ -76,9 +73,22 @@
             "role": "Maintainer"
         }
     ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "PHPGenesis\\Services\\Cloudflare\\Providers\\CloudflareServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "PHPGenesis\\Common\\Composer\\Scripts::postAutoloadDump"
+        ]
+    },
     "replace": {
         "phpgenesis/aws": "self.version",
         "phpgenesis/cli": "self.version",
+        "phpgenesis/cloudflare": "self.version",
         "phpgenesis/common": "self.version",
         "phpgenesis/http": "self.version",
         "phpgenesis/logger": "self.version"

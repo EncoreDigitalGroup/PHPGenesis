@@ -13,7 +13,6 @@ use Illuminate\Support\Facades\Http;
 /** @experimental */
 class UpdateCloudflareDomainContactsCommand extends Command
 {
-
     protected string $accountId;
     protected string $email;
     protected string $apiKey;
@@ -58,6 +57,7 @@ class UpdateCloudflareDomainContactsCommand extends Command
 
         if ($response->failed()) {
             $this->error('Failed to fetch domains: ' . $data['errors'][0]['message']);
+
             return [];
         }
 

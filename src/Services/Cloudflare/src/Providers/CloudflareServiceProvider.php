@@ -12,9 +12,7 @@ use PHPGenesis\Services\Cloudflare\Console\Commands\UpdateCloudflareDomainContac
 /** @experimental */
 class CloudflareServiceProvider extends ServiceProvider
 {
-    public function register(): void
-    {
-    }
+    public function register(): void {}
 
     public function boot(): void
     {

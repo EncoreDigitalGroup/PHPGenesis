@@ -13,6 +13,7 @@ use Illuminate\Support\Collection;
 abstract class Repository implements IModelRepository
 {
     use IsRepository;
+
     protected string $modelClass;
     protected ?Model $model;
 

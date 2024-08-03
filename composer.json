@@ -26,6 +26,7 @@
         "encoredigitalgroup/tachyon": "^2.0",
         "guzzlehttp/guzzle": "6.x|7.x",
         "illuminate/console": "^10|^11",
+        "illuminate/database": "^10|^11",
         "illuminate/filesystem": "^10|^11",
         "illuminate/http": "^10|^11",
         "illuminate/support": "^10|^11",

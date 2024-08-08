@@ -8,9 +8,24 @@ permissions:
     pull-requests: write
 
 jobs:
+    GitStatusCheck:
+        name: GitStatusCheck
+        uses: EncoreDigitalGroup/ci-workflows/.github/workflows/php_gitStatusCheck.yml@main
+
+    FormatTitle:
+        name: FormatTitle
+        uses: EncoreDigitalGroup/ci-workflows/.github/workflows/formatPullRequestTitle.yml@v1
+        with:
+            branch: ${{ github.head_ref }}
+            pullRequestNumber: ${{ github.event.number }}
+            repository: ${{ github.repository }}
+        secrets:
+            token: ${{ secrets.GITHUB_TOKEN }}
+
     Duster:
         name: Duster
-        uses: EncoreDigitalGroup/.github/.github/workflows/dusterFixBlame.yml@v1
+        needs: GitStatusCheck
+        uses: EncoreDigitalGroup/ci-workflows/.github/workflows/dusterFixBlame.yml@v1
         permissions:
             contents: write
             pull-requests: write
@@ -18,7 +33,7 @@ jobs:
     StaticAnalysis:
         needs: Duster
         name: StaticAnalysis
-        uses: EncoreDigitalGroup/.github/.github/workflows/larastan.yml@v1
+        uses: EncoreDigitalGroup/ci-workflows/.github/workflows/larastan.yml@v1
         with:
             branch: ${{ github.head_ref }}
             path: 'src/'
@@ -27,7 +42,7 @@ jobs:
     Test:
         needs: Duster
         name: Test
-        uses: EncoreDigitalGroup/.github/.github/workflows/pest.yml@v1
+        uses: EncoreDigitalGroup/ci-workflows/.github/workflows/pest.yml@v1
         with:
             phpVersion: '8.3'
             branch: ${{ github.head_ref }}

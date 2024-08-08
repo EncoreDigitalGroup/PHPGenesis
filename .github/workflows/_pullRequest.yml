@@ -11,6 +11,8 @@ jobs:
     GitStatusCheck:
         name: GitStatusCheck
         uses: EncoreDigitalGroup/ci-workflows/.github/workflows/php_gitStatusCheck.yml@main
+        with:
+            branch: ${{ github.event.repository.default_branch }}
 
     FormatTitle:
         name: FormatTitle

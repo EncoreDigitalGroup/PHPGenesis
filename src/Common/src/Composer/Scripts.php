@@ -17,12 +17,28 @@ class Scripts
         $packageName = $event->getComposer()->getPackage()->getName();
 
         $isPhpGenesis = false;
+        $usingPhpGenesis = false;
 
-        if ($packageName == 'phpgenesis/phpgenesis') {
-            $isPhpGenesis = true;
-            echo 'Package is PHPGenesis Monorepo. Modifying IdeHelper::updateEditorConfig() behavior' . PHP_EOL;
+        $composer = file_get_contents('composer.json');
+
+        if (is_string($composer)) {
+            $composer = json_decode($composer);
+
+            $requires = $composer->require;
+
+            foreach ($requires as $package => $version) {
+                if ($package == 'phpgenesis/phpgenesis') {
+                    $usingPhpGenesis = true;
+                    break;
+                }
+            }
+
+            if ($packageName == 'phpgenesis/phpgenesis') {
+                $isPhpGenesis = true;
+                echo 'Package is PHPGenesis Monorepo. Modifying IdeHelper::updateEditorConfig() behavior' . PHP_EOL;
+            }
+
+            IdeHelper::updateEditorConfig($isPhpGenesis, $usingPhpGenesis);
         }
-
-        IdeHelper::updateEditorConfig($isPhpGenesis);
     }
 }

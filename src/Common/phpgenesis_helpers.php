@@ -5,8 +5,16 @@
  */
 
 if (!function_exists('phpgenesis_vendor_dir')) {
-    function phpgenesis_vendor_dir(?string $path = null): string
+    function phpgenesis_vendor_dir(?string $path = null, bool $usingPhpGenesis = false): string
     {
+        if ($usingPhpGenesis) {
+            if ($path == null) {
+                return __DIR__ . '/../../';
+            }
+
+            return __DIR__ . '/../../' . $path;
+        }
+
         if ($path == null) {
             return __DIR__ . '/../';
         }

@@ -15,6 +15,13 @@ if (!function_exists('phpgenesis_vendor_dir')) {
             return __DIR__ . '/../../' . $path;
         }
 
+        return phpgenesis_module_vendor_dir($path);
+    }
+}
+
+if (!function_exists('phpgenesis_module_vendor_dir')) {
+    function phpgenesis_module_vendor_dir(?string $path = null): string
+    {
         if ($path == null) {
             return __DIR__ . '/../';
         }

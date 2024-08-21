@@ -20,22 +20,25 @@ class Scripts
         $usingPhpGenesis = false;
 
         $composer = file_get_contents('composer.json');
-        $composer = json_decode($composer);
 
-        $requires = $composer->require;
+        if (is_string($composer)) {
+            $composer = json_decode($composer);
 
-        foreach ($requires as $package => $version) {
-            if ($package == 'phpgenesis/phpgenesis') {
-                $usingPhpGenesis = true;
-                break;
+            $requires = $composer->require;
+
+            foreach ($requires as $package => $version) {
+                if ($package == 'phpgenesis/phpgenesis') {
+                    $usingPhpGenesis = true;
+                    break;
+                }
             }
-        }
 
-        if ($packageName == 'phpgenesis/phpgenesis') {
-            $isPhpGenesis = true;
-            echo 'Package is PHPGenesis Monorepo. Modifying IdeHelper::updateEditorConfig() behavior' . PHP_EOL;
-        }
+            if ($packageName == 'phpgenesis/phpgenesis') {
+                $isPhpGenesis = true;
+                echo 'Package is PHPGenesis Monorepo. Modifying IdeHelper::updateEditorConfig() behavior' . PHP_EOL;
+            }
 
-        IdeHelper::updateEditorConfig($isPhpGenesis, $usingPhpGenesis);
+            IdeHelper::updateEditorConfig($isPhpGenesis, $usingPhpGenesis);
+        }
     }
 }

@@ -29,7 +29,5 @@ class ComposerServiceProvider extends ServiceProvider
         }
     }
 
-    public function boot(): void
-    {
-    }
+    public function boot(): void {}
 }

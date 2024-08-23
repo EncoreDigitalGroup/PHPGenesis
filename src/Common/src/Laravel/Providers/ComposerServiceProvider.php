@@ -18,12 +18,13 @@ class ComposerServiceProvider extends ServiceProvider
         }
 
         $composerJsonPath = base_path('composer.json');
+        $composerConfig = file_get_contents($composerJsonPath);
 
-        if (!is_string($composerJsonPath)) {
+        if (!is_string($composerConfig)) {
             return;
         }
 
-        $composerConfig = json_decode(file_get_contents($composerJsonPath), true);
+        $composerConfig = json_decode($composerConfig, true);
 
         if (isset($composerConfig['extra']['laravel']['providers'])) {
             foreach ($composerConfig['extra']['laravel']['providers'] as $provider) {

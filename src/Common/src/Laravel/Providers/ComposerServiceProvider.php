@@ -38,6 +38,8 @@ class ComposerServiceProvider extends ServiceProvider
         }
     }
 
-    public function boot(): void {
-        // Method left intentionally empty}
+    public function boot(): void
+    {
+        // Method left intentionally empty
+    }
 }

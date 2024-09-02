@@ -25,14 +25,14 @@ class PhpGenesisContainer extends IlluminateContainer implements \Illuminate\Con
         return static::$instance;
     }
 
-    protected static function isLaravelApplication(): bool
-    {
-        return class_exists(Application::class);
-    }
-
     public static function isLaravel(): bool
     {
         return static::isLaravelApplication();
+    }
+
+    protected static function isLaravelApplication(): bool
+    {
+        return class_exists(Application::class);
     }
 
     public function version()

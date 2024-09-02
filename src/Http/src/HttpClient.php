@@ -11,6 +11,4 @@ use Illuminate\Support\Facades\Http;
 /**
  * @experimental
  */
-class HttpClient extends Http
-{
-}
+class HttpClient extends Http {}

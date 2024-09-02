@@ -8,6 +8,8 @@ namespace PHPGenesis\Common\Container;
 
 use Illuminate\Container\Container as IlluminateContainer;
 use Illuminate\Foundation\Application;
+use Illuminate\Support\ServiceProvider;
+use PHPGenesis\Common\Laravel\Providers\PhpGenesisServiceProvider;
 
 /** @experimental */
 class PhpGenesisContainer extends IlluminateContainer implements \Illuminate\Contracts\Foundation\Application
@@ -35,99 +37,101 @@ class PhpGenesisContainer extends IlluminateContainer implements \Illuminate\Con
         return class_exists(Application::class);
     }
 
-    public function version()
+    public function version(): string
     {
-        // TODO: Implement version() method.
+        return '';
     }
 
-    public function basePath($path = '')
+    public function basePath($path = ''): string
     {
-        // TODO: Implement basePath() method.
+        return '';
     }
 
-    public function bootstrapPath($path = '')
+    public function bootstrapPath($path = ''): string
     {
-        // TODO: Implement bootstrapPath() method.
+        return '';
     }
 
-    public function configPath($path = '')
+    public function configPath($path = ''): string
     {
-        // TODO: Implement configPath() method.
+        return '';
     }
 
-    public function databasePath($path = '')
+    public function databasePath($path = ''): string
     {
-        // TODO: Implement databasePath() method.
+        return '';
     }
 
-    public function langPath($path = '')
+    public function langPath($path = ''): string
     {
-        // TODO: Implement langPath() method.
+        return '';
     }
 
     public function publicPath($path = '')
     {
-        // TODO: Implement publicPath() method.
+        return '';
     }
 
     public function resourcePath($path = '')
     {
-        // TODO: Implement resourcePath() method.
+        return '';
     }
 
     public function storagePath($path = '')
     {
-        // TODO: Implement storagePath() method.
+        return '';
     }
 
-    public function environment(...$environments)
+    public function environment(...$environments): string|bool
     {
-        // TODO: Implement environment() method.
+        return '';
     }
 
-    public function runningInConsole()
+    public function runningInConsole(): bool
     {
-        // TODO: Implement runningInConsole() method.
+        return false;
     }
 
-    public function runningUnitTests()
+    public function runningUnitTests(): bool
     {
-        // TODO: Implement runningUnitTests() method.
+        return false;
     }
 
-    public function hasDebugModeEnabled()
+    public function hasDebugModeEnabled(): false
     {
-        // TODO: Implement hasDebugModeEnabled() method.
+        return false;
     }
 
-    public function maintenanceMode()
+    /** @phpstan-ignore-next-line */
+    public function maintenanceMode(): bool
     {
-        // TODO: Implement maintenanceMode() method.
+        return false;
     }
 
-    public function isDownForMaintenance()
+    public function isDownForMaintenance(): bool
     {
-        // TODO: Implement isDownForMaintenance() method.
+        return false;
     }
 
-    public function registerConfiguredProviders()
+    public function registerConfiguredProviders(): bool
     {
-        // TODO: Implement registerConfiguredProviders() method.
+        return false;
     }
 
-    public function register($provider, $force = false)
+    /** @phpstan-ignore-next-line */
+    public function register($provider, $force = false): void
     {
-        // TODO: Implement register() method.
+        return;
     }
 
-    public function registerDeferredProvider($provider, $service = null)
+    public function registerDeferredProvider($provider, $service = null): string
     {
-        // TODO: Implement registerDeferredProvider() method.
+        return $provider;
     }
 
-    public function resolveProvider($provider)
+    public function resolveProvider($provider): string|ServiceProvider
     {
-        // TODO: Implement resolveProvider() method.
+        return $provider;
     }
 
     public function boot()
@@ -150,24 +154,24 @@ class PhpGenesisContainer extends IlluminateContainer implements \Illuminate\Con
         // TODO: Implement bootstrapWith() method.
     }
 
-    public function getLocale()
+    public function getLocale(): string
     {
-        // TODO: Implement getLocale() method.
+        return '';
     }
 
-    public function getNamespace()
+    public function getNamespace(): string
     {
-        // TODO: Implement getNamespace() method.
+        return '';
     }
 
-    public function getProviders($provider)
+    public function getProviders($provider): array
     {
-        // TODO: Implement getProviders() method.
+        return [];
     }
 
-    public function hasBeenBootstrapped()
+    public function hasBeenBootstrapped(): bool
     {
-        // TODO: Implement hasBeenBootstrapped() method.
+        return false;
     }
 
     public function loadDeferredProviders()
@@ -180,14 +184,15 @@ class PhpGenesisContainer extends IlluminateContainer implements \Illuminate\Con
         // TODO: Implement setLocale() method.
     }
 
-    public function shouldSkipMiddleware()
+    public function shouldSkipMiddleware(): bool
     {
-        // TODO: Implement shouldSkipMiddleware() method.
+        return false;
     }
 
-    public function terminating($callback)
+    /** @phpstan-ignore-next-line */
+    public function terminating($callback): void
     {
-        // TODO: Implement terminating() method.
+        return;
     }
 
     public function terminate()

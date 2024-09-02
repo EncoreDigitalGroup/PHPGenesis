@@ -14,7 +14,7 @@ class HttpClientBuilder
     {
         if (!PhpGenesisContainer::isLaravel()) {
             // Step 1: Initialize the service container
-            $this->container = new PhpGenesisContainer();
+            $this->container = PhpGenesisContainer::getInstance();
 
             // Step 2: Bind the HttpFactory to the container
             $this->container->singleton('http', function () {

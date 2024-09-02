@@ -13,10 +13,10 @@ use Illuminate\Support\Facades\Http;
 /** @experimental */
 class UpdateCloudflareDomainContactsCommand extends Command
 {
-    protected string $accountId;
-    protected string $email;
-    protected string $apiKey;
-    protected string $defaultProfile;
+    protected ?string $accountId;
+    protected ?string $email;
+    protected ?string $apiKey;
+    protected ?string $defaultProfile;
     protected $signature = 'cloudflare:updateDomainContacts';
     protected $description = 'Iterates over all domains in a Cloudflare account and updates their contacts';
 

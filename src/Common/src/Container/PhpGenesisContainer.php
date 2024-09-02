@@ -9,7 +9,6 @@ namespace PHPGenesis\Common\Container;
 use Illuminate\Container\Container as IlluminateContainer;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
-use PHPGenesis\Common\Laravel\Providers\PhpGenesisServiceProvider;
 
 /** @experimental */
 class PhpGenesisContainer extends IlluminateContainer implements \Illuminate\Contracts\Foundation\Application
@@ -119,10 +118,7 @@ class PhpGenesisContainer extends IlluminateContainer implements \Illuminate\Con
     }
 
     /** @phpstan-ignore-next-line */
-    public function register($provider, $force = false): void
-    {
-        return;
-    }
+    public function register($provider, $force = false): void {}
 
     public function registerDeferredProvider($provider, $service = null): string
     {
@@ -190,10 +186,7 @@ class PhpGenesisContainer extends IlluminateContainer implements \Illuminate\Con
     }
 
     /** @phpstan-ignore-next-line */
-    public function terminating($callback): void
-    {
-        return;
-    }
+    public function terminating($callback): void {}
 
     public function terminate()
     {

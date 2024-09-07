@@ -24,12 +24,10 @@ class Logger implements ILogger
         if ($config->betaFeatures->facade) {
             LoggerBuilder::make();
             BetaLogger::debug($message, BetaLogger::betaLogContext($context));
+        } elseif (Laravel::installed('support')) {
+            LaravelLogger::debug($message, $context);
         } else {
-            if (Laravel::installed('support')) {
-                LaravelLogger::debug($message, $context);
-            } else {
-                MonoLogger::debug($message, $context);
-            }
+            MonoLogger::debug($message, $context);
         }
 
     }
@@ -41,12 +39,10 @@ class Logger implements ILogger
         if ($config->betaFeatures->facade) {
             LoggerBuilder::make();
             BetaLogger::info($message, BetaLogger::betaLogContext($context));
+        } elseif (Laravel::installed('support')) {
+            LaravelLogger::info($message, $context);
         } else {
-            if (Laravel::installed('support')) {
-                LaravelLogger::info($message, $context);
-            } else {
-                MonoLogger::info($message, $context);
-            }
+            MonoLogger::info($message, $context);
         }
     }
 
@@ -57,12 +53,10 @@ class Logger implements ILogger
         if ($config->betaFeatures->facade) {
             LoggerBuilder::make();
             BetaLogger::notice($message, BetaLogger::betaLogContext($context));
+        } elseif (Laravel::installed('support')) {
+            LaravelLogger::notice($message, $context);
         } else {
-            if (Laravel::installed('support')) {
-                LaravelLogger::notice($message, $context);
-            } else {
-                MonoLogger::notice($message, $context);
-            }
+            MonoLogger::notice($message, $context);
         }
     }
 
@@ -73,12 +67,10 @@ class Logger implements ILogger
         if ($config->betaFeatures->facade) {
             LoggerBuilder::make();
             BetaLogger::warning($message, BetaLogger::betaLogContext($context));
+        } elseif (Laravel::installed('support')) {
+            LaravelLogger::warning($message, $context);
         } else {
-            if (Laravel::installed('support')) {
-                LaravelLogger::warning($message, $context);
-            } else {
-                MonoLogger::warning($message, $context);
-            }
+            MonoLogger::warning($message, $context);
         }
     }
 
@@ -89,12 +81,10 @@ class Logger implements ILogger
         if ($config->betaFeatures->facade) {
             LoggerBuilder::make();
             BetaLogger::error($message, BetaLogger::betaLogContext($context));
+        } elseif (Laravel::installed('support')) {
+            LaravelLogger::error($message, $context);
         } else {
-            if (Laravel::installed('support')) {
-                LaravelLogger::error($message, $context);
-            } else {
-                MonoLogger::error($message, $context);
-            }
+            MonoLogger::error($message, $context);
         }
     }
 
@@ -105,12 +95,10 @@ class Logger implements ILogger
         if ($config->betaFeatures->facade) {
             LoggerBuilder::make();
             BetaLogger::critical($message, BetaLogger::betaLogContext($context));
+        } elseif (Laravel::installed('support')) {
+            LaravelLogger::critical($message, $context);
         } else {
-            if (Laravel::installed('support')) {
-                LaravelLogger::critical($message, $context);
-            } else {
-                MonoLogger::critical($message, $context);
-            }
+            MonoLogger::critical($message, $context);
         }
     }
 
@@ -121,12 +109,10 @@ class Logger implements ILogger
         if ($config->betaFeatures->facade) {
             LoggerBuilder::make();
             BetaLogger::alert($message, BetaLogger::betaLogContext($context));
+        } elseif (Laravel::installed('support')) {
+            LaravelLogger::alert($message, $context);
         } else {
-            if (Laravel::installed('support')) {
-                LaravelLogger::alert($message, $context);
-            } else {
-                MonoLogger::alert($message, $context);
-            }
+            MonoLogger::alert($message, $context);
         }
     }
 
@@ -137,12 +123,10 @@ class Logger implements ILogger
         if ($config->betaFeatures->facade) {
             LoggerBuilder::make();
             BetaLogger::emergency($message, BetaLogger::betaLogContext($context));
+        } elseif (Laravel::installed('support')) {
+            LaravelLogger::emergency($message, $context);
         } else {
-            if (Laravel::installed('support')) {
-                LaravelLogger::emergency($message, $context);
-            } else {
-                MonoLogger::emergency($message, $context);
-            }
+            MonoLogger::emergency($message, $context);
         }
     }
 
@@ -153,12 +137,10 @@ class Logger implements ILogger
         if ($config->betaFeatures->facade) {
             LoggerBuilder::make();
             BetaLogger::shareContext($context);
+        } elseif (Laravel::installed('support')) {
+            LaravelLogger::shareContext($context);
         } else {
-            if (Laravel::installed('support')) {
-                LaravelLogger::shareContext($context);
-            } else {
-                MonoLogger::shareContext($context);
-            }
+            MonoLogger::shareContext($context);
         }
     }
 
@@ -169,17 +151,19 @@ class Logger implements ILogger
         if ($config->betaFeatures->facade) {
             LoggerBuilder::make();
             BetaLogger::withContext($context);
+        } elseif (Laravel::installed('support')) {
+            LaravelLogger::withContext($context);
         } else {
-            if (Laravel::installed('support')) {
-                LaravelLogger::withContext($context);
-            } else {
-                MonoLogger::withContext($context);
-            }
+            MonoLogger::withContext($context);
         }
     }
 
     protected static function getConfig(): LoggerConfig
     {
+        if (!isset(static::$config)) {
+            static::$config = new LoggerConfig();
+        }
+
         return static::$config;
     }
 }

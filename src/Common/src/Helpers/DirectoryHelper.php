@@ -6,8 +6,6 @@
 
 namespace PHPGenesis\Common\Helpers;
 
-use Composer\Composer;
-
 class DirectoryHelper
 {
     public static function basePath(): string

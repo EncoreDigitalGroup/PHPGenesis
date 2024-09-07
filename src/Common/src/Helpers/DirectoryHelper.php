@@ -13,6 +13,7 @@ class DirectoryHelper
     public static function basePath(): string
     {
         $composer = new Composer();
+
         return $composer->getConfig()->get('vendor-dir') . '/..';
     }
 }

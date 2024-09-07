@@ -2,7 +2,6 @@
 
 namespace PHPGenesis\Logger\BetaFeatures;
 
-use Illuminate\Http\Client\Factory as HttpFactory;
 use Illuminate\Log\LogManager;
 use Illuminate\Support\Facades\Facade;
 use PHPGenesis\Common\Container\PhpGenesisContainer;
@@ -10,8 +9,8 @@ use PHPGenesis\Common\Container\PhpGenesisContainer;
 /** @internal */
 class LoggerBuilder
 {
-    protected PhpGenesisContainer $container;
     protected static LoggerBuilder $instance;
+    protected PhpGenesisContainer $container;
 
     public function __construct()
     {

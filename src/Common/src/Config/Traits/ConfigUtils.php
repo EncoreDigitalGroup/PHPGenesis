@@ -6,8 +6,6 @@
 
 namespace PHPGenesis\Common\Config\Traits;
 
-use PHPGenesis\Common\Helpers\DirectoryHelper;
-
 trait ConfigUtils
 {
     protected static self $instance;

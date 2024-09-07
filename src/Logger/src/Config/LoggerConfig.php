@@ -8,7 +8,6 @@ namespace PHPGenesis\Logger\Config;
 
 use PHPGenesis\Common\Config\IModuleConfig;
 use PHPGenesis\Common\Config\Traits\ConfigUtils;
-use PHPGenesis\Common\Helpers\DirectoryHelper;
 
 class LoggerConfig implements IModuleConfig
 {

@@ -16,4 +16,10 @@ class LoggerConfig implements IModuleConfig
     public string $name = 'phpgenesis';
     public string $logFileName = 'phpgenesis.log';
     public string $logLevel = 'debug';
+    public LoggerBetaFeatures $betaFeatures;
+
+    public function __construct()
+    {
+        $this->betaFeatures = new LoggerBetaFeatures();
+    }
 }

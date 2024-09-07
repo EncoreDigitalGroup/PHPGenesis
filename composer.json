@@ -1,22 +1,25 @@
 {
     "name": "phpgenesis/phpgenesis",
-    "type": "project",
     "description": "Central Repository for PHPGenesis Libraries",
+    "license": "proprietary",
+    "type": "project",
     "keywords": [
         "Modules",
         "PHPGenesis"
     ],
-    "license": "proprietary",
-    "config": {
-        "preferred-install": "dist",
-        "sort-packages": true,
-        "allow-plugins": {
-            "pestphp/pest-plugin": true,
-            "php-http/discovery": true,
-            "neronmoon/scriptsdev": true,
-            "phpstan/extension-installer": true
+    "authors": [
+        {
+            "name": "Encore Digital Group",
+            "email": "opensource@encoredigitalgroup.com",
+            "homepage": "https://encoredigitalgroup.com",
+            "role": "Owner"
+        },
+        {
+            "name": "Marc Beinder",
+            "homepage": "https://marcbeinder.com",
+            "role": "Maintainer"
         }
-    },
+    ],
     "require": {
         "php": "^8.3",
         "composer-runtime-api": "^2.0",
@@ -30,6 +33,7 @@
         "illuminate/database": "^10|^11",
         "illuminate/filesystem": "^10|^11",
         "illuminate/http": "^10|^11",
+        "illuminate/log": "^10|^11",
         "illuminate/support": "^10|^11",
         "laravel/prompts": "^0.1",
         "monolog/monolog": "^3.6",
@@ -47,11 +51,17 @@
         "tomasvotruba/cognitive-complexity": "^0.2.3",
         "tomasvotruba/unused-public": "^0.3.7"
     },
+    "replace": {
+        "phpgenesis/aws": "self.version",
+        "phpgenesis/cli": "self.version",
+        "phpgenesis/cloudflare": "self.version",
+        "phpgenesis/common": "self.version",
+        "phpgenesis/http": "self.version",
+        "phpgenesis/logger": "self.version"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
     "autoload": {
-        "files": [
-            "src/Common/phpgenesis_helpers.php",
-            "src/Common/src/Helpers/helpers.php"
-        ],
         "psr-4": {
             "PHPGenesis\\CLI\\": "src/CLI/src/",
             "PHPGenesis\\Common\\": "src/Common/src/",
@@ -60,21 +70,22 @@
             "PHPGenesis\\Services\\AmazonWebServices\\": "src/Services/AmazonWebServices/src/",
             "PHPGenesis\\Services\\Cloudflare\\": "src/Services/Cloudflare/src/",
             "PHPGenesis\\Services\\Cloudflare\\\\": "src/Services/Cloudflare/src/"
+        },
+        "files": [
+            "src/Common/phpgenesis_helpers.php",
+            "src/Common/src/Helpers/helpers.php"
+        ]
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "php-http/discovery": true,
+            "neronmoon/scriptsdev": true,
+            "phpstan/extension-installer": true
         }
     },
-    "authors": [
-        {
-            "name": "Encore Digital Group",
-            "email": "opensource@encoredigitalgroup.com",
-            "homepage": "https://encoredigitalgroup.com",
-            "role": "Owner"
-        },
-        {
-            "name": "Marc Beinder",
-            "homepage": "https://marcbeinder.com",
-            "role": "Maintainer"
-        }
-    ],
     "extra": {
         "laravel": {
             "providers": [
@@ -86,15 +97,5 @@
         "post-autoload-dump": [
             "PHPGenesis\\Common\\Composer\\Scripts::postAutoloadDump"
         ]
-    },
-    "replace": {
-        "phpgenesis/aws": "self.version",
-        "phpgenesis/cli": "self.version",
-        "phpgenesis/cloudflare": "self.version",
-        "phpgenesis/common": "self.version",
-        "phpgenesis/http": "self.version",
-        "phpgenesis/logger": "self.version"
-    },
-    "minimum-stability": "stable",
-    "prefer-stable": true
+    }
 }

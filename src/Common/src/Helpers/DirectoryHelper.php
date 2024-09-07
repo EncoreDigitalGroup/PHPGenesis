@@ -6,14 +6,20 @@
 
 namespace PHPGenesis\Common\Helpers;
 
-use Composer\Composer;
-
 class DirectoryHelper
 {
     public static function basePath(): string
     {
-        $composer = new Composer();
+        $directoryPath = __DIR__;
+        do {
+            $isVendorPath = false;
+            $currentDirectoryName = basename($directoryPath);
+            $directoryPath = dirname($directoryPath);
+            if ($currentDirectoryName == 'vendor') {
+                $isVendorPath = true;
+            }
+        } while ($isVendorPath == false);
 
-        return $composer->getConfig()->get('vendor-dir') . '/..';
+        return $directoryPath;
     }
 }

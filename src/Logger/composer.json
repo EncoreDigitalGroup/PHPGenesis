@@ -6,6 +6,7 @@
     "require": {
         "php": "^8.3",
         "phpgenesis/common": "self.version",
+        "illuminate/log": "^10|^11",
         "monolog/monolog": "^3.6"
     },
     "scripts": {

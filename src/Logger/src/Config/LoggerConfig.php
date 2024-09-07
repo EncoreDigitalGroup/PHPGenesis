@@ -8,6 +8,7 @@ namespace PHPGenesis\Logger\Config;
 
 use PHPGenesis\Common\Config\IModuleConfig;
 use PHPGenesis\Common\Config\Traits\ConfigUtils;
+use PHPGenesis\Common\Helpers\DirectoryHelper;
 
 class LoggerConfig implements IModuleConfig
 {
@@ -16,4 +17,10 @@ class LoggerConfig implements IModuleConfig
     public string $name = 'phpgenesis';
     public string $logFileName = 'phpgenesis.log';
     public string $logLevel = 'debug';
+    public LoggerBetaFeatures $betaFeatures;
+
+    public function __construct()
+    {
+        $this->betaFeatures = new LoggerBetaFeatures();
+    }
 }

@@ -16,6 +16,9 @@ composer require phpgenesis/logger
 
 ### Usage
 
+**Note:** Changes are coming in PHPGenesis/Logger v0.3 that remove the Monolog specific implementation. Instead, PHPGenesis will implement the Laravel Log Facade for you
+in any PHP project.
+
 To log a message, use the `PHPGenesis\Logger\Logger` class.
 
 ```php

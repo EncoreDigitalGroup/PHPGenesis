@@ -27,6 +27,7 @@ jobs:
     Duster:
         name: Duster
         needs: GitStatusCheck
+        if: needs.GitStatusCheck.outputs.shouldRun == 'true'
         uses: EncoreDigitalGroup/ci-workflows/.github/workflows/dusterFixBlame.yml@v1
         permissions:
             contents: write

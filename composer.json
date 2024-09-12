@@ -1,7 +1,7 @@
 {
     "name": "phpgenesis/phpgenesis",
     "description": "Central Repository for PHPGenesis Libraries",
-    "license": "proprietary",
+    "license": "BSD-3-Clause",
     "type": "project",
     "keywords": [
         "Modules",
@@ -37,6 +37,7 @@
         "illuminate/support": "^10|^11",
         "laravel/prompts": "^0.1",
         "monolog/monolog": "^3.6",
+        "open-feature/sdk": "^2.0",
         "rector/rector": "^1.0",
         "symfony/console": "^6.2|^7.0",
         "symfony/process": "^6.2|^7.0"
@@ -57,24 +58,24 @@
         "phpgenesis/cloudflare": "self.version",
         "phpgenesis/common": "self.version",
         "phpgenesis/http": "self.version",
-        "phpgenesis/logger": "self.version"
+        "phpgenesis/logger": "self.version",
+        "phpgenesis/open-feature": "self.version"
     },
-    "minimum-stability": "stable",
-    "prefer-stable": true,
     "autoload": {
+        "files": [
+            "src/Common/phpgenesis_helpers.php",
+            "src/Common/src/Helpers/helpers.php"
+        ],
         "psr-4": {
             "PHPGenesis\\CLI\\": "src/CLI/src/",
             "PHPGenesis\\Common\\": "src/Common/src/",
             "PHPGenesis\\Http\\": "src/Http/src/",
             "PHPGenesis\\Logger\\": "src/Logger/src/",
+            "PHPGenesis\\OpenFeature\\": "src/OpenFeature/src/",
             "PHPGenesis\\Services\\AmazonWebServices\\": "src/Services/AmazonWebServices/src/",
             "PHPGenesis\\Services\\Cloudflare\\": "src/Services/Cloudflare/src/",
             "PHPGenesis\\Services\\Cloudflare\\\\": "src/Services/Cloudflare/src/"
-        },
-        "files": [
-            "src/Common/phpgenesis_helpers.php",
-            "src/Common/src/Helpers/helpers.php"
-        ]
+        }
     },
     "config": {
         "preferred-install": "dist",
@@ -97,5 +98,7 @@
         "post-autoload-dump": [
             "PHPGenesis\\Common\\Composer\\Scripts::postAutoloadDump"
         ]
-    }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
 }

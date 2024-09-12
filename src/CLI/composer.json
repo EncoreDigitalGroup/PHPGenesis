@@ -2,7 +2,7 @@
     "name": "phpgenesis/cli",
     "description": "Command Line Interface for PHPGenesis",
     "type": "library",
-    "license": "proprietary",
+    "license": "BSD-3-Clause",
     "require": {
         "php": "^8.3",
         "phpgenesis/common": "self.version",

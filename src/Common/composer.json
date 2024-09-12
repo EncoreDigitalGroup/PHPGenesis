@@ -2,7 +2,7 @@
     "name": "phpgenesis/common",
     "description": "Shared Functionality for PHPGenesis",
     "type": "library",
-    "license": "proprietary",
+    "license": "BSD-3-Clause",
     "require": {
         "php": "^8.3",
         "composer-runtime-api": "^2.0",

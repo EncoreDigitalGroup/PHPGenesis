@@ -11,6 +11,7 @@ use OpenFeature\OpenFeatureAPI;
 
 /**
  * @api
+ *
  * @experimental
  */
 class OpenFeature

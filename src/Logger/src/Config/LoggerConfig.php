@@ -29,6 +29,10 @@ class LoggerConfig implements IModuleConfig
 
     public static function get(): LoggerConfig
     {
+        if (!isset(static::$config)) {
+            static::$config = new self();
+        }
+
         return static::$config;
     }
 

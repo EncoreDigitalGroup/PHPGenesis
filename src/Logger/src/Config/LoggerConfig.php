@@ -7,11 +7,15 @@
 namespace PHPGenesis\Logger\Config;
 
 use PHPGenesis\Common\Config\IModuleConfig;
+use PHPGenesis\Common\Config\PhpGenesisConfig;
 use PHPGenesis\Common\Config\Traits\ConfigUtils;
+use PHPGenesis\Common\Helpers\DirectoryHelper;
 
 class LoggerConfig implements IModuleConfig
 {
     use ConfigUtils;
+
+    public static self $config;
 
     public string $name = 'phpgenesis';
     public string $logFileName = 'phpgenesis.log';
@@ -21,5 +25,36 @@ class LoggerConfig implements IModuleConfig
     public function __construct()
     {
         $this->betaFeatures = new LoggerBetaFeatures();
+
+        $this->mergeConfigKeys();
+    }
+
+    public static function get(): LoggerConfig
+    {
+        return static::$config;
+    }
+
+    public function mergeConfigKeys(): void
+    {
+        $config = PhpGenesisConfig::get();
+
+        if (isset($config->logger)) {
+            $config = $config->logger;
+
+            $this->mergeConfigKey($config, 'name');
+            $this->mergeConfigKey($config, 'logFileName');
+            $this->mergeConfigKey($config, 'logLevel');
+
+            $this->betaFeatures->mergeConfigKeys($config);
+
+            static::$config = $this;
+        }
+    }
+
+    private function mergeConfigKey(object $config, string $key): void
+    {
+        if (isset($config->$key)) {
+            $this->$key = $config->$key;
+        }
     }
 }

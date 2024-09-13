@@ -8,6 +8,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/Services/AmazonWebServices/src" isTestSource="false" packagePrefix="PHPGenesis\Services\AmazonWebServices\" />
       <sourceFolder url="file://$MODULE_DIR$/src/Http/src" isTestSource="false" packagePrefix="PHPGenesis\Http\" />
       <sourceFolder url="file://$MODULE_DIR$/src/Services/Cloudflare/src" isTestSource="false" packagePrefix="PHPGenesis\Services\Cloudflare\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/OpenFeature/src" isTestSource="false" packagePrefix="PHPGenesis\OpenFeature\" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/brianium/paratest" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/carbonphp/carbon-doctrine-types" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
@@ -121,6 +122,8 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/tightenco/duster" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/illuminate/database" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/illuminate/log" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/myclabs/php-enum" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/open-feature/sdk" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

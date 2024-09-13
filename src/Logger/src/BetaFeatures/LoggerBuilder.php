@@ -1,10 +1,15 @@
 <?php
+/*
+ * Copyright (c) 2024. Encore Digital Group.
+ * All Right Reserved.
+ */
 
 namespace PHPGenesis\Logger\BetaFeatures;
 
 use Illuminate\Log\LogManager;
 use Illuminate\Support\Facades\Facade;
 use PHPGenesis\Common\Container\PhpGenesisContainer;
+use PHPGenesis\Logger\Config\LoggerConfig;
 
 /** @internal */
 class LoggerBuilder
@@ -18,7 +23,13 @@ class LoggerBuilder
             $this->container = PhpGenesisContainer::getInstance();
 
             $this->container->singleton('log', function () {
-                return new LogManager($this->container);
+                $logManager = new LogManager($this->container);
+
+                if (LoggerConfig::get()->betaFeatures->facade) {
+                    $this->mergeJsonConfig();
+                }
+
+                return $logManager;
             });
 
             Facade::setFacadeApplication($this->container);
@@ -32,5 +43,25 @@ class LoggerBuilder
         }
 
         return static::$instance;
+    }
+
+    protected function mergeJsonConfig(): void
+    {
+        $loggerConfig = LoggerConfig::get();
+
+        $loggerConfig = json_encode($loggerConfig);
+        if ($loggerConfig) {
+            $loggerConfig = json_decode($loggerConfig, true);
+            if (json_last_error() === JSON_ERROR_NONE) {
+                $currentConfig = $this->container->getBindings()['config'];
+                $currentLoggingConfig = $currentConfig['logging'];
+                $mergedLoggingConfig = array_merge($currentLoggingConfig, $loggerConfig);
+                $mergedConfig = array_merge($currentConfig, $mergedLoggingConfig);
+                $this->container->bind('config', function () use ($mergedConfig) {
+                    return $mergedConfig;
+                });
+            }
+        }
+
     }
 }

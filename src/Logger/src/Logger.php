@@ -19,7 +19,7 @@ class Logger implements ILogger
 
     public static function debug(string $message, ?array $context = []): void
     {
-        $config = static::getConfig();
+        $config = LoggerConfig::get();
 
         if ($config->betaFeatures->facade) {
             LoggerBuilder::make();
@@ -34,7 +34,7 @@ class Logger implements ILogger
 
     public static function info(string $message, ?array $context = []): void
     {
-        $config = static::getConfig();
+        $config = LoggerConfig::get();
 
         if ($config->betaFeatures->facade) {
             LoggerBuilder::make();
@@ -48,7 +48,7 @@ class Logger implements ILogger
 
     public static function notice(string $message, ?array $context = []): void
     {
-        $config = static::getConfig();
+        $config = LoggerConfig::get();
 
         if ($config->betaFeatures->facade) {
             LoggerBuilder::make();
@@ -62,7 +62,7 @@ class Logger implements ILogger
 
     public static function warning(string $message, ?array $context = []): void
     {
-        $config = static::getConfig();
+        $config = LoggerConfig::get();
 
         if ($config->betaFeatures->facade) {
             LoggerBuilder::make();
@@ -76,7 +76,7 @@ class Logger implements ILogger
 
     public static function error(string $message, ?array $context = []): void
     {
-        $config = static::getConfig();
+        $config = LoggerConfig::get();
 
         if ($config->betaFeatures->facade) {
             LoggerBuilder::make();
@@ -90,7 +90,7 @@ class Logger implements ILogger
 
     public static function critical(string $message, ?array $context = []): void
     {
-        $config = static::getConfig();
+        $config = LoggerConfig::get();
 
         if ($config->betaFeatures->facade) {
             LoggerBuilder::make();
@@ -104,7 +104,7 @@ class Logger implements ILogger
 
     public static function alert(string $message, ?array $context = []): void
     {
-        $config = static::getConfig();
+        $config = LoggerConfig::get();
 
         if ($config->betaFeatures->facade) {
             LoggerBuilder::make();
@@ -118,7 +118,7 @@ class Logger implements ILogger
 
     public static function emergency(string $message, ?array $context = []): void
     {
-        $config = static::getConfig();
+        $config = LoggerConfig::get();
 
         if ($config->betaFeatures->facade) {
             LoggerBuilder::make();
@@ -132,7 +132,7 @@ class Logger implements ILogger
 
     public static function shareContext(array $context): void
     {
-        $config = static::getConfig();
+        $config = LoggerConfig::get();
 
         if ($config->betaFeatures->facade) {
             LoggerBuilder::make();
@@ -146,7 +146,7 @@ class Logger implements ILogger
 
     public static function withContext(array $context): void
     {
-        $config = static::getConfig();
+        $config = LoggerConfig::get();
 
         if ($config->betaFeatures->facade) {
             LoggerBuilder::make();
@@ -156,14 +156,5 @@ class Logger implements ILogger
         } else {
             MonoLogger::withContext($context);
         }
-    }
-
-    protected static function getConfig(): LoggerConfig
-    {
-        if (!isset(static::$config)) {
-            static::$config = new LoggerConfig();
-        }
-
-        return static::$config;
     }
 }

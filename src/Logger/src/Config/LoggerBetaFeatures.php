@@ -6,24 +6,19 @@
 
 namespace PHPGenesis\Logger\Config;
 
-use PHPGenesis\Common\Helpers\DirectoryHelper;
-
 class LoggerBetaFeatures
 {
     public bool $facade = false;
 
-    public function __construct()
+    public function mergeConfigKeys(object $config): void
     {
-        $basePath = DirectoryHelper::basePath();
-        $configFilePath = $basePath . '/phpgenesis.json';
+        $this->mergeConfigKey($config, 'facade');
+    }
 
-        if (file_exists($configFilePath)) {
-            $configFile = file_get_contents($configFilePath);
-
-            if ($configFile) {
-                $configFile = json_decode($configFile);
-                $this->facade = $configFile?->logger?->betaFeatures?->facade ?? false;
-            }
+    private function mergeConfigKey(object $config, string $key): void
+    {
+        if (isset($config->$key)) {
+            $this->$key = $config->$key;
         }
     }
 }

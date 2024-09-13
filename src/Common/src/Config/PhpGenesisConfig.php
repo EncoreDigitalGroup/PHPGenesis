@@ -11,9 +11,9 @@ use PHPGenesis\Common\Helpers\DirectoryHelper;
 
 class PhpGenesisConfig
 {
-    const string FILE_NAME = '/phpgenesis.json';
-
     public static object $config;
+
+    const string FILE_NAME = '/phpgenesis.json';
 
     public ?object $logger;
 
@@ -27,6 +27,7 @@ class PhpGenesisConfig
             if ($configFile) {
                 $config = json_decode($configFile);
                 static::$config = $config;
+
                 return static::$config;
             }
         }

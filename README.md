@@ -13,7 +13,6 @@ Encore Digital Group writes primarily Laravel Applications. Therefore, a large p
 Encore Digital Group has a number of PHP libraries, separate from PHPGenesis, that are included in PHPGenesis. Some of these libraries include:
 
 - [StdLib](https://github.com/EncoreDigitalGroup/StdLib)
-- [SDK-Client-Foundation](https://github.com/EncoreDigitalGroup/SDK-Client-Foundation)
 - [Tachyon](https://github.com/EncoreDigitalGroup/Tachyon)
 
 Using these libraries, PHPGenesis provides:

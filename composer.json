@@ -26,7 +26,6 @@
         "aws/aws-sdk-php": "^3.284",
         "composer/composer": "^2.0",
         "encoredigitalgroup/stdlib": "^1.3",
-        "encoredigitalgroup/tachyon": "^2.0",
         "guzzlehttp/guzzle": "6.x|7.x",
         "illuminate/console": "^10|^11",
         "illuminate/container": "^10|^11",
@@ -61,11 +60,9 @@
         "phpgenesis/logger": "self.version",
         "phpgenesis/open-feature": "self.version"
     },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
     "autoload": {
-        "files": [
-            "src/Common/phpgenesis_helpers.php",
-            "src/Common/src/Helpers/helpers.php"
-        ],
         "psr-4": {
             "PHPGenesis\\CLI\\": "src/CLI/src/",
             "PHPGenesis\\Common\\": "src/Common/src/",
@@ -75,7 +72,11 @@
             "PHPGenesis\\Services\\AmazonWebServices\\": "src/Services/AmazonWebServices/src/",
             "PHPGenesis\\Services\\Cloudflare\\": "src/Services/Cloudflare/src/",
             "PHPGenesis\\Services\\Cloudflare\\\\": "src/Services/Cloudflare/src/"
-        }
+        },
+        "files": [
+            "src/Common/phpgenesis_helpers.php",
+            "src/Common/src/Helpers/helpers.php"
+        ]
     },
     "config": {
         "preferred-install": "dist",
@@ -98,7 +99,5 @@
         "post-autoload-dump": [
             "PHPGenesis\\Common\\Composer\\Scripts::postAutoloadDump"
         ]
-    },
-    "minimum-stability": "stable",
-    "prefer-stable": true
+    }
 }

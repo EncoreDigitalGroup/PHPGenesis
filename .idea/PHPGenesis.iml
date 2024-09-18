@@ -9,13 +9,13 @@
       <sourceFolder url="file://$MODULE_DIR$/src/Http/src" isTestSource="false" packagePrefix="PHPGenesis\Http\" />
       <sourceFolder url="file://$MODULE_DIR$/src/Services/Cloudflare/src" isTestSource="false" packagePrefix="PHPGenesis\Services\Cloudflare\" />
       <sourceFolder url="file://$MODULE_DIR$/src/OpenFeature/src" isTestSource="false" packagePrefix="PHPGenesis\OpenFeature\" />
+      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/brianium/paratest" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/carbonphp/carbon-doctrine-types" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/deprecations" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/inflector" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/encoredigitalgroup/stdlib" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/encoredigitalgroup/tachyon" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/fidry/cpu-core-counter" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/filp/whoops" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/guzzle" />

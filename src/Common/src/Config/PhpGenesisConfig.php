@@ -7,6 +7,7 @@
 namespace PHPGenesis\Common\Config;
 
 use PHPGenesis\Common\Helpers\DirectoryHelper;
+use stdClass;
 
 class PhpGenesisConfig
 {
@@ -31,15 +32,9 @@ class PhpGenesisConfig
             }
         }
 
-        $configArray = [];
-        $config = json_encode($configArray);
+        static::$config = new stdClass();
 
-        if ($config) {
-            $config = json_decode($config);
-            static::$config = $config;
-        }
-
-        return $config;
+        return static::$config;
     }
 
     public static function get(): object

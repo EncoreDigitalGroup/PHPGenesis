@@ -6,7 +6,6 @@
 
 namespace PHPGenesis\Common\Config;
 
-use EncoreDigitalGroup\StdLib\Exceptions\NullExceptions\NullException;
 use PHPGenesis\Common\Helpers\DirectoryHelper;
 
 class PhpGenesisConfig
@@ -17,7 +16,7 @@ class PhpGenesisConfig
 
     public ?object $logger;
 
-    public static function load(): ?object
+    public static function load(): object
     {
         $configFilePath = DirectoryHelper::basePath() . self::FILE_NAME;
 
@@ -32,7 +31,15 @@ class PhpGenesisConfig
             }
         }
 
-        return null;
+        $configArray = [];
+        $config = json_encode($configArray);
+
+        if ($config) {
+            $config = json_decode($config);
+            static::$config = $config;
+        }
+
+        return $config;
     }
 
     public static function get(): object
@@ -41,12 +48,6 @@ class PhpGenesisConfig
             return static::$config;
         }
 
-        $config = static::load();
-
-        if (is_null($config)) {
-            throw new NullException('config');
-        }
-
-        return $config;
+        return static::load();
     }
 }

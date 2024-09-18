@@ -6,7 +6,6 @@
 
 namespace PHPGenesis\Common\Config;
 
-use EncoreDigitalGroup\StdLib\Exceptions\NullExceptions\NullException;
 use PHPGenesis\Common\Helpers\DirectoryHelper;
 
 class PhpGenesisConfig

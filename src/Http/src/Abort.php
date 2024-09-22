@@ -6,8 +6,6 @@
 
 namespace PHPGenesis\Http;
 
-use PHPGenesis\Common\Container\PhpGenesisContainer;
-use PHPGenesis\Common\Exceptions\LaravelNotInstalledException;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 
 /** @experimental */

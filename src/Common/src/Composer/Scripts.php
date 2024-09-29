@@ -7,8 +7,10 @@
 namespace PHPGenesis\Common\Composer;
 
 use Composer\Script\Event;
+use PHPGenesis\Common\Attributes\Internal;
 use PHPGenesis\Common\Helpers\IdeHelper;
 
+#[Internal]
 class Scripts
 {
     public static function postAutoloadDump(Event $event): void

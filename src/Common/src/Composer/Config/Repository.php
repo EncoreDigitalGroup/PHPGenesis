@@ -6,6 +6,9 @@
 
 namespace PHPGenesis\Common\Composer\Config;
 
+use PHPGenesis\Common\Attributes\Internal;
+
+#[Internal]
 class Repository
 {
     public ?string $type;

@@ -6,8 +6,10 @@
 
 namespace PHPGenesis\Common\Composer\Config;
 
+use PHPGenesis\Common\Attributes\Internal;
 use stdClass;
 
+#[Internal]
 class Composer
 {
     public ?string $name;

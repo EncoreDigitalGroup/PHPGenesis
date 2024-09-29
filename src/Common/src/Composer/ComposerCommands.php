@@ -6,6 +6,9 @@
 
 namespace PHPGenesis\Common\Composer;
 
+use PHPGenesis\Common\Attributes\Internal;
+
+#[Internal]
 class ComposerCommands
 {
     const INSTALL = 'install';

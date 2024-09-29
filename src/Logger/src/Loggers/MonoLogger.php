@@ -6,6 +6,7 @@
 
 namespace PHPGenesis\Logger\Loggers;
 
+use PHPGenesis\Common\Attributes\Internal;
 use PHPGenesis\Logger\BaseLogger;
 use PHPGenesis\Logger\ILogger;
 use PHPGenesis\Logger\LogLevel;
@@ -15,6 +16,7 @@ use PHPGenesis\Logger\LogLevel;
  *
  * @internal This class is not meant to be used by developers outside of the PHPGenesis\Logger namespace.
  */
+#[Internal]
 class MonoLogger extends BaseLogger implements ILogger
 {
     public static function debug(string $message, ?array $context = []): void

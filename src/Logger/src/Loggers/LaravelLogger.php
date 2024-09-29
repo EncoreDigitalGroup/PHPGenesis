@@ -7,6 +7,7 @@
 namespace PHPGenesis\Logger\Loggers;
 
 use Illuminate\Support\Facades\Log;
+use PHPGenesis\Common\Attributes\Internal;
 use PHPGenesis\Logger\ILogger;
 
 /**
@@ -14,6 +15,7 @@ use PHPGenesis\Logger\ILogger;
  *
  * @internal This class is not meant to be used by developers outside of the PHPGenesis\Logger namespace.
  */
+#[Internal]
 class LaravelLogger implements ILogger
 {
     public static function debug($message, $context = []): void

@@ -6,10 +6,12 @@
 
 namespace PHPGenesis\Logger\Config;
 
+use PHPGenesis\Common\Attributes\Internal;
 use PHPGenesis\Common\Config\IModuleConfig;
 use PHPGenesis\Common\Config\PhpGenesisConfig;
 use PHPGenesis\Common\Config\Traits\ConfigUtils;
 
+#[Internal]
 class LoggerConfig implements IModuleConfig
 {
     use ConfigUtils;

@@ -8,10 +8,12 @@ namespace PHPGenesis\Logger\BetaFeatures;
 
 use Illuminate\Log\LogManager;
 use Illuminate\Support\Facades\Facade;
+use PHPGenesis\Common\Attributes\Internal;
 use PHPGenesis\Common\Container\PhpGenesisContainer;
 use PHPGenesis\Logger\Config\LoggerConfig;
 
 /** @internal */
+#[Internal]
 class LoggerBuilder
 {
     protected static LoggerBuilder $instance;

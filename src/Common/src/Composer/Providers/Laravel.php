@@ -6,8 +6,10 @@
 
 namespace PHPGenesis\Common\Composer\Providers;
 
+use PHPGenesis\Common\Attributes\Internal;
 use PHPGenesis\Common\Composer\Composer;
 
+#[Internal]
 class Laravel
 {
     const PACKAGE_VENDOR = 'laravel';

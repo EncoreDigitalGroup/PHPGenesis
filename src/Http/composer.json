@@ -5,6 +5,7 @@
     "license": "BSD-3-Clause",
     "require": {
         "php": "^8.3",
+        "phpgenesis/common": "self.version",
         "illuminate/container": "^10|^11",
         "illuminate/http": "^10|^11",
         "illuminate/support": "^10|^11"

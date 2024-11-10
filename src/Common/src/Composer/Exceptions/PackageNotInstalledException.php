@@ -13,6 +13,6 @@ class PackageNotInstalledException extends BaseException
 {
     public function __construct(string $packageName)
     {
-        parent::__construct(str_concat_space('Composer package', $packageName, 'is not installed.'), ExitCode::RESOURCE_UNAVAILABLE);
+        parent::__construct("Composer package {$packageName} is not installed.", ExitCode::RESOURCE_UNAVAILABLE);
     }
 }

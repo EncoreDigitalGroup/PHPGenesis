@@ -15,13 +15,14 @@ abstract class Repository implements IModelRepository
 {
     use IsRepository;
 
-    /** @var class-string $modelClass */
+    /** @var class-string */
     protected string $modelClass;
+
     protected ?Model $model;
 
     /**
-     * @param Model|null $model
-     * @param class-string $modelClass
+     * @param  class-string  $modelClass
+     *
      * @throws ArgumentNullException
      * @throws NotImplementedException
      */

@@ -21,7 +21,7 @@ abstract class Repository implements IModelRepository
     protected ?Model $model;
 
     /**
-     * @param class-string $modelClass
+     * @param  class-string  $modelClass
      *
      * @throws ArgumentNullException
      * @throws NotImplementedException

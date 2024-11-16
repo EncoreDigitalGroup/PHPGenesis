@@ -6,8 +6,6 @@
 
 namespace PHPGenesis\Common\Repositories;
 
-use EncoreDigitalGroup\StdLib\Exceptions\NotImplementedException;
-
 trait IsRepository
 {
     protected function arrayMapAttribute(string $property, string $attribute, array $attributes): void

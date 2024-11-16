@@ -16,24 +16,4 @@ trait IsRepository
             $this->$property = $attributes[$attribute];
         }
     }
-
-    protected function map(): static
-    {
-        throw new NotImplementedException();
-    }
-
-    protected function mapModel(): static
-    {
-        throw new NotImplementedException();
-    }
-
-    protected function arrayMap(array $attributes): void
-    {
-        throw new NotImplementedException();
-    }
-
-    protected function fieldArray(): array
-    {
-        throw new NotImplementedException();
-    }
 }

@@ -21,7 +21,7 @@ abstract class Repository implements IModelRepository
     protected ?Model $model;
 
     /**
-     * @param  class-string  $modelClass
+     * @param class-string $modelClass
      *
      * @throws ArgumentNullException
      * @throws NotImplementedException
@@ -109,11 +109,16 @@ abstract class Repository implements IModelRepository
         return $this;
     }
 
+    /** @deprecated No replacement */
+    protected function fieldArray(): array
+    {
+        return [];
+    }
+
     abstract protected function map(): static;
 
     abstract protected function mapModel(): static;
 
     abstract protected function arrayMap(array $attributes): void;
 
-    abstract protected function fieldArray(): array;
 }

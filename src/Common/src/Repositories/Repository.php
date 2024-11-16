@@ -6,6 +6,7 @@
 
 namespace PHPGenesis\Common\Repositories;
 
+use EncoreDigitalGroup\StdLib\Exceptions\NotImplementedException;
 use EncoreDigitalGroup\StdLib\Exceptions\NullExceptions\ArgumentNullException;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
@@ -14,9 +15,17 @@ abstract class Repository implements IModelRepository
 {
     use IsRepository;
 
+    /** @var class-string */
     protected string $modelClass;
+
     protected ?Model $model;
 
+    /**
+     * @param  class-string  $modelClass
+     *
+     * @throws ArgumentNullException
+     * @throws NotImplementedException
+     */
     public function __construct(?Model $model = null, ?string $modelClass = null)
     {
         if (!is_null($model)) {

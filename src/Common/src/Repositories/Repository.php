@@ -101,4 +101,19 @@ abstract class Repository implements IModelRepository
     {
         $this->model?->delete();
     }
+
+    public function fromAttributeArray(array $attributes): static
+    {
+        $this->arrayMap($attributes);
+
+        return $this;
+    }
+
+    abstract protected function map(): static;
+
+    abstract protected function mapModel(): static;
+
+    abstract protected function arrayMap(array $attributes): void;
+
+    abstract protected function fieldArray(): array;
 }

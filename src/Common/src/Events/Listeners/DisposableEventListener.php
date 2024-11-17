@@ -7,6 +7,7 @@
 
 namespace PHPGenesis\Common\Events\Listeners;
 
+use Illuminate\Foundation\Events\Terminating;
 use PHPGenesis\Common\Events\DisposeEvent;
 use PHPGenesis\Common\Interfaces\IDisposable;
 use ReflectionClass;
@@ -14,7 +15,7 @@ use ReflectionProperty;
 
 class DisposableEventListener
 {
-    public function handle(DisposeEvent $event): void
+    public function handle(DisposeEvent|Terminating $event): void
     {
         $this->cleanupDisposableClasses();
     }

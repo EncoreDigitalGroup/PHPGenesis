@@ -7,7 +7,4 @@
 
 namespace PHPGenesis\Common\Interfaces;
 
-interface IDisposable
-{
-
-}
+interface IDisposable {}

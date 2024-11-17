@@ -6,7 +6,6 @@
 
 namespace PHPGenesis\Common\Laravel\Providers;
 
-use EncoreDigitalGroup\IntelliTrack\Analytics\Services\NewRelic\NewRelic;
 use Illuminate\Foundation\Events\Terminating;
 use Illuminate\Queue\Events\JobProcessed;
 use Illuminate\Support\Facades\Event;

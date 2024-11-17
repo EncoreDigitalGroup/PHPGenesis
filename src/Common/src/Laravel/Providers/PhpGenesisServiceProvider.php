@@ -28,6 +28,7 @@ class PhpGenesisServiceProvider extends ServiceProvider
         ]);
 
         Event::listen(Terminating::class, DisposableEventListener::class);
+        Event::listen(DisposeEvent::class, DisposableEventListener::class);
 
         Queue::after(function (JobProcessed $event): void {
             DisposeEvent::dispatch();

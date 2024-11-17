@@ -9,6 +9,6 @@ use PHPGenesis\Common\Container\PhpGenesisContainer;
 
 it('Check if Laravel Exists', function (): void {
     $container = new PhpGenesisContainer();
-    expect($container->isLaravel())->toBeFalse()
+    expect($container->isLaravel())->toBeTrue()
         ->and($container::getInstance())->toBeInstanceOf(Container::class);
 });

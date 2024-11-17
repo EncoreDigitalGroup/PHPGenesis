@@ -12,6 +12,9 @@
         "illuminate/database": "^10|^11",
         "illuminate/support": "^10|^11"
     },
+    "require-dev": {
+        "laravel/framework": "^10|^11"
+    },
     "scripts": {
         "post-autoload-dump": [
             "PHPGenesis\\Common\\Composer\\Scripts::postAutoloadDump"

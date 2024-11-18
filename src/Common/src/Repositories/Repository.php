@@ -22,7 +22,7 @@ abstract class Repository implements IModelRepository
     protected bool $usingToModel = false;
 
     /**
-     * @param class-string $modelClass
+     * @param  class-string  $modelClass
      *
      * @throws ArgumentNullException
      * @throws NotImplementedException

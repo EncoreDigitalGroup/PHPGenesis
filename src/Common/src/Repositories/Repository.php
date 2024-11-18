@@ -19,6 +19,7 @@ abstract class Repository implements IModelRepository
     protected string $modelClass;
 
     protected ?Model $model;
+    protected bool $usingToModel = false;
 
     /**
      * @param  class-string  $modelClass
@@ -86,7 +87,9 @@ abstract class Repository implements IModelRepository
 
     public function save(): void
     {
-        $this->mapModel();
+        if (!$this->usingToModel) {
+            $this->mapModel();
+        }
         $this->model?->save();
     }
 
@@ -102,11 +105,33 @@ abstract class Repository implements IModelRepository
         $this->model?->delete();
     }
 
+    /** @deprecated use fromArray() instead. */
     public function fromAttributeArray(array $attributes): static
     {
         $this->arrayMap($attributes);
 
         return $this;
+    }
+
+    public function fromArray(array $attributes): static
+    {
+        $this->mapArray($attributes);
+
+        return $this;
+    }
+
+    public function toModel(?array $attributes = null): static
+    {
+        $this->usingToModel = true;
+        $modelAttributes = $attributes;
+        if (is_null($attributes)) {
+            $json = json_encode($this);
+            if ($json) {
+                $modelAttributes = json_decode($json, true);
+            }
+        }
+
+        return $this->mapArray($modelAttributes, true);
     }
 
     /** @deprecated No replacement */
@@ -117,7 +142,11 @@ abstract class Repository implements IModelRepository
 
     abstract protected function map(): static;
 
+    abstract protected function mapArray(array $attributes, bool $toModel = false): static;
+
+    /** @deprecated use toModel() instead. */
     abstract protected function mapModel(): static;
 
+    /** @deprecated use mapArray() instead. */
     abstract protected function arrayMap(array $attributes): void;
 }

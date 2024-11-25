@@ -24,7 +24,7 @@ class LoggerConfig implements IModuleConfig
 
     public function __construct()
     {
-        $this->betaFeatures = new LoggerBetaFeatures();
+        $this->betaFeatures = new LoggerBetaFeatures;
 
         $this->mergeConfigKeys();
     }
@@ -32,7 +32,7 @@ class LoggerConfig implements IModuleConfig
     public static function get(): LoggerConfig
     {
         if (!isset(static::$config)) {
-            static::$config = new self();
+            static::$config = new self;
         }
 
         return static::$config;
@@ -57,8 +57,8 @@ class LoggerConfig implements IModuleConfig
 
     private function mergeConfigKey(object $config, string $key): void
     {
-        if (isset($config->$key)) {
-            $this->$key = $config->$key;
+        if (isset($config->{$key})) {
+            $this->{$key} = $config->{$key};
         }
     }
 }

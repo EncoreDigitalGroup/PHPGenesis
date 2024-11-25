@@ -12,11 +12,11 @@ trait IsRepository
     {
         if ($toModel) {
             if (isset($attributes[$attribute])) {
-                $this->model->$attribute = $attributes[$attribute];
+                $this->model->{$attribute} = $attributes[$attribute];
             }
         } else {
             if (isset($attributes[$attribute])) {
-                $this->$property = $attributes[$attribute];
+                $this->{$property} = $attributes[$attribute];
             }
         }
 

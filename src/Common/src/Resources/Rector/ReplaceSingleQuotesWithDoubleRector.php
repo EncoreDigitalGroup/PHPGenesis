@@ -22,7 +22,7 @@ final class ReplaceSingleQuotesWithDoubleRector extends AbstractRector
     }
 
     /**
-     * @param String_ $node
+     * @param  String_  $node
      */
     public function refactor(Node $node): ?Node
     {
@@ -40,16 +40,6 @@ final class ReplaceSingleQuotesWithDoubleRector extends AbstractRector
         }
 
         return null;
-    }
-
-    private function notContainExcludedSymbol(string $symbol): bool
-    {
-        foreach (self::EXCLUDED_SYMBOLS as $excludedSymbol) {
-            if (str_contains($symbol, $excludedSymbol)) {
-                return false;
-            }
-        }
-        return true;
     }
 
     public function getRuleDefinition(): RuleDefinition
@@ -77,5 +67,16 @@ class SomeClass
 CODE_SAMPLE
             ),
         ]);
+    }
+
+    private function notContainExcludedSymbol(string $symbol): bool
+    {
+        foreach (self::EXCLUDED_SYMBOLS as $excludedSymbol) {
+            if (str_contains($symbol, $excludedSymbol)) {
+                return false;
+            }
+        }
+
+        return true;
     }
 }

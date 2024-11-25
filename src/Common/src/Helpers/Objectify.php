@@ -19,7 +19,7 @@ class Objectify
         $json = json_encode($value);
 
         if ($json === false) {
-            throw new ImproperBooleanReturnedException();
+            throw new ImproperBooleanReturnedException;
         }
 
         return json_decode($json);

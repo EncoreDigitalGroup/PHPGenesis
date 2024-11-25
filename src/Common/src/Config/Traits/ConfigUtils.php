@@ -13,7 +13,7 @@ trait ConfigUtils
     public static function get(): self
     {
         if (!isset(static::$instance)) {
-            static::$instance = new self();
+            static::$instance = new self;
         }
 
         return static::$instance;

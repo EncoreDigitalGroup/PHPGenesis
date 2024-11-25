@@ -18,7 +18,7 @@ class HttpClientBuilder
 
             // Step 2: Bind the HttpFactory to the container
             $this->container->singleton('http', function () {
-                return new HttpFactory();
+                return new HttpFactory;
             });
 
             // Step 3: Set the container as the facade application

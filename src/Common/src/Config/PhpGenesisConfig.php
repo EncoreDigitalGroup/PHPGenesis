@@ -32,7 +32,7 @@ class PhpGenesisConfig
             }
         }
 
-        static::$config = new stdClass();
+        static::$config = new stdClass;
 
         return static::$config;
     }

@@ -29,11 +29,11 @@ class Composer
 
     public function __construct()
     {
-        $this->config = new Config();
+        $this->config = new Config;
 
-        $this->require = new stdClass();
+        $this->require = new stdClass;
         $this->require->php = '^8.2';
 
-        $this->authors[] = new Author();
+        $this->authors[] = new Author;
     }
 }

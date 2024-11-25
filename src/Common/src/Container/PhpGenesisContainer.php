@@ -20,7 +20,7 @@ class PhpGenesisContainer extends IlluminateContainer implements \Illuminate\Con
         }
 
         if (is_null(static::$instance)) {
-            static::$instance = new static(); //@phpstan-ignore-line
+            static::$instance = new static; //@phpstan-ignore-line
         }
 
         return static::$instance;

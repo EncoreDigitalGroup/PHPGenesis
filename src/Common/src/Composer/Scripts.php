@@ -41,6 +41,7 @@ class Scripts
             }
 
             IdeHelper::updateEditorConfig($isPhpGenesis, $usingPhpGenesis);
+            IdeHelper::updatePint($isPhpGenesis, $usingPhpGenesis);
         }
     }
 }

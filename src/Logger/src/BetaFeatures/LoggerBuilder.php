@@ -41,7 +41,7 @@ class LoggerBuilder
     public static function make(): LoggerBuilder
     {
         if (!isset(static::$instance)) {
-            static::$instance = new self();
+            static::$instance = new self;
         }
 
         return static::$instance;

@@ -20,8 +20,8 @@ class LoggerBetaFeatures
 
     private function mergeConfigKey(object $config, string $key): void
     {
-        if (isset($config->$key)) {
-            $this->$key = $config->$key;
+        if (isset($config->{$key})) {
+            $this->{$key} = $config->{$key};
         }
     }
 }

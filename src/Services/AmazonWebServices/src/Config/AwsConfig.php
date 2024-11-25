@@ -19,13 +19,13 @@ class AwsConfig implements IModuleConfig
 
     public function __construct()
     {
-        $this->credentials = new AwsCredentials();
+        $this->credentials = new AwsCredentials;
         $this->credentials->key = config(self::CONFIG_CREDENTIALS_KEY) ?? null;
         $this->credentials->secret = config(self::CONFIG_CREDENTIALS_SECRET) ?? null;
     }
 
     public static function get(): AwsConfig
     {
-        return new AwsConfig();
+        return new AwsConfig;
     }
 }

@@ -21,7 +21,7 @@ class MonoLogger extends BaseLogger implements ILogger
 {
     public static function debug(string $message, ?array $context = []): void
     {
-        $monoLogger = new MonoLogger();
+        $monoLogger = new MonoLogger;
 
         $monoLogger->log(LogLevel::DEBUG, $message, $context);
 
@@ -30,7 +30,7 @@ class MonoLogger extends BaseLogger implements ILogger
 
     public static function info(string $message, ?array $context = []): void
     {
-        $monoLogger = new MonoLogger();
+        $monoLogger = new MonoLogger;
 
         $monoLogger->log(LogLevel::INFO, $message, $context);
 
@@ -39,7 +39,7 @@ class MonoLogger extends BaseLogger implements ILogger
 
     public static function notice(string $message, ?array $context = []): void
     {
-        $monoLogger = new MonoLogger();
+        $monoLogger = new MonoLogger;
 
         $monoLogger->log(LogLevel::NOTICE, $message, $context);
 
@@ -48,7 +48,7 @@ class MonoLogger extends BaseLogger implements ILogger
 
     public static function warning(string $message, ?array $context = []): void
     {
-        $monoLogger = new MonoLogger();
+        $monoLogger = new MonoLogger;
 
         $monoLogger->log(LogLevel::WARNING, $message, $context);
 
@@ -57,7 +57,7 @@ class MonoLogger extends BaseLogger implements ILogger
 
     public static function error(string $message, ?array $context = []): void
     {
-        $monoLogger = new MonoLogger();
+        $monoLogger = new MonoLogger;
 
         $monoLogger->log(LogLevel::ERROR, $message, $context);
 
@@ -66,7 +66,7 @@ class MonoLogger extends BaseLogger implements ILogger
 
     public static function critical(string $message, ?array $context = []): void
     {
-        $monoLogger = new MonoLogger();
+        $monoLogger = new MonoLogger;
 
         $monoLogger->log(LogLevel::CRITICAL, $message, $context);
 
@@ -75,7 +75,7 @@ class MonoLogger extends BaseLogger implements ILogger
 
     public static function alert(string $message, ?array $context = []): void
     {
-        $monoLogger = new MonoLogger();
+        $monoLogger = new MonoLogger;
 
         $monoLogger->log(LogLevel::ALERT, $message, $context);
 
@@ -84,7 +84,7 @@ class MonoLogger extends BaseLogger implements ILogger
 
     public static function emergency(string $message, ?array $context = []): void
     {
-        $monoLogger = new MonoLogger();
+        $monoLogger = new MonoLogger;
 
         $monoLogger->log(LogLevel::EMERGENCY, $message, $context);
 
@@ -93,7 +93,7 @@ class MonoLogger extends BaseLogger implements ILogger
 
     public static function shareContext(array $context): void
     {
-        $monoLogger = new MonoLogger();
+        $monoLogger = new MonoLogger;
 
         /** @noinspection PhpExpressionResultUnusedInspection */
         $monoLogger->globalContext($context);
@@ -103,7 +103,7 @@ class MonoLogger extends BaseLogger implements ILogger
 
     public static function withContext(array $context): void
     {
-        $monoLogger = new MonoLogger();
+        $monoLogger = new MonoLogger;
 
         /** @noinspection PhpExpressionResultUnusedInspection */
         $monoLogger->globalContext($context);

@@ -45,7 +45,7 @@ abstract class Repository implements IModelRepository
     {
         if (is_null($model)) {
             /** @phpstan-ignore-next-line */
-            return new static();
+            return new static;
         }
 
         /** @phpstan-ignore-next-line */

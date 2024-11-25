@@ -19,6 +19,6 @@ class Config
 
     public function __construct()
     {
-        $this->allowPlugins = new stdClass();
+        $this->allowPlugins = new stdClass;
     }
 }

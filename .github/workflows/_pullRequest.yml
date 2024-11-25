@@ -10,7 +10,7 @@ permissions:
 jobs:
     GitStatusCheck:
         name: GitStatusCheck
-        uses: EncoreDigitalGroup/ci-workflows/.github/workflows/php_gitStatusCheck.yml@main
+        uses: EncoreDigitalGroup/ci-workflows/.github/workflows/php_gitStatusCheck.yml@v1
         with:
             branch: ${{ github.event.repository.default_branch }}
 

@@ -35,7 +35,7 @@
         "illuminate/http": "^10|^11",
         "illuminate/log": "^10|^11",
         "illuminate/support": "^10|^11",
-        "laravel/prompts": "^0.1",
+        "laravel/prompts": "^0.3",
         "monolog/monolog": "^3.6",
         "open-feature/sdk": "^2.0",
         "rector/rector": "^1.0",

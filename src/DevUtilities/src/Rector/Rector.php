@@ -23,7 +23,7 @@ use Rector\TypeDeclaration\Rector\ClassMethod\AddVoidReturnTypeWhereNoReturnRect
 
 class Rector
 {
-    public static function rules(array $rules): array
+    public static function rules(array $rules = []): array
     {
         return array_merge([
             AddVoidReturnTypeWhereNoReturnRector::class,
@@ -31,7 +31,7 @@ class Rector
         ], $rules);
     }
 
-    public static function skip(array $rules): array
+    public static function skip(array $rules = []): array
     {
         return array_merge([
             CompactToVariablesRector::class,

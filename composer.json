@@ -51,7 +51,7 @@
         "symplify/monorepo-builder": "^11.2",
         "tightenco/duster": "^3.0",
         "tomasvotruba/cognitive-complexity": "^0.2.3",
-        "tomasvotruba/unused-public": "^0.3.7"
+        "tomasvotruba/unused-public": "^1.0.0"
     },
     "replace": {
         "phpgenesis/aws": "self.version",

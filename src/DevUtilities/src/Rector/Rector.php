@@ -154,9 +154,6 @@ use Rector\EarlyReturn\Rector\Return_\ReturnBinaryOrToEarlyReturnRector;
 use Rector\EarlyReturn\Rector\StmtsAwareInterface\ReturnEarlyIfVariableRector;
 use Rector\Instanceof_\Rector\Ternary\FlipNegatedTernaryInstanceofRector;
 use Rector\Naming\Rector\Assign\RenameVariableToMatchMethodCallReturnTypeRector;
-use Rector\Naming\Rector\Class_\RenamePropertyToMatchTypeRector;
-use Rector\Naming\Rector\ClassMethod\RenameParamToMatchTypeRector;
-use Rector\Naming\Rector\ClassMethod\RenameVariableToMatchNewTypeRector;
 use Rector\Naming\Rector\Foreach_\RenameForeachValueVariableToMatchExprVariableRector;
 use Rector\Naming\Rector\Foreach_\RenameForeachValueVariableToMatchMethodCallReturnTypeRector;
 use Rector\Php52\Rector\Property\VarToPublicPropertyRector;
@@ -371,8 +368,6 @@ class Rector
             ReturnBinaryOrToEarlyReturnRector::class,
             ReturnEarlyIfVariableRector::class,
             FlipNegatedTernaryInstanceofRector::class,
-            RenameVariableToMatchNewTypeRector::class,
-            RenamePropertyToMatchTypeRector::class,
             RenameForeachValueVariableToMatchMethodCallReturnTypeRector::class,
             VarToPublicPropertyRector::class,
             StringClassNameToClassConstantRector::class,
@@ -448,7 +443,6 @@ class Rector
             CatchExceptionNameMatchingTypeRector::class,
             EncapsedStringsToSprintfRector::class,
             RenameForeachValueVariableToMatchExprVariableRector::class,
-            RenameParamToMatchTypeRector::class,
             RenameVariableToMatchMethodCallReturnTypeRector::class,
             SeparateMultiUseImportsRector::class,
             RemoveExtraParametersRector::class,

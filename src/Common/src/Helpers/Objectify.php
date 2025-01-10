@@ -6,22 +6,11 @@
 
 namespace PHPGenesis\Common\Helpers;
 
-use EncoreDigitalGroup\StdLib\Exceptions\ImproperBooleanReturnedException;
-use stdClass;
+use EncoreDigitalGroup\StdLib\Attributes\Deprecated;
+use PHPGenesis\Common\Support\Objectify as BaseObjectify;
 
-class Objectify
+#[Deprecated]
+/** @deprecated use PHPGenesis\Common\Support\Objectify instead */
+class Objectify extends BaseObjectify
 {
-    /**
-     * @throws ImproperBooleanReturnedException
-     */
-    public static function perform(iterable $value): stdClass|array
-    {
-        $json = json_encode($value);
-
-        if ($json === false) {
-            throw new ImproperBooleanReturnedException;
-        }
-
-        return json_decode($json);
-    }
 }

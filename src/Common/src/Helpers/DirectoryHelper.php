@@ -6,20 +6,11 @@
 
 namespace PHPGenesis\Common\Helpers;
 
-class DirectoryHelper
-{
-    public static function basePath(): string
-    {
-        $directoryPath = __DIR__;
-        do {
-            $isVendorPath = false;
-            $currentDirectoryName = basename($directoryPath);
-            $directoryPath = dirname($directoryPath);
-            if ($currentDirectoryName == 'vendor') {
-                $isVendorPath = true;
-            }
-        } while ($isVendorPath == false);
+use EncoreDigitalGroup\StdLib\Attributes\Deprecated;
+use PHPGenesis\Common\Support\DirectoryHelper as BaseDirectoryHelper;
 
-        return $directoryPath;
-    }
+#[Deprecated]
+/** @deprecated use PHPGenesis\Common\Support\DirectoryHelper instead */
+class DirectoryHelper extends BaseDirectoryHelper
+{
 }

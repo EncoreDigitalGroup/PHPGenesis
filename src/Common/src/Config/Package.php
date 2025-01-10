@@ -6,6 +6,10 @@
 
 namespace PHPGenesis\Common\Config;
 
+use EncoreDigitalGroup\StdLib\Attributes\Deprecated;
+
+#[Deprecated]
+/** @deprecated */
 class Package
 {
     public const string AWS = 'phpgenesis/aws';

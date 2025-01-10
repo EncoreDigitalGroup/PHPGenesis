@@ -88,7 +88,7 @@ abstract class Repository implements IModelRepository
     public function save(): void
     {
         if (!$this->usingToModel) {
-            $this->mapModel();
+            $this->toModel();
         }
         $this->model?->save();
     }

@@ -63,6 +63,7 @@
         "no_leading_namespace_whitespace": true,
         "not_operator_with_successor_space": false,
         "single_blank_line_at_eof": false,
-        "single_quote": false
+        "single_quote": false,
+        "single_line_comment_style": false
     }
 }

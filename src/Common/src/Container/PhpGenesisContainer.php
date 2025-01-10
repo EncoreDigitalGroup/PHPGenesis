@@ -10,7 +10,6 @@ use Illuminate\Container\Container as IlluminateContainer;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
 
-/** @experimental */
 class PhpGenesisContainer extends IlluminateContainer implements \Illuminate\Contracts\Foundation\Application
 {
     public static function getInstance(): IlluminateContainer|PhpGenesisContainer
@@ -20,7 +19,7 @@ class PhpGenesisContainer extends IlluminateContainer implements \Illuminate\Con
         }
 
         if (is_null(static::$instance)) {
-            static::$instance = new static; //@phpstan-ignore-line
+            static::$instance = new static;
         }
 
         return static::$instance;
@@ -118,7 +117,9 @@ class PhpGenesisContainer extends IlluminateContainer implements \Illuminate\Con
     }
 
     /** @phpstan-ignore-next-line */
-    public function register($provider, $force = false): void {}
+    public function register($provider, $force = false): void
+    {
+    }
 
     public function registerDeferredProvider($provider, $service = null): string
     {
@@ -186,7 +187,9 @@ class PhpGenesisContainer extends IlluminateContainer implements \Illuminate\Con
     }
 
     /** @phpstan-ignore-next-line */
-    public function terminating($callback): void {}
+    public function terminating($callback): void
+    {
+    }
 
     public function terminate()
     {

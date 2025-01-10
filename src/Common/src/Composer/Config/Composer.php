@@ -32,7 +32,7 @@ class Composer
         $this->config = new Config;
 
         $this->require = new stdClass;
-        $this->require->php = '^8.2';
+        $this->require->php = '^8.3';
 
         $this->authors[] = new Author;
     }

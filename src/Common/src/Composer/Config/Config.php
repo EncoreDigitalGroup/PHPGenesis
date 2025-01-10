@@ -10,6 +10,7 @@ use PHPGenesis\Common\Attributes\Internal;
 use stdClass;
 
 #[Internal]
+/** @internal */
 class Config
 {
     public ?bool $optimizeAutoloader = true;

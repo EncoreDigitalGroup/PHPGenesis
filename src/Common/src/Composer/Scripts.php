@@ -11,6 +11,7 @@ use PHPGenesis\Common\Attributes\Internal;
 use PHPGenesis\Common\Helpers\IdeHelper;
 
 #[Internal]
+/** @internal */
 class Scripts
 {
     public static function postAutoloadDump(Event $event): void

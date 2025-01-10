@@ -12,7 +12,7 @@ use PHPGenesis\Logger\ILogger;
 
 /** @internal */
 #[Internal]
-class LaravelLogger extends Log implements ILogger
+class LaravelLogger extends Log
 {
     public static function betaLogContext(?array $context = []): array
     {

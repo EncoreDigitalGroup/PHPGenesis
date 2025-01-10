@@ -12,6 +12,7 @@ use PHPGenesis\Common\Config\PhpGenesisConfig;
 use PHPGenesis\Common\Config\Traits\ConfigUtils;
 
 #[Internal]
+/** @internal */
 class LoggerConfig implements IModuleConfig
 {
     use ConfigUtils;

@@ -10,7 +10,6 @@ use Exception;
 use Illuminate\Support\Facades\Config;
 use PHPGenesis\Common\Composer\Providers\Laravel;
 
-/** @experimental */
 class ExceptionLogger
 {
     public static function debug(Exception $exception, string $message, array $context = []): void

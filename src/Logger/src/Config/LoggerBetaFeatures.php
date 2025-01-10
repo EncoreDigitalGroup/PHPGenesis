@@ -9,6 +9,7 @@ namespace PHPGenesis\Logger\Config;
 use PHPGenesis\Common\Attributes\Internal;
 
 #[Internal]
+/** @internal */
 class LoggerBetaFeatures
 {
     public bool $facade = false;

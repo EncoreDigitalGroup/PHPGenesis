@@ -1,10 +1,10 @@
 <?php
 /*
- * Copyright (c) 2024. Encore Digital Group.
+ * Copyright (c) 2024-2025. Encore Digital Group.
  * All Right Reserved.
  */
 
-namespace PHPGenesis\Logger\BetaFeatures;
+namespace PHPGenesis\Logger\Loggers;
 
 use Illuminate\Log\LogManager;
 use Illuminate\Support\Facades\Facade;
@@ -14,10 +14,19 @@ use PHPGenesis\Logger\Config\LoggerConfig;
 
 /** @internal */
 #[Internal]
-class LoggerBuilder
+class LaravelLoggerBuilder
 {
-    protected static LoggerBuilder $instance;
+    protected static LaravelLoggerBuilder $instance;
     protected PhpGenesisContainer $container;
+
+    public static function make(): LaravelLoggerBuilder
+    {
+        if (!isset(static::$instance)) {
+            static::$instance = new self;
+        }
+
+        return static::$instance;
+    }
 
     public function __construct()
     {
@@ -36,15 +45,6 @@ class LoggerBuilder
 
             Facade::setFacadeApplication($this->container);
         }
-    }
-
-    public static function make(): LoggerBuilder
-    {
-        if (!isset(static::$instance)) {
-            static::$instance = new self;
-        }
-
-        return static::$instance;
     }
 
     protected function mergeJsonConfig(): void

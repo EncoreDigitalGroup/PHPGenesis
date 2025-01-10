@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright (c) 2024. Encore Digital Group.
  * All Right Reserved.
@@ -16,7 +17,7 @@ class LoggerBetaFeatures
 
     public function mergeConfigKeys(object $config): void
     {
-        $this->mergeConfigKey($config, 'facade');
+        $this->mergeConfigKey($config, "facade");
     }
 
     private function mergeConfigKey(object $config, string $key): void

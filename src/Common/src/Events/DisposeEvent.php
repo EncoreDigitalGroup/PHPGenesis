@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright (c) 2024. Encore Digital Group.
  * All Right Reserved.
@@ -11,6 +12,4 @@ use Illuminate\Foundation\Events\Dispatchable;
 class DisposeEvent
 {
     use Dispatchable;
-
-    public function __construct() {}
 }

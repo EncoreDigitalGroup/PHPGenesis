@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright (c) 2024. Encore Digital Group.
  * All Right Reserved.
@@ -15,7 +16,7 @@ class DirectoryHelper
             $isVendorPath = false;
             $currentDirectoryName = basename($directoryPath);
             $directoryPath = dirname($directoryPath);
-            if ($currentDirectoryName == 'vendor') {
+            if ($currentDirectoryName == "vendor") {
                 $isVendorPath = true;
             }
         } while ($isVendorPath == false);

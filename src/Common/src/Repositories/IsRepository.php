@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright (c) 2024. Encore Digital Group.
  * All Right Reserved.
@@ -14,10 +15,8 @@ trait IsRepository
             if (isset($attributes[$attribute])) {
                 $this->model->{$attribute} = $attributes[$attribute];
             }
-        } else {
-            if (isset($attributes[$attribute])) {
-                $this->{$property} = $attributes[$attribute];
-            }
+        } elseif (isset($attributes[$attribute])) {
+            $this->{$property} = $attributes[$attribute];
         }
 
     }

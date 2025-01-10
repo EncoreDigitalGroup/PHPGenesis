@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright (c) 2024. Encore Digital Group.
  * All Right Reserved.
@@ -18,9 +19,9 @@ class LoggerConfig implements IModuleConfig
     use ConfigUtils;
 
     public static self $config;
-    public string $name = 'phpgenesis';
-    public string $logFileName = 'phpgenesis.log';
-    public string $logLevel = 'debug';
+    public string $name = "phpgenesis";
+    public string $logFileName = "phpgenesis.log";
+    public string $logLevel = "debug";
     public LoggerBetaFeatures $betaFeatures;
 
     public function __construct()
@@ -46,9 +47,9 @@ class LoggerConfig implements IModuleConfig
         if (isset($config->logger)) {
             $config = $config->logger;
 
-            $this->mergeConfigKey($config, 'name');
-            $this->mergeConfigKey($config, 'logFileName');
-            $this->mergeConfigKey($config, 'logLevel');
+            $this->mergeConfigKey($config, "name");
+            $this->mergeConfigKey($config, "logFileName");
+            $this->mergeConfigKey($config, "logLevel");
 
             $this->betaFeatures->mergeConfigKeys($config);
 

@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright (c) 2024. Encore Digital Group.
  * All Right Reserved.
@@ -37,52 +38,52 @@ class PhpGenesisContainer extends IlluminateContainer implements \Illuminate\Con
 
     public function version(): string
     {
-        return '';
+        return "";
     }
 
-    public function basePath($path = ''): string
+    public function basePath($path = ""): string
     {
-        return '';
+        return "";
     }
 
-    public function bootstrapPath($path = ''): string
+    public function bootstrapPath($path = ""): string
     {
-        return '';
+        return "";
     }
 
-    public function configPath($path = ''): string
+    public function configPath($path = ""): string
     {
-        return '';
+        return "";
     }
 
-    public function databasePath($path = ''): string
+    public function databasePath($path = ""): string
     {
-        return '';
+        return "";
     }
 
-    public function langPath($path = ''): string
+    public function langPath($path = ""): string
     {
-        return '';
+        return "";
     }
 
-    public function publicPath($path = '')
+    public function publicPath($path = "")
     {
-        return '';
+        return "";
     }
 
-    public function resourcePath($path = '')
+    public function resourcePath($path = "")
     {
-        return '';
+        return "";
     }
 
-    public function storagePath($path = '')
+    public function storagePath($path = "")
     {
-        return '';
+        return "";
     }
 
     public function environment(...$environments): string|bool
     {
-        return '';
+        return "";
     }
 
     public function runningInConsole(): bool
@@ -117,9 +118,7 @@ class PhpGenesisContainer extends IlluminateContainer implements \Illuminate\Con
     }
 
     /** @phpstan-ignore-next-line */
-    public function register($provider, $force = false): void
-    {
-    }
+    public function register($provider, $force = false): void {}
 
     public function registerDeferredProvider($provider, $service = null): string
     {
@@ -131,34 +130,34 @@ class PhpGenesisContainer extends IlluminateContainer implements \Illuminate\Con
         return $provider;
     }
 
-    public function boot()
+    public function boot(): void
     {
         // TODO: Implement boot() method.
     }
 
-    public function booting($callback)
+    public function booting($callback): void
     {
         // TODO: Implement booting() method.
     }
 
-    public function booted($callback)
+    public function booted($callback): void
     {
         // TODO: Implement booted() method.
     }
 
-    public function bootstrapWith(array $bootstrappers)
+    public function bootstrapWith(array $bootstrappers): void
     {
         // TODO: Implement bootstrapWith() method.
     }
 
     public function getLocale(): string
     {
-        return '';
+        return "";
     }
 
     public function getNamespace(): string
     {
-        return '';
+        return "";
     }
 
     public function getProviders($provider): array
@@ -171,12 +170,12 @@ class PhpGenesisContainer extends IlluminateContainer implements \Illuminate\Con
         return false;
     }
 
-    public function loadDeferredProviders()
+    public function loadDeferredProviders(): void
     {
         // TODO: Implement loadDeferredProviders() method.
     }
 
-    public function setLocale($locale)
+    public function setLocale($locale): void
     {
         // TODO: Implement setLocale() method.
     }
@@ -187,11 +186,9 @@ class PhpGenesisContainer extends IlluminateContainer implements \Illuminate\Con
     }
 
     /** @phpstan-ignore-next-line */
-    public function terminating($callback): void
-    {
-    }
+    public function terminating($callback): void {}
 
-    public function terminate()
+    public function terminate(): void
     {
         // TODO: Implement terminate() method.
     }

@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright (c) 2024. Encore Digital Group.
  * All Right Reserved.
@@ -11,6 +12,4 @@ use PHPGenesis\Common\Support\Objectify as BaseObjectify;
 
 #[Deprecated]
 /** @deprecated use PHPGenesis\Common\Support\Objectify instead */
-class Objectify extends BaseObjectify
-{
-}
+class Objectify extends BaseObjectify {}

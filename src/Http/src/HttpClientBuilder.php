@@ -17,7 +17,7 @@ class HttpClientBuilder
             $this->container = PhpGenesisContainer::getInstance();
 
             // Step 2: Bind the HttpFactory to the container
-            $this->container->singleton('http', function () {
+            $this->container->singleton("http", function (): \Illuminate\Http\Client\Factory {
                 return new HttpFactory;
             });
 

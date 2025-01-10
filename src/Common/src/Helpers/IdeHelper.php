@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright (c) 2024. Encore Digital Group.
  * All Right Reserved.
@@ -11,6 +12,4 @@ use PHPGenesis\Common\Support\IdeHelper as BaseIdeHelper;
 
 #[Deprecated]
 /** @deprecated use PHPGenesis\Common\Support\IdeHelper instead */
-class IdeHelper extends BaseIdeHelper
-{
-}
+class IdeHelper extends BaseIdeHelper {}

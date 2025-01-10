@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright (c) 2024. Encore Digital Group.
  * All Right Reserved.
@@ -78,26 +79,26 @@ class ExceptionLogger
 
     private static function buildMessage(string $message): string
     {
-        return 'Exception: {exception.message}. ' . $message;
+        return "Exception: {exception.message}. " . $message;
     }
 
     private static function buildContext(Exception $exception, array $context = []): array
     {
         $mergedContext = array_merge([
-            'exception.message' => $exception->getMessage(),
-            'exception.code' => $exception->getCode(),
-            'exception.file' => $exception->getFile(),
-            'exception.line' => $exception->getLine(),
+            "exception.message" => $exception->getMessage(),
+            "exception.code" => $exception->getCode(),
+            "exception.file" => $exception->getFile(),
+            "exception.line" => $exception->getLine(),
         ], $context);
 
-        if (Laravel::installed() && (Config::get('phpgenesis.logger.exception.includeStackTrace'))) {
-            $mergedContext['exception.trace'] = $exception->getTrace();
+        if (Laravel::installed() && (Config::get("phpgenesis.logger.exception.includeStackTrace"))) {
+            $mergedContext["exception.trace"] = $exception->getTrace();
 
             return $mergedContext;
         }
 
         if (!Laravel::installed()) {
-            $mergedContext['exception.trace'] = $exception->getTrace();
+            $mergedContext["exception.trace"] = $exception->getTrace();
         }
 
         return $mergedContext;

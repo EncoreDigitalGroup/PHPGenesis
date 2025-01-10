@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright (c) 2024. Encore Digital Group.
  * All Right Reserved.
@@ -13,7 +14,7 @@ class PhpGenesisConfig
 {
     public static object $config;
 
-    const string FILE_NAME = '/phpgenesis.json';
+    const string FILE_NAME = "/phpgenesis.json";
 
     public ?object $logger;
 

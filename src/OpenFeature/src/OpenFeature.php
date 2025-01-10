@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright (c) 2024. Encore Digital Group.
  * All Right Reserved.
@@ -26,7 +27,7 @@ class OpenFeature
         return $defaultValue;
     }
 
-    public static function string(string $flagKey, string $defaultValue = '', ?EvaluationContext $context = null): string
+    public static function string(string $flagKey, string $defaultValue = "", ?EvaluationContext $context = null): string
     {
         $api = OpenFeatureAPI::getInstance();
         $value = $api->getProvider()->resolveStringValue($flagKey, $defaultValue, $context)->getValue();

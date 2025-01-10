@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright (c) 2024. Encore Digital Group.
  * All Right Reserved.
@@ -12,8 +13,8 @@ use PHPGenesis\Common\Attributes\Internal;
 /** @internal */
 class Author
 {
-    public ?string $name = 'Your Name';
-    public ?string $email = 'you@example.com';
+    public ?string $name = "Your Name";
+    public ?string $email = "you@example.com";
     public ?string $homepage;
-    public ?string $role = 'Developer';
+    public ?string $role = "Developer";
 }

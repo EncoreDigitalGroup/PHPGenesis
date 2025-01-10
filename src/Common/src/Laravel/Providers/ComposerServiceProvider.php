@@ -13,11 +13,11 @@ class ComposerServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
-        if (!function_exists('base_path')) {
+        if (!function_exists("base_path")) {
             return;
         }
 
-        $composerJsonPath = base_path('composer.json');
+        $composerJsonPath = base_path("composer.json");
         $composerConfig = file_get_contents($composerJsonPath);
 
         if (!is_string($composerConfig)) {
@@ -26,14 +26,14 @@ class ComposerServiceProvider extends ServiceProvider
 
         $composerConfig = json_decode($composerConfig, true);
 
-        if (isset($composerConfig['extra']['laravel']['providers'])) {
-            foreach ($composerConfig['extra']['laravel']['providers'] as $provider) {
+        if (isset($composerConfig["extra"]["laravel"]["providers"])) {
+            foreach ($composerConfig["extra"]["laravel"]["providers"] as $provider) {
                 $this->app->register($provider);
             }
         }
 
-        if (isset($composerConfig['extra']['laravel']['aliases'])) {
-            foreach ($composerConfig['extra']['laravel']['aliases'] as $alias => $class) {
+        if (isset($composerConfig["extra"]["laravel"]["aliases"])) {
+            foreach ($composerConfig["extra"]["laravel"]["aliases"] as $alias => $class) {
                 $this->app->alias($class, $alias);
             }
         }

@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright (c) 2024. Encore Digital Group.
  * All Right Reserved.
@@ -22,7 +23,7 @@ abstract class Repository implements IModelRepository
     protected bool $usingToModel = false;
 
     /**
-     * @param class-string $modelClass
+     * @param  class-string  $modelClass
      *
      * @throws ArgumentNullException
      * @throws NotImplementedException
@@ -35,7 +36,7 @@ abstract class Repository implements IModelRepository
         }
 
         if (is_null($modelClass)) {
-            throw new ArgumentNullException('modelClass');
+            throw new ArgumentNullException("modelClass");
         }
 
         $this->modelClass = $modelClass;

@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright (c) 2024. Encore Digital Group.
  * All Right Reserved.
@@ -8,7 +9,7 @@ use EncoreDigitalGroup\StdLib\Exceptions\ImproperBooleanReturnedException;
 use Illuminate\Support\Collection;
 use PHPGenesis\Common\Helpers\Objectify;
 
-if (!function_exists('objectify')) {
+if (!function_exists("objectify")) {
     /**
      * @throws ImproperBooleanReturnedException
      */
@@ -18,14 +19,14 @@ if (!function_exists('objectify')) {
     }
 }
 
-if (!function_exists('dto')) {
+if (!function_exists("dto")) {
     function dto($dto_class, $object): Collection
     {
         return collect(new $dto_class($object));
     }
 }
 
-if (!function_exists('dto_collection')) {
+if (!function_exists("dto_collection")) {
     function dto_collection($dto_class, $objects): Collection
     {
         $dto = [];

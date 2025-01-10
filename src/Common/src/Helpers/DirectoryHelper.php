@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright (c) 2024. Encore Digital Group.
  * All Right Reserved.
@@ -11,6 +12,4 @@ use PHPGenesis\Common\Support\DirectoryHelper as BaseDirectoryHelper;
 
 #[Deprecated]
 /** @deprecated use PHPGenesis\Common\Support\DirectoryHelper instead */
-class DirectoryHelper extends BaseDirectoryHelper
-{
-}
+class DirectoryHelper extends BaseDirectoryHelper {}

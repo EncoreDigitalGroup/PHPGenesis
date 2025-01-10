@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright (c) 2024. Encore Digital Group.
  * All Right Reserved.
@@ -14,7 +15,7 @@ use stdClass;
 class Config
 {
     public ?bool $optimizeAutoloader = true;
-    public ?string $preferredInstall = 'dist';
+    public ?string $preferredInstall = "dist";
     public ?bool $sortPackages = true;
     public ?object $allowPlugins;
 

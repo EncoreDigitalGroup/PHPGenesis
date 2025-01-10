@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright (c) 2024. Encore Digital Group.
  * All Right Reserved.
@@ -25,7 +26,7 @@ class Composer
         return InstalledVersions::getInstallPath(CommonConfig::PACKAGE_NAME);
     }
 
-    private static function globalInstallCheck($packageName): bool
+    private static function globalInstallCheck(string $packageName): bool
     {
         if (InstalledVersions::isInstalled($packageName)) {
             return true;

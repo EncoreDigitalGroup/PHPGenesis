@@ -164,7 +164,6 @@ use Rector\Privatization\Rector\MethodCall\PrivatizeLocalGetterToPropertyRector;
 use Rector\Privatization\Rector\Property\PrivatizeFinalClassPropertyRector;
 use Rector\Renaming\Rector\FuncCall\RenameFunctionRector;
 use Rector\Strict\Rector\BooleanNot\BooleanInBooleanNotRuleFixerRector;
-use Rector\Strict\Rector\Empty_\DisallowedEmptyRuleFixerRector;
 use Rector\Strict\Rector\If_\BooleanInIfConditionRuleFixerRector;
 use Rector\Strict\Rector\Ternary\BooleanInTernaryOperatorRuleFixerRector;
 use Rector\Strict\Rector\Ternary\DisallowedShortTernaryRuleFixerRector;
@@ -375,7 +374,6 @@ class Rector
             PrivatizeLocalGetterToPropertyRector::class,
             PrivatizeFinalClassPropertyRector::class,
             RenameFunctionRector::class,
-            DisallowedEmptyRuleFixerRector::class,
             BooleanInIfConditionRuleFixerRector::class,
             BooleanInTernaryOperatorRuleFixerRector::class,
             DisallowedShortTernaryRuleFixerRector::class,

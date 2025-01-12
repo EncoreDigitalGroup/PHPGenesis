@@ -7,8 +7,6 @@ abstract class Action
 {
     abstract public function __construct(mixed ...$params);
 
-    abstract public function handle(): static;
-
     public static function dispatch(mixed ...$params): static
     {
         return static::make(...$params)->handle();
@@ -18,4 +16,6 @@ abstract class Action
     {
         return new static(...$params);
     }
+
+    abstract public function handle(): static;
 }

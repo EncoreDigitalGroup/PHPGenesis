@@ -1,7 +1,12 @@
-name: PullRequest
+name: Pull Request
 
 on:
     pull_request_target:
+    workflow_dispatch:
+
+concurrency:
+    group: ${{ github.repository }}-${{ github.event.pull_request.number }}-pullRequest
+    cancel-in-progress: true
 
 permissions:
     contents: write
@@ -10,48 +15,48 @@ permissions:
 jobs:
     GitStatusCheck:
         name: GitStatusCheck
-        uses: EncoreDigitalGroup/ci-workflows/.github/workflows/php_gitStatusCheck.yml@v1
-        with:
-            branch: ${{ github.event.repository.default_branch }}
+        runs-on: ubuntu-latest
+        outputs:
+            shouldRun: ${{ steps.GitStatusCheck.outputs.shouldRun }}
+        steps:
+            -   name: GitStatusCheck
+                id: GitStatusCheck
+                uses: EncoreDigitalGroup/ci-workflows/actions/php/gitStatusCheck@v2
 
     FormatTitle:
         name: FormatTitle
-        uses: EncoreDigitalGroup/ci-workflows/.github/workflows/formatPullRequestTitle.yml@v1
-        with:
-            branch: ${{ github.head_ref }}
-            pullRequestNumber: ${{ github.event.number }}
-            repository: ${{ github.repository }}
-        secrets:
-            token: ${{ secrets.GITHUB_TOKEN }}
+        runs-on: ubuntu-latest
+        steps:
+            -   name: FormatTitle
+                uses: EncoreDigitalGroup/ci-workflows/actions/github/formatPullRequestTitle@v2
+                with:
+                    branch: ${{ github.head_ref }}
+                    pullRequestNumber: ${{ github.event.number }}
+                    repository: ${{ github.repository }}
+                    token: ${{ secrets.GITHUB_TOKEN }}
 
-    Duster:
-        name: Duster
+    CodeStyle:
         needs: GitStatusCheck
+        name: CodeStyle
         if: needs.GitStatusCheck.outputs.shouldRun == 'true'
-        uses: EncoreDigitalGroup/ci-workflows/.github/workflows/dusterFixBlame.yml@v1
-        permissions:
-            contents: write
-            pull-requests: write
+        runs-on: ubuntu-latest
+        steps:
+            -   name: CodeStyle
+                uses: EncoreDigitalGroup/ci-workflows/actions/php/codeStyle@v2
+                with:
+                    branch: "${{ github.head_ref }}"
+                    repository: "${{ github.repository }}"
 
     StaticAnalysis:
-        needs: Duster
+        needs: CodeStyle
         name: StaticAnalysis
-        uses: EncoreDigitalGroup/ci-workflows/.github/workflows/larastan.yml@v1
+        uses: EncoreDigitalGroup/ci-workflows/.github/workflows/php_larastan.yml@v2
         with:
-            branch: ${{ github.head_ref }}
+            phpVersion: '8.3'
             path: 'src/'
-            phpVersion: '8.3'
-
-    Test:
-        needs: Duster
-        name: Test
-        uses: EncoreDigitalGroup/ci-workflows/.github/workflows/pest.yml@v1
-        with:
-            phpVersion: '8.3'
             branch: ${{ github.head_ref }}
-            enforceCoverage: false
 
     AutoMerge:
-        needs: [ StaticAnalysis, Test ]
-        name: AutoMerge
-        uses: EncoreDigitalGroup/.github/.github/workflows/dependabotAutoMerge.yml@v1
+        needs: [ StaticAnalysis ]
+        name: Auto-Merge
+        uses: EncoreDigitalGroup/ci-workflows/.github/workflows/github_dependabotAutoMerge.yml@v2

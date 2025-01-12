@@ -10,9 +10,10 @@ parameters:
     checkTooWideReturnTypesInProtectedAndPublicMethods: false
     treatPhpDocTypesAsCertain: false
     ignoreErrors:
-        - '#PHPDoc tag .+ #'
         - identifier: missingType.generics
         - identifier: missingType.iterableValue
+        - '#PHPDoc tag .+ #'
+        - '#Unsafe usage of new static\(\)#'
     unused_public:
         methods: false
         properties: false

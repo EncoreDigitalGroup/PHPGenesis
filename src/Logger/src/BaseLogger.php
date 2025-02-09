@@ -22,7 +22,7 @@ abstract class BaseLogger
         $this->logger->pushHandler(new StreamHandler("phpgenesis.log", Level::Debug));
     }
 
-    protected function log(Level $level, string $message, ?array $context = []): void
+    protected function log(Level $level, string $message, array $context = []): void
     {
         $this->logger->log($level, $message, $context);
     }

@@ -38,7 +38,7 @@
         "laravel/prompts": "^0.3",
         "monolog/monolog": "^3.6",
         "open-feature/sdk": "^2.0",
-        "rector/rector": "^1.0",
+        "rector/rector": "^2.0",
         "symfony/console": "^6.2|^7.0",
         "symfony/process": "^6.2|^7.0"
     },
@@ -50,8 +50,7 @@
         "phpstan/extension-installer": "^1.0",
         "symplify/monorepo-builder": "^11.2",
         "tightenco/duster": "^3.0",
-        "tomasvotruba/cognitive-complexity": "^0.2.3",
-        "tomasvotruba/unused-public": "^1.0.0"
+        "tomasvotruba/cognitive-complexity": "^1.0"
     },
     "replace": {
         "phpgenesis/aws": "self.version",

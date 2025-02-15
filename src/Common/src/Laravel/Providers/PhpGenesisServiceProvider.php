@@ -19,13 +19,13 @@ class PhpGenesisServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
-        $this->mergeConfigFrom(__DIR__ . '/../Config/phpgenesis.php', 'phpgenesis');
+        $this->mergeConfigFrom(__DIR__ . "/../Config/phpgenesis.php", "phpgenesis");
     }
 
     public function boot(): void
     {
         $this->publishes([
-            __DIR__ . '/../Config/phpgenesis.php' => config_path('phpgenesis.php'),
+            __DIR__ . "/../Config/phpgenesis.php" => config_path("phpgenesis.php"),
         ]);
 
         Event::listen(Terminating::class, DisposableEventListener::class);

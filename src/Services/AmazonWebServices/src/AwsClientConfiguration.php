@@ -17,16 +17,16 @@ class AwsClientConfiguration
         $config = AwsConfig::get();
 
         if (is_null($config->credentials) || is_null($config->credentials->key) || is_null($config->credentials->secret)) {
-            throw new Exception('AWS credentials not set');
+            throw new Exception("AWS credentials not set");
         }
 
         return [
-            'credentials' => [
-                'key' => $config->credentials->key,
-                'secret' => $config->credentials->secret,
+            "credentials" => [
+                "key" => $config->credentials->key,
+                "secret" => $config->credentials->secret,
             ],
-            'region' => $config->region,
-            'version' => $config->region,
+            "region" => $config->region,
+            "version" => $config->region,
         ];
     }
 }

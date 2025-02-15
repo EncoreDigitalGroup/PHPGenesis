@@ -11,12 +11,12 @@ use Monolog\Level;
 
 class LogLevel
 {
-    const DEBUG = Level::Debug;
-    const INFO = Level::Info;
-    const NOTICE = Level::Notice;
-    const WARNING = Level::Warning;
-    const ERROR = Level::Error;
-    const CRITICAL = Level::Critical;
-    const ALERT = Level::Alert;
-    const EMERGENCY = Level::Emergency;
+    const Level DEBUG = Level::Debug;
+    const Level INFO = Level::Info;
+    const Level NOTICE = Level::Notice;
+    const Level WARNING = Level::Warning;
+    const Level ERROR = Level::Error;
+    const Level CRITICAL = Level::Critical;
+    const Level ALERT = Level::Alert;
+    const Level EMERGENCY = Level::Emergency;
 }

@@ -17,22 +17,22 @@ abstract class BaseLogger
 
     public function __construct()
     {
-        $this->logger = new Logger('logger');
+        $this->logger = new Logger("logger");
 
-        $this->logger->pushHandler(new StreamHandler('phpgenesis.log', Level::Debug));
+        $this->logger->pushHandler(new StreamHandler("phpgenesis.log", Level::Debug));
     }
 
-    protected function log(Level $level, string $message, ?array $context = []): void
+    protected function log(Level $level, string $message, array $context = []): void
     {
         $this->logger->log($level, $message, $context);
     }
 
     protected function globalContext(array $context): void
     {
-        if (isset($_GLOBAL['PHPGENESIS_LOGGER_CONTEXT'])) {
-            $_GLOBAL['PHPGENESIS_LOGGER_CONTEXT'] = array_merge($_GLOBAL['PHPGENESIS_LOGGER_CONTEXT'], $context);
+        if (isset($_GLOBAL["PHPGENESIS_LOGGER_CONTEXT"])) {
+            $_GLOBAL["PHPGENESIS_LOGGER_CONTEXT"] = array_merge($_GLOBAL["PHPGENESIS_LOGGER_CONTEXT"], $context);
         } else {
-            $_GLOBAL['PHPGENESIS_LOGGER_CONTEXT'] = $context;
+            $_GLOBAL["PHPGENESIS_LOGGER_CONTEXT"] = $context;
         }
     }
 }

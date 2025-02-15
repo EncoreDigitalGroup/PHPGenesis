@@ -5,7 +5,7 @@
  * All Right Reserved.
  */
 
-namespace PHPGenesis\Common\Helpers;
+namespace PHPGenesis\Common\Support;
 
 use EncoreDigitalGroup\StdLib\Exceptions\ImproperBooleanReturnedException;
 use stdClass;

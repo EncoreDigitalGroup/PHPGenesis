@@ -36,7 +36,7 @@ abstract class Repository implements IModelRepository
         }
 
         if (is_null($modelClass)) {
-            throw new ArgumentNullException('modelClass');
+            throw new ArgumentNullException("modelClass");
         }
 
         $this->modelClass = $modelClass;
@@ -89,7 +89,7 @@ abstract class Repository implements IModelRepository
     public function save(): void
     {
         if (!$this->usingToModel) {
-            $this->mapModel();
+            $this->toModel();
         }
         $this->model?->save();
     }
@@ -104,14 +104,6 @@ abstract class Repository implements IModelRepository
     public function delete(): void
     {
         $this->model?->delete();
-    }
-
-    /** @deprecated use fromArray() instead. */
-    public function fromAttributeArray(array $attributes): static
-    {
-        $this->arrayMap($attributes);
-
-        return $this;
     }
 
     public function fromArray(array $attributes): static
@@ -135,19 +127,7 @@ abstract class Repository implements IModelRepository
         return $this->mapArray($modelAttributes, true);
     }
 
-    /** @deprecated No replacement */
-    protected function fieldArray(): array
-    {
-        return [];
-    }
-
     abstract protected function map(): static;
 
     abstract protected function mapArray(array $attributes, bool $toModel = false): static;
-
-    /** @deprecated use toModel() instead. */
-    abstract protected function mapModel(): static;
-
-    /** @deprecated use mapArray() instead. */
-    abstract protected function arrayMap(array $attributes): void;
 }

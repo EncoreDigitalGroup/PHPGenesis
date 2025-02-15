@@ -1,11 +1,11 @@
 <?php
 
 /*
- * Copyright (c) 2024. Encore Digital Group.
+ * Copyright (c) 2024-2025. Encore Digital Group.
  * All Right Reserved.
  */
 
-namespace PHPGenesis\Logger\BetaFeatures;
+namespace PHPGenesis\Logger\Loggers;
 
 use Illuminate\Log\LogManager;
 use Illuminate\Support\Facades\Facade;
@@ -15,9 +15,9 @@ use PHPGenesis\Logger\Config\LoggerConfig;
 
 /** @internal */
 #[Internal]
-class LoggerBuilder
+class LaravelLoggerBuilder
 {
-    protected static LoggerBuilder $instance;
+    protected static LaravelLoggerBuilder $instance;
     protected PhpGenesisContainer $container;
 
     public function __construct()
@@ -25,7 +25,7 @@ class LoggerBuilder
         if (!PhpGenesisContainer::isLaravel()) {
             $this->container = PhpGenesisContainer::getInstance();
 
-            $this->container->singleton('log', function () {
+            $this->container->singleton("log", function (): LogManager {
                 $logManager = new LogManager($this->container);
 
                 if (LoggerConfig::get()->betaFeatures->facade) {
@@ -39,7 +39,7 @@ class LoggerBuilder
         }
     }
 
-    public static function make(): LoggerBuilder
+    public static function make(): LaravelLoggerBuilder
     {
         if (!isset(static::$instance)) {
             static::$instance = new self;
@@ -56,11 +56,11 @@ class LoggerBuilder
         if ($loggerConfig) {
             $loggerConfig = json_decode($loggerConfig, true);
             if (json_last_error() === JSON_ERROR_NONE) {
-                $currentConfig = $this->container->getBindings()['config'];
-                $currentLoggingConfig = $currentConfig['logging'];
+                $currentConfig = $this->container->getBindings()["config"];
+                $currentLoggingConfig = $currentConfig["logging"];
                 $mergedLoggingConfig = array_merge($currentLoggingConfig, $loggerConfig);
                 $mergedConfig = array_merge($currentConfig, $mergedLoggingConfig);
-                $this->container->bind('config', function () use ($mergedConfig) {
+                $this->container->bind("config", function () use ($mergedConfig): array {
                     return $mergedConfig;
                 });
             }

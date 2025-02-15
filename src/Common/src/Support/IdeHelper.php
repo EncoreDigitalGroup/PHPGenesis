@@ -5,14 +5,14 @@
  * All Right Reserved.
  */
 
-namespace PHPGenesis\Common\Helpers;
+namespace PHPGenesis\Common\Support;
 
-use EncoreDigitalGroup\StdLib\Objects\File;
+use EncoreDigitalGroup\StdLib\Objects\Filesystem\File;
 
 class IdeHelper
 {
-    private const string EDITOR_CONFIG_PATH = "Resources/.editorconfig";
-    private const string PINT_PATH = "Resources/pint.json";
+    protected const string EDITOR_CONFIG_PATH = "Resources/.editorconfig";
+    protected const string PINT_PATH = "Resources/pint.json";
 
     public static function updateEditorConfig(bool $isPhpGenesis, bool $usingPhpGenesis = false): void
     {

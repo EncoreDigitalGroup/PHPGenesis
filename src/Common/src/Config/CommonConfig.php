@@ -23,19 +23,19 @@ class CommonConfig implements IModuleConfig
 
     public static function aws(): AwsConfig
     {
-        if (Composer::installed(Package::AWS, true)) {
+        if (Composer::installed(Packages::AWS, true)) {
             return AwsConfig::get();
         }
 
-        throw new PackageNotInstalledException(Package::AWS);
+        throw new PackageNotInstalledException(Packages::AWS);
     }
 
     public static function logger(): LoggerConfig
     {
-        if (Composer::installed(Package::Logger, true)) {
+        if (Composer::installed(Packages::Logger, true)) {
             return LoggerConfig::get();
         }
 
-        throw new PackageNotInstalledException(Package::Logger);
+        throw new PackageNotInstalledException(Packages::Logger);
     }
 }

@@ -14,10 +14,6 @@ parameters:
         - identifier: missingType.iterableValue
         - '#PHPDoc tag .+ #'
         - '#Unsafe usage of new static\(\)#'
-    unused_public:
-        methods: false
-        properties: false
-        constants: false
     cognitive_complexity:
             class: 50
             function: 10

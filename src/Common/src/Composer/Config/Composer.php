@@ -25,7 +25,7 @@ class Composer
     public ?Autoload $autoload;
     public ?array $authors = [];
     public ?object $replace;
-    public ?string $minimumStability = 'stable';
+    public ?string $minimumStability = "stable";
     public ?bool $preferStable = true;
 
     public function __construct()
@@ -33,7 +33,7 @@ class Composer
         $this->config = new Config;
 
         $this->require = new stdClass;
-        $this->require->php = '^8.2';
+        $this->require->php = "^8.3";
 
         $this->authors[] = new Author;
     }

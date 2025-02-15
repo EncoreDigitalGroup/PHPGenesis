@@ -9,11 +9,16 @@ namespace PHPGenesis\Common\Composer;
 
 use Composer\InstalledVersions;
 use PHPGenesis\Common\Config\CommonConfig;
+use PHPGenesis\Common\Config\Packages;
 
 class Composer
 {
-    public static function installed(string $packageName, bool $global = false): bool
+    public static function installed(Packages|string $packageName, bool $global = false): bool
     {
+        if ($packageName instanceof Packages) {
+            $packageName = $packageName->value;
+        }
+
         if ($global) {
             return self::globalInstallCheck($packageName);
         }
@@ -26,7 +31,7 @@ class Composer
         return InstalledVersions::getInstallPath(CommonConfig::PACKAGE_NAME);
     }
 
-    private static function globalInstallCheck($packageName): bool
+    private static function globalInstallCheck(string $packageName): bool
     {
         if (InstalledVersions::isInstalled($packageName)) {
             return true;

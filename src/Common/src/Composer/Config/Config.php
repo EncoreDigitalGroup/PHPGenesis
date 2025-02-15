@@ -11,10 +11,11 @@ use PHPGenesis\Common\Attributes\Internal;
 use stdClass;
 
 #[Internal]
+/** @internal */
 class Config
 {
     public ?bool $optimizeAutoloader = true;
-    public ?string $preferredInstall = 'dist';
+    public ?string $preferredInstall = "dist";
     public ?bool $sortPackages = true;
     public ?object $allowPlugins;
 

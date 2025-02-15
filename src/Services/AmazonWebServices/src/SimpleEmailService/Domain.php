@@ -26,7 +26,7 @@ class Domain
         $SesClient = self::getSesClient();
         try {
             return $SesClient->verifyDomainIdentity([
-                'Domain' => $this->domain,
+                "Domain" => $this->domain,
             ]);
         } catch (AwsException $e) {
             return $e->getMessage();
@@ -38,10 +38,10 @@ class Domain
         $SesClient = self::getSesClient();
         try {
             $Result = $SesClient->verifyDomainDkim([
-                'Domain' => $this->domain,
+                "Domain" => $this->domain,
             ]);
 
-            return json_decode(json_encode($Result['DkimTokens']));
+            return json_decode(json_encode($Result["DkimTokens"]));
         } catch (AwsException $e) {
             return $e->getMessage();
         }

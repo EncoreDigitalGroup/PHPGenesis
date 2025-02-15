@@ -27,14 +27,14 @@ final class ReplaceSingleQuotesWithDoubleRector extends AbstractRector
      */
     public function refactor(Node $node): ?Node
     {
-        if ($node->getAttribute('kind') === String_::KIND_SINGLE_QUOTED) {
+        if ($node->getAttribute("kind") === String_::KIND_SINGLE_QUOTED) {
             // Get the text of the string literal
             $stringValue = $node->value;
 
             // Check if it does not contain variables
             if ($this->notContainExcludedSymbol($stringValue)) {
                 // Replace double quotes with single quotes
-                return new String_($stringValue, ['kind' => String_::KIND_DOUBLE_QUOTED]);
+                return new String_($stringValue, ["kind" => String_::KIND_DOUBLE_QUOTED]);
             }
 
             return null;
@@ -45,7 +45,7 @@ final class ReplaceSingleQuotesWithDoubleRector extends AbstractRector
 
     public function getRuleDefinition(): RuleDefinition
     {
-        return new RuleDefinition('Replace double quotes with single quotes', [
+        return new RuleDefinition("Replace double quotes with single quotes", [
             new CodeSample(
                 <<<'CODE_SAMPLE'
 class SomeClass

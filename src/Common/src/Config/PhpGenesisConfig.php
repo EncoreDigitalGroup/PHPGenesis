@@ -7,14 +7,14 @@
 
 namespace PHPGenesis\Common\Config;
 
-use PHPGenesis\Common\Helpers\DirectoryHelper;
+use PHPGenesis\Common\Support\DirectoryHelper;
 use stdClass;
 
 class PhpGenesisConfig
 {
     public static object $config;
 
-    const string FILE_NAME = '/phpgenesis.json';
+    const string FILE_NAME = "/phpgenesis.json";
 
     public ?object $logger;
 

@@ -10,6 +10,7 @@ namespace PHPGenesis\Common\Composer\Config;
 use PHPGenesis\Common\Attributes\Internal;
 
 #[Internal]
+/** @internal */
 class Autoload
 {
     public ?array $psr4;

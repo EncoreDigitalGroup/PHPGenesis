@@ -12,6 +12,4 @@ use Illuminate\Foundation\Events\Dispatchable;
 class DisposeEvent
 {
     use Dispatchable;
-
-    public function __construct() {}
 }

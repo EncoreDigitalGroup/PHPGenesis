@@ -11,12 +11,12 @@ use PHPGenesis\Common\Config\IModuleConfig;
 
 class AwsConfig implements IModuleConfig
 {
-    const string CONFIG_CREDENTIALS_KEY = 'phpgenesis.amazonWebServices.credentials.key';
-    const string CONFIG_CREDENTIALS_SECRET = 'phpgenesis.amazonWebServices.credentials.secret';
+    const string CONFIG_CREDENTIALS_KEY = "phpgenesis.amazonWebServices.credentials.key";
+    const string CONFIG_CREDENTIALS_SECRET = "phpgenesis.amazonWebServices.credentials.secret";
 
     public ?AwsCredentials $credentials = null;
-    public string $region = 'us-east-1';
-    public string $version = '2010-12-01';
+    public string $region = "us-east-1";
+    public string $version = "2010-12-01";
 
     public function __construct()
     {

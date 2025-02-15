@@ -11,17 +11,18 @@ use PHPGenesis\Common\Attributes\Internal;
 use PHPGenesis\Common\Composer\Composer;
 
 #[Internal]
+/** @internal */
 class Laravel
 {
-    const PACKAGE_VENDOR = 'laravel';
+    const PACKAGE_VENDOR = "laravel";
 
-    public static function installed(string $packageName = 'framework'): bool
+    public static function installed(string $packageName = "framework"): bool
     {
 
-        if (Composer::installed(self::PACKAGE_VENDOR . '/' . $packageName)) {
+        if (Composer::installed(self::PACKAGE_VENDOR . "/" . $packageName)) {
             return true;
         }
 
-        return Composer::installed(self::PACKAGE_VENDOR . '/framework');
+        return Composer::installed(self::PACKAGE_VENDOR . "/framework");
     }
 }

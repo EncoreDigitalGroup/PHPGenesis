@@ -25,7 +25,7 @@ class LaravelLoggerBuilder
         if (!PhpGenesisContainer::isLaravel()) {
             $this->container = PhpGenesisContainer::getInstance();
 
-            $this->container->singleton("log", function (): \Illuminate\Log\LogManager {
+            $this->container->singleton("log", function (): LogManager {
                 $logManager = new LogManager($this->container);
 
                 if (LoggerConfig::get()->betaFeatures->facade) {

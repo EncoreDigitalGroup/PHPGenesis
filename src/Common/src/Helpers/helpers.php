@@ -7,12 +7,10 @@
 
 use EncoreDigitalGroup\StdLib\Exceptions\ImproperBooleanReturnedException;
 use Illuminate\Support\Collection;
-use PHPGenesis\Common\Helpers\Objectify;
+use PHPGenesis\Common\Support\Objectify;
 
 if (!function_exists("objectify")) {
-    /**
-     * @throws ImproperBooleanReturnedException
-     */
+    /** @throws ImproperBooleanReturnedException */
     function objectify($value): stdClass|array
     {
         return Objectify::perform($value);

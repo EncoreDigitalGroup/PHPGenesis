@@ -10,9 +10,6 @@ namespace PHPGenesis\OpenFeature;
 use OpenFeature\interfaces\flags\EvaluationContext;
 use OpenFeature\OpenFeatureAPI;
 
-/**
- * @api
- */
 class OpenFeature
 {
     public static function bool(string $flagKey, bool $defaultValue = false, ?EvaluationContext $context = null): bool

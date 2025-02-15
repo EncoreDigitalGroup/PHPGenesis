@@ -12,11 +12,7 @@ use PHPGenesis\Logger\BaseLogger;
 use PHPGenesis\Logger\ILogger;
 use PHPGenesis\Logger\LogLevel;
 
-/**
- * @api
- *
- * @internal This class is not meant to be used by developers outside the PHPGenesis\Logger namespace.
- */
+/** @internal This class is not meant to be used by developers outside the PHPGenesis\Logger namespace. */
 #[Internal]
 class MonoLogger extends BaseLogger implements ILogger
 {

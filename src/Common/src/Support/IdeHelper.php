@@ -7,7 +7,7 @@
 
 namespace PHPGenesis\Common\Support;
 
-use EncoreDigitalGroup\StdLib\Objects\File;
+use EncoreDigitalGroup\StdLib\Objects\Filesystem\File;
 
 class IdeHelper
 {

@@ -9,7 +9,7 @@ namespace PHPGenesis\Common\Composer;
 
 use Composer\Script\Event;
 use PHPGenesis\Common\Attributes\Internal;
-use PHPGenesis\Common\Helpers\IdeHelper;
+use PHPGenesis\Common\Support\IdeHelper;
 
 #[Internal]
 /** @internal */

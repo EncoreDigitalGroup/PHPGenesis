@@ -9,7 +9,4 @@ namespace PHPGenesis\Http;
 
 use Illuminate\Support\Facades\Http;
 
-/**
- * @experimental
- */
 class HttpClient extends Http {}

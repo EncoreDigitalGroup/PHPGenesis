@@ -224,9 +224,9 @@ use Rector\Visibility\Rector\ClassMethod\ExplicitPublicClassMethodRector;
 
 class Rector
 {
-    public static function rules(array $rules = []): array
+    public static function rules(array $rules = [], array $except = []): array
     {
-        return array_merge([
+        $allRules = array_merge([
             AddVoidReturnTypeWhereNoReturnRector::class,
             ReplaceSingleQuotesWithDoubleRector::class,
             CombinedAssignRector::class,
@@ -431,6 +431,8 @@ class Rector
             WhileNullableToInstanceofRector::class,
             ExplicitPublicClassMethodRector::class,
         ], $rules);
+
+        return array_diff($allRules, $except);
     }
 
     public static function skip(array $rules = []): array

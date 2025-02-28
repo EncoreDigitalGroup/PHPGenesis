@@ -1,186 +1,79 @@
 parameters:
 	ignoreErrors:
 		-
-			message: "#^Call to an undefined static method PHPGenesis\\\\Common\\\\Config\\\\CommonConfig\\:\\:basePath\\(\\)\\.$#"
-			count: 2
-			path: src/CLI/src/Commands/InstallCommand.php
-
-		-
-			message: "#^Call to an undefined static method PHPGenesis\\\\Logger\\\\Config\\\\LoggerConfig\\:\\:install\\(\\)\\.$#"
-			count: 1
-			path: src/CLI/src/Commands/InstallCommand.php
-
-		-
-			message: "#^Cognitive complexity for \"PHPGenesis\\\\CLI\\\\Commands\\\\InstallCommand\\:\\:promptUntilValid\\(\\)\" is 12, keep it under 10$#"
-			count: 1
-			path: src/CLI/src/Commands/InstallCommand.php
-
-		-
-			message: "#^Unable to resolve the template type TKey in call to function collect$#"
-			count: 1
-			path: src/CLI/src/Commands/InstallCommand.php
-
-		-
-			message: "#^Unable to resolve the template type TValue in call to function collect$#"
-			count: 1
-			path: src/CLI/src/Commands/InstallCommand.php
-
-		-
-			message: "#^Method PHPGenesis\\\\Common\\\\Composer\\\\Composer\\:\\:globalInstallCheck\\(\\) has parameter \\$packageName with no type specified\\.$#"
-			count: 1
-			path: src/Common/src/Composer/Composer.php
-
-		-
-			message: "#^Method PHPGenesis\\\\Common\\\\Config\\\\IModuleConfig\\:\\:get\\(\\) has no return type specified\\.$#"
+			message: '#^Method PHPGenesis\\Common\\Config\\IModuleConfig\:\:get\(\) has no return type specified\.$#'
+			identifier: missingType.return
 			count: 1
 			path: src/Common/src/Config/IModuleConfig.php
 
 		-
-			message: "#^Function dto\\(\\) has parameter \\$dto_class with no type specified\\.$#"
+			message: '#^Function dto\(\) has parameter \$dto_class with no type specified\.$#'
+			identifier: missingType.parameter
 			count: 1
 			path: src/Common/src/Helpers/helpers.php
 
 		-
-			message: "#^Function dto\\(\\) has parameter \\$object with no type specified\\.$#"
+			message: '#^Function dto\(\) has parameter \$object with no type specified\.$#'
+			identifier: missingType.parameter
 			count: 1
 			path: src/Common/src/Helpers/helpers.php
 
 		-
-			message: "#^Function dto_collection\\(\\) has parameter \\$dto_class with no type specified\\.$#"
+			message: '#^Function dto_collection\(\) has parameter \$dto_class with no type specified\.$#'
+			identifier: missingType.parameter
 			count: 1
 			path: src/Common/src/Helpers/helpers.php
 
 		-
-			message: "#^Function dto_collection\\(\\) has parameter \\$objects with no type specified\\.$#"
+			message: '#^Function dto_collection\(\) has parameter \$objects with no type specified\.$#'
+			identifier: missingType.parameter
 			count: 1
 			path: src/Common/src/Helpers/helpers.php
 
 		-
-			message: "#^Function objectify\\(\\) has parameter \\$value with no type specified\\.$#"
+			message: '#^Function objectify\(\) has parameter \$value with no type specified\.$#'
+			identifier: missingType.parameter
 			count: 1
 			path: src/Common/src/Helpers/helpers.php
 
 		-
-			message: "#^Parameter \\#1 \\$value of function collect expects Illuminate\\\\Contracts\\\\Support\\\\Arrayable\\<\\(int\\|string\\), mixed\\>\\|iterable\\<\\(int\\|string\\), mixed\\>\\|null, object given\\.$#"
+			message: '#^Parameter \#1 \$value of function collect expects Illuminate\\Contracts\\Support\\Arrayable\<\(int\|string\), mixed\>\|iterable\<\(int\|string\), mixed\>\|null, object given\.$#'
+			identifier: argument.type
 			count: 1
 			path: src/Common/src/Helpers/helpers.php
 
 		-
-			message: "#^Unable to resolve the template type TKey in call to function collect$#"
+			message: '#^Unable to resolve the template type TKey in call to function collect$#'
+			identifier: argument.templateType
 			count: 1
 			path: src/Common/src/Helpers/helpers.php
 
 		-
-			message: "#^Unable to resolve the template type TValue in call to function collect$#"
+			message: '#^Unable to resolve the template type TValue in call to function collect$#'
+			identifier: argument.templateType
 			count: 1
 			path: src/Common/src/Helpers/helpers.php
 
 		-
-			message: "#^Function config_path not found\\.$#"
+			message: '#^Trait PHPGenesis\\Common\\Traits\\HasMake is used zero times and is not analysed\.$#'
+			identifier: trait.unused
 			count: 1
-			path: src/Common/src/Laravel/Providers/PhpGenesisServiceProvider.php
+			path: src/Common/src/Traits/HasMake.php
 
 		-
-			message: "#^Parameter \\#3 \\$context of method Monolog\\\\Logger\\:\\:log\\(\\) expects array, array\\|null given\\.$#"
+			message: '#^Undefined variable\: \$_GLOBAL$#'
+			identifier: variable.undefined
 			count: 1
 			path: src/Logger/src/BaseLogger.php
 
 		-
-			message: "#^Undefined variable\\: \\$_GLOBAL$#"
+			message: '#^Variable \$_GLOBAL in isset\(\) is never defined\.$#'
+			identifier: isset.variable
 			count: 1
 			path: src/Logger/src/BaseLogger.php
 
 		-
-			message: "#^Variable \\$_GLOBAL in isset\\(\\) is never defined\\.$#"
-			count: 1
-			path: src/Logger/src/BaseLogger.php
-
-		-
-			message: "#^Method PHPGenesis\\\\Logger\\\\Loggers\\\\LaravelLogger\\:\\:alert\\(\\) has parameter \\$context with no type specified\\.$#"
-			count: 1
-			path: src/Logger/src/Loggers/LaravelLogger.php
-
-		-
-			message: "#^Method PHPGenesis\\\\Logger\\\\Loggers\\\\LaravelLogger\\:\\:alert\\(\\) has parameter \\$message with no type specified\\.$#"
-			count: 1
-			path: src/Logger/src/Loggers/LaravelLogger.php
-
-		-
-			message: "#^Method PHPGenesis\\\\Logger\\\\Loggers\\\\LaravelLogger\\:\\:critical\\(\\) has parameter \\$context with no type specified\\.$#"
-			count: 1
-			path: src/Logger/src/Loggers/LaravelLogger.php
-
-		-
-			message: "#^Method PHPGenesis\\\\Logger\\\\Loggers\\\\LaravelLogger\\:\\:critical\\(\\) has parameter \\$message with no type specified\\.$#"
-			count: 1
-			path: src/Logger/src/Loggers/LaravelLogger.php
-
-		-
-			message: "#^Method PHPGenesis\\\\Logger\\\\Loggers\\\\LaravelLogger\\:\\:debug\\(\\) has parameter \\$context with no type specified\\.$#"
-			count: 1
-			path: src/Logger/src/Loggers/LaravelLogger.php
-
-		-
-			message: "#^Method PHPGenesis\\\\Logger\\\\Loggers\\\\LaravelLogger\\:\\:debug\\(\\) has parameter \\$message with no type specified\\.$#"
-			count: 1
-			path: src/Logger/src/Loggers/LaravelLogger.php
-
-		-
-			message: "#^Method PHPGenesis\\\\Logger\\\\Loggers\\\\LaravelLogger\\:\\:emergency\\(\\) has parameter \\$context with no type specified\\.$#"
-			count: 1
-			path: src/Logger/src/Loggers/LaravelLogger.php
-
-		-
-			message: "#^Method PHPGenesis\\\\Logger\\\\Loggers\\\\LaravelLogger\\:\\:emergency\\(\\) has parameter \\$message with no type specified\\.$#"
-			count: 1
-			path: src/Logger/src/Loggers/LaravelLogger.php
-
-		-
-			message: "#^Method PHPGenesis\\\\Logger\\\\Loggers\\\\LaravelLogger\\:\\:error\\(\\) has parameter \\$context with no type specified\\.$#"
-			count: 1
-			path: src/Logger/src/Loggers/LaravelLogger.php
-
-		-
-			message: "#^Method PHPGenesis\\\\Logger\\\\Loggers\\\\LaravelLogger\\:\\:error\\(\\) has parameter \\$message with no type specified\\.$#"
-			count: 1
-			path: src/Logger/src/Loggers/LaravelLogger.php
-
-		-
-			message: "#^Method PHPGenesis\\\\Logger\\\\Loggers\\\\LaravelLogger\\:\\:info\\(\\) has parameter \\$context with no type specified\\.$#"
-			count: 1
-			path: src/Logger/src/Loggers/LaravelLogger.php
-
-		-
-			message: "#^Method PHPGenesis\\\\Logger\\\\Loggers\\\\LaravelLogger\\:\\:info\\(\\) has parameter \\$message with no type specified\\.$#"
-			count: 1
-			path: src/Logger/src/Loggers/LaravelLogger.php
-
-		-
-			message: "#^Method PHPGenesis\\\\Logger\\\\Loggers\\\\LaravelLogger\\:\\:notice\\(\\) has parameter \\$context with no type specified\\.$#"
-			count: 1
-			path: src/Logger/src/Loggers/LaravelLogger.php
-
-		-
-			message: "#^Method PHPGenesis\\\\Logger\\\\Loggers\\\\LaravelLogger\\:\\:notice\\(\\) has parameter \\$message with no type specified\\.$#"
-			count: 1
-			path: src/Logger/src/Loggers/LaravelLogger.php
-
-		-
-			message: "#^Method PHPGenesis\\\\Logger\\\\Loggers\\\\LaravelLogger\\:\\:warning\\(\\) has parameter \\$context with no type specified\\.$#"
-			count: 1
-			path: src/Logger/src/Loggers/LaravelLogger.php
-
-		-
-			message: "#^Method PHPGenesis\\\\Logger\\\\Loggers\\\\LaravelLogger\\:\\:warning\\(\\) has parameter \\$message with no type specified\\.$#"
-			count: 1
-			path: src/Logger/src/Loggers/LaravelLogger.php
-
-		-
-			message: "#^Function config not found\\.$#"
-			count: 2
-			path: src/Services/AmazonWebServices/src/Config/AwsConfig.php
-
-		-
-			message: "#^Parameter \\#1 \\$json of function json_decode expects string, string\\|false given\\.$#"
+			message: '#^Parameter \#1 \$json of function json_decode expects string, string\|false given\.$#'
+			identifier: argument.type
 			count: 1
 			path: src/Services/AmazonWebServices/src/SimpleEmailService/Domain.php

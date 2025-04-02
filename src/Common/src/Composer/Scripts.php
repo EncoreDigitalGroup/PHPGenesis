@@ -10,11 +10,14 @@ namespace PHPGenesis\Common\Composer;
 use Composer\Script\Event;
 use PHPGenesis\Common\Attributes\Internal;
 use PHPGenesis\Common\Support\IdeHelper;
+use stdClass;
 
 #[Internal]
 /** @internal */
 class Scripts
 {
+    protected static stdClass $composer;
+
     public static function postAutoloadDump(Event $event): void
     {
         require_once $event->getComposer()->getConfig()->get("vendor-dir") . "/autoload.php";
@@ -27,6 +30,7 @@ class Scripts
 
         if (is_string($composer)) {
             $composer = json_decode($composer);
+            static::$composer = $composer;
 
             $requires = $composer->require;
 
@@ -45,5 +49,14 @@ class Scripts
             IdeHelper::updateEditorConfig($isPhpGenesis, $usingPhpGenesis);
             IdeHelper::updatePint($isPhpGenesis, $usingPhpGenesis);
         }
+    }
+
+    public static function composer(): ?stdClass
+    {
+        if (!isset(static::$composer)) {
+            return null;
+        }
+
+        return static::$composer;
     }
 }

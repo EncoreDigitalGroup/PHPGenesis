@@ -18,7 +18,11 @@ class IdeHelper
     public static function updateEditorConfig(bool $isPhpGenesis, bool $usingPhpGenesis = false): void
     {
         $composer = Scripts::composer();
-        if (!is_null($composer) && isset($composer->extra->phpgenesis->hasApplicationDirectory)) {
+        if (
+            !is_null($composer)
+            && isset($composer->extra->phpgenesis->hasApplicationDirectory)
+            && $composer->extra->phpgenesis->hasApplicationDirectory
+        ) {
             IdeHelper::publishToProjectRoot(phpgenesis_common_src(self::EDITOR_CONFIG_PATH), "../.editorconfig", $isPhpGenesis, $usingPhpGenesis);
         }
 

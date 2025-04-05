@@ -8,9 +8,9 @@
         "composer-runtime-api": "^2.0",
         "composer/composer": "^2.0",
         "encoredigitalgroup/stdlib": "^2.0",
-        "illuminate/collections": "^10|^11",
-        "illuminate/database": "^10|^11",
-        "illuminate/support": "^10|^11"
+        "illuminate/collections": "^10|^11|^12",
+        "illuminate/database": "^10|^11|^12",
+        "illuminate/support": "^10|^11|^12"
     },
     "require-dev": {
         "laravel/framework": "^10|^11"

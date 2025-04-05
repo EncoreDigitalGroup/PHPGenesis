@@ -19,10 +19,10 @@ trait HasMake
             return new static(...$params);
         }
 
-        $instance = new static();
+        $instance = new static;
         foreach ($params as $key => $value) {
             if (property_exists($instance, $key)) {
-                $instance->$key = $value;
+                $instance->{$key} = $value;
             }
         }
 

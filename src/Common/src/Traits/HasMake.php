@@ -15,7 +15,7 @@ trait HasMake
     {
         $reflection = new ReflectionClass(static::class);
 
-        if ($reflection->hasMethod('__construct')) {
+        if ($reflection->hasMethod("__construct")) {
             return new static(...$params);
         }
 

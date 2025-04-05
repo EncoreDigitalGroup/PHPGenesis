@@ -7,10 +7,25 @@
 
 namespace PHPGenesis\Common\Traits;
 
+use ReflectionClass;
+
 trait HasMake
 {
-    public static function make(mixed ...$params): static
+    public static function make(...$params): static
     {
-        return new static(...$params);
+        $reflection = new ReflectionClass(static::class);
+
+        if ($reflection->hasMethod("__construct")) {
+            return new static(...$params);
+        }
+
+        $instance = new static;
+        foreach ($params as $key => $value) {
+            if (property_exists($instance, $key)) {
+                $instance->{$key} = $value;
+            }
+        }
+
+        return $instance;
     }
 }

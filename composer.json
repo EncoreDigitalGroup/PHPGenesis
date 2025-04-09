@@ -43,7 +43,7 @@
         "symfony/process": "^6.2|^7.0"
     },
     "require-dev": {
-        "laravel/framework": "^10|^11",
+        "laravel/framework": "^10|^11|^12",
         "neronmoon/scriptsdev": "^0.1",
         "nikic/php-parser": "^5",
         "pestphp/pest": "^3",

@@ -21,7 +21,7 @@ abstract class Action
         return null;
     }
 
-    public static function make(mixed ...$params): static
+    public static function make(mixed ...$params): mixed
     {
         return new static(...$params);
     }

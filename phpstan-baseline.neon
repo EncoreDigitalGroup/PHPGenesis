@@ -55,6 +55,12 @@ parameters:
 			path: src/Common/src/Helpers/helpers.php
 
 		-
+			message: '#^Trait PHPGenesis\\Common\\Traits\\HasExternalId is used zero times and is not analysed\.$#'
+			identifier: trait.unused
+			count: 1
+			path: src/Common/src/Traits/HasExternalId.php
+
+		-
 			message: '#^Trait PHPGenesis\\Common\\Traits\\HasMake is used zero times and is not analysed\.$#'
 			identifier: trait.unused
 			count: 1

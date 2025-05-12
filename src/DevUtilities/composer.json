@@ -10,7 +10,7 @@
         "php": "^8.3",
         "phpgenesis/common": "self.version",
         "encoredigitalgroup/stdlib": "^2.0",
-        "rector/rector": "^2.0"
+        "rector/rector": "^1|^2"
     },
     "autoload": {
         "psr-4": {

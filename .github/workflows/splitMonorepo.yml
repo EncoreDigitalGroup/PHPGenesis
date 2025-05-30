@@ -18,12 +18,19 @@ jobs:
                 package:
                     -   localPath: Common
                         splitRepoName: Common
+
+                    -   localPath: Laravel
+                        splitRepoName: Laravel
+
                     -   localPath: Logger
                         splitRepoName: Logger
+
                     -   localPath: Http
                         splitRepoName: Http
+
                     -   localPath: DevUtilities
                         splitRepoName: DevUtilities
+
                     -   localPath: Services/AmazonWebServices
                         splitRepoName: AmazonWebServices
         steps:
@@ -37,9 +44,9 @@ jobs:
                     GITHUB_TOKEN: ${{ secrets.GH_MONOREPO_SPLIT_TOKEN }}
                 with:
                     package_directory: 'src/${{ matrix.package.localPath }}'
-                    repository_organization: 'EncoreSoftware'
+                    repository_organization: 'EncoreDigitalGroup'
                     repository_name: '${{ matrix.package.splitRepoName }}'
                     branch: main
                     tag: ${{ steps.previousTag.outputs.tag }}
-                    user_name: 'EncoreBot'
-                    user_email: 'ghbot@encoredigitalgroup.com'
+                    user_name: 'GenesisBot'
+                    user_email: 'ghbot@phpgenesis.com'

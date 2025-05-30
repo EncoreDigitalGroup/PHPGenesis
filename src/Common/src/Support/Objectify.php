@@ -12,10 +12,7 @@ use stdClass;
 
 class Objectify
 {
-    /**
-     * @throws ImproperBooleanReturnedException
-     */
-    public static function perform(iterable $value): stdClass|array
+    public static function make(iterable $value): stdClass|array
     {
         $json = json_encode($value);
 
@@ -24,5 +21,11 @@ class Objectify
         }
 
         return json_decode($json);
+    }
+
+    /** @deprecated Use Objectify::make() instead. */
+    public static function perform(iterable $value): stdClass|array
+    {
+        return self::make($value);
     }
 }

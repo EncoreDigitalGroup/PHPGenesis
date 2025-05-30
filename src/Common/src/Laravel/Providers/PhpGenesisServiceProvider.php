@@ -7,13 +7,13 @@
 
 namespace PHPGenesis\Common\Laravel\Providers;
 
+use Disposable\Events\DisposeEvent;
+use Disposable\Events\Listeners\DisposableEventListener;
 use Illuminate\Foundation\Events\Terminating;
 use Illuminate\Queue\Events\JobProcessed;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Queue;
 use Illuminate\Support\ServiceProvider;
-use PHPGenesis\Common\Events\DisposeEvent;
-use PHPGenesis\Common\Events\Listeners\DisposableEventListener;
 
 class PhpGenesisServiceProvider extends ServiceProvider
 {

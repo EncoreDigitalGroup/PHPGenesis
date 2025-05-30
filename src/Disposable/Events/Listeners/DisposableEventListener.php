@@ -5,11 +5,11 @@
  * All Rights Reserved.
  */
 
-namespace PHPGenesis\Common\Events\Listeners;
+namespace Disposable\Events\Listeners;
 
+use Disposable\Events\DisposeEvent;
+use Disposable\Interfaces\IDisposable;
 use Illuminate\Foundation\Events\Terminating;
-use PHPGenesis\Common\Events\DisposeEvent;
-use PHPGenesis\Common\Interfaces\IDisposable;
 use ReflectionClass;
 use ReflectionProperty;
 
@@ -20,9 +20,6 @@ class DisposableEventListener
         $this->cleanupDisposableClasses();
     }
 
-    /**
-     * Find and unset static properties of IDisposable classes.
-     */
     protected function cleanupDisposableClasses(): void
     {
         $allClasses = get_declared_classes();
@@ -31,7 +28,6 @@ class DisposableEventListener
             if (in_array(IDisposable::class, class_implements($className))) {
                 $reflection = new ReflectionClass($className);
 
-                // Iterate through static properties and set them to null
                 foreach ($reflection->getProperties(ReflectionProperty::IS_STATIC) as $property) {
                     $reflection->setStaticPropertyValue($property->getName(), null);
                 }

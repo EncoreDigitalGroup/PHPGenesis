@@ -5,6 +5,6 @@
  * All Rights Reserved.
  */
 
-namespace PHPGenesis\Common\Interfaces;
+namespace Disposable\Interfaces;
 
 interface IDisposable {}

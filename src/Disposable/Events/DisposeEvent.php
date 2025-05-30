@@ -5,7 +5,7 @@
  * All Rights Reserved.
  */
 
-namespace PHPGenesis\Common\Events;
+namespace Disposable\Events;
 
 use Illuminate\Foundation\Events\Dispatchable;
 

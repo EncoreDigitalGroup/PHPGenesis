@@ -2,7 +2,7 @@
 
 /*
  * Copyright (c) 2025. Encore Digital Group.
- * All Right Reserved.
+ * All Rights Reserved.
  */
 
 namespace PHPGenesis\Common\Support\Identifiers;
@@ -46,8 +46,8 @@ class UniqueIdGenerator extends AbstractIdGenerator
         if ($currentLength < $effectiveTargetLength) {
             $paddingNeeded = $effectiveTargetLength - $currentLength;
             $numberOfPaddingCharactersToUse = min($paddingNeeded, $maxPadding);
-            $paddingLength = $numberOfPaddingCharactersToUse + strlen((string) $nextNumber);
-            $idString = $prefix . str_pad((string) $nextNumber, $paddingLength, $paddingCharacter, STR_PAD_LEFT);
+            $paddingLength = $numberOfPaddingCharactersToUse + strlen((string)$nextNumber);
+            $idString = $prefix . str_pad((string)$nextNumber, $paddingLength, $paddingCharacter, STR_PAD_LEFT);
         }
 
         $this->saveLastNumber($nextNumber);
@@ -58,12 +58,12 @@ class UniqueIdGenerator extends AbstractIdGenerator
     private function loadLastNumber(): void
     {
         $cachedValue = Cache::get($this->schema->getCacheKey(), "0");
-        $this->lastNumber = (int) $cachedValue;
+        $this->lastNumber = (int)$cachedValue;
     }
 
     private function saveLastNumber(int $number): void
     {
-        Cache::forever($this->schema->getCacheKey(), (string) $number);
+        Cache::forever($this->schema->getCacheKey(), (string)$number);
         $this->lastNumber = $number;
     }
 

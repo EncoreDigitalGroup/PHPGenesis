@@ -1,8 +1,8 @@
 <?php
 
 /*
- * Copyright (c) 2024. Encore Digital Group.
- * All Right Reserved.
+ * Copyright (c) 2024-2025. Encore Digital Group.
+ * All Rights Reserved.
  */
 
 declare(strict_types=1);

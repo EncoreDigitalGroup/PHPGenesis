@@ -1,8 +1,8 @@
 <?php
 
 /*
- * Encore Digital Group - Planning Center PHP SDK
- * Copyright (c) 2024. Encore Digital Group
+ * Copyright (c) 2024-2025. Encore Digital Group.
+ * All Rights Reserved.
  */
 
 namespace PHPGenesis\Common\Resources\Rector;
@@ -23,7 +23,7 @@ final class ReplaceSingleQuotesWithDoubleRector extends AbstractRector
     }
 
     /**
-     * @param  String_  $node
+     * @param String_ $node
      */
     public function refactor(Node $node): ?Node
     {

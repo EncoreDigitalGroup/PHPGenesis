@@ -2,7 +2,7 @@
 
 /*
  * Copyright (c) 2025. Encore Digital Group.
- * All Right Reserved.
+ * All Rights Reserved.
  */
 
 namespace PHPGenesis\Common\Support\Identifiers;
@@ -14,9 +14,9 @@ readonly class TicketIdSchema implements IdentifierSchema
 {
     public function __construct(
         private string $prefix = "CS",
-        private bool $useDate = true,
-        private int $targetLength = 10,
-        private int $maxPadding = 3,
+        private bool   $useDate = true,
+        private int    $targetLength = 10,
+        private int    $maxPadding = 3,
         private string $paddingCharacter = "0",
         private string $cacheKey = "ticketIdSchema"
     ) {}

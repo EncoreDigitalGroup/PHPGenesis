@@ -2,7 +2,7 @@
 
 /*
  * Copyright (c) 2024-2025. Encore Digital Group.
- * All Right Reserved.
+ * All Rights Reserved.
  */
 
 namespace PHPGenesis\Logger\Loggers;

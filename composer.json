@@ -69,15 +69,14 @@
     "autoload": {
         "psr-4": {
             "PHPGenesis\\CLI\\": "src/CLI/src/",
+            "PHPGenesis\\CloudProviders\\AmazonWebServices\\": "src/CloudProviders/AmazonWebServices/src/",
+            "PHPGenesis\\CloudProviders\\Cloudflare\\": "src/CloudProviders/Cloudflare/src/",
             "PHPGenesis\\Common\\": "src/Common/src/",
             "PHPGenesis\\DevUtilities\\": "src/DevUtilities/src/",
             "PHPGenesis\\Http\\": "src/Http/src/",
             "PHPGenesis\\Laravel\\": "src/Laravel/src/",
             "PHPGenesis\\Logger\\": "src/Logger/src/",
-            "PHPGenesis\\OpenFeature\\": "src/OpenFeature/src/",
-            "PHPGenesis\\Services\\AmazonWebServices\\": "src/Services/AmazonWebServices/src/",
-            "PHPGenesis\\Services\\Cloudflare\\": "src/Services/Cloudflare/src/",
-            "PHPGenesis\\Services\\Cloudflare\\\\": "src/Services/Cloudflare/src/"
+            "PHPGenesis\\OpenFeature\\": "src/OpenFeature/src/"
         },
         "files": [
             "src/Common/phpgenesis_helpers.php",
@@ -97,7 +96,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "PHPGenesis\\Services\\Cloudflare\\Providers\\CloudflareServiceProvider"
+                "PHPGenesis\\CloudProviders\\Cloudflare\\Providers\\CloudflareServiceProvider"
             ]
         }
     },

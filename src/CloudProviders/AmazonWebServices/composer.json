@@ -15,7 +15,7 @@
     },
     "autoload": {
         "psr-4": {
-            "PHPGenesis\\Services\\AmazonWebServices\\": "src/"
+            "PHPGenesis\\CloudProviders\\AmazonWebServices\\": "src/"
         }
     },
     "minimum-stability": "stable"

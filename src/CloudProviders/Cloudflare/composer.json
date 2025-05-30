@@ -14,13 +14,13 @@
     },
     "autoload": {
         "psr-4": {
-            "PHPGenesis\\Services\\Cloudflare\\": "src/"
+            "PHPGenesis\\CloudProviders\\Cloudflare\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "PHPGenesis\\Services\\Cloudflare\\Providers\\CloudflareServiceProvider"
+                "PHPGenesis\\CloudProviders\\Cloudflare\\Providers\\CloudflareServiceProvider"
             ]
         }
     },

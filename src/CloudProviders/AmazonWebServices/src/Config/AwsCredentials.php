@@ -5,7 +5,7 @@
  * All Rights Reserved.
  */
 
-namespace PHPGenesis\Services\AmazonWebServices\Config;
+namespace PHPGenesis\CloudProviders\AmazonWebServices\Config;
 
 class AwsCredentials
 {

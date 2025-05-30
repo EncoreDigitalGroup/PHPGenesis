@@ -5,7 +5,7 @@
  * All Rights Reserved.
  */
 
-namespace PHPGenesis\Services\AmazonWebServices;
+namespace PHPGenesis\CloudProviders\AmazonWebServices;
 
 use Exception;
 use PHPGenesis\Services\AmazonWebServices\Config\AwsConfig;

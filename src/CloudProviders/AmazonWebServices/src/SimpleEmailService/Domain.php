@@ -5,7 +5,7 @@
  * All Rights Reserved.
  */
 
-namespace PHPGenesis\Services\AmazonWebServices\SimpleEmailService;
+namespace PHPGenesis\CloudProviders\AmazonWebServices\SimpleEmailService;
 
 use Aws\Exception\AwsException;
 use Aws\Result;

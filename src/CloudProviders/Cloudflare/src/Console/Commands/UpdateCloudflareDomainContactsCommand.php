@@ -5,7 +5,7 @@
  * All Rights Reserved.
  */
 
-namespace PHPGenesis\Services\Cloudflare\Console\Commands;
+namespace PHPGenesis\CloudProviders\Cloudflare\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Config;

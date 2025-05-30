@@ -5,7 +5,7 @@
  * All Rights Reserved.
  */
 
-namespace PHPGenesis\Services\Cloudflare\Providers;
+namespace PHPGenesis\CloudProviders\Cloudflare\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use PHPGenesis\Services\Cloudflare\Console\Commands\UpdateCloudflareDomainContactsCommand;

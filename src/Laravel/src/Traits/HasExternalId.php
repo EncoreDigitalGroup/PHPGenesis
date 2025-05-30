@@ -5,7 +5,7 @@
  * All Rights Reserved.
  */
 
-namespace PHPGenesis\Common\Traits;
+namespace PHPGenesis\Laravel\Traits;
 
 use Illuminate\Database\Eloquent\Model;
 

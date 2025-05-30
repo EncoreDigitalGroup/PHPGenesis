@@ -7,6 +7,7 @@
 
 namespace PHPGenesis\Common\Repositories;
 
+/** @deprecated No replacement. */
 trait IsRepository
 {
     protected function arrayMapAttribute(string $property, string $attribute, array $attributes, bool $toModel = false): void

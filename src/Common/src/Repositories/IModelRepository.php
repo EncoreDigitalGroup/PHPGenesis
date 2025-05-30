@@ -7,6 +7,7 @@
 
 namespace PHPGenesis\Common\Repositories;
 
+/** @deprecated No replacement. */
 interface IModelRepository
 {
     /** @phpstan-ignore-next-line */

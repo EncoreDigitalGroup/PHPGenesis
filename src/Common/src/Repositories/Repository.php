@@ -12,6 +12,7 @@ use EncoreDigitalGroup\StdLib\Exceptions\NullExceptions\ArgumentNullException;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 
+/** @deprecated No replacement. */
 abstract class Repository implements IModelRepository
 {
     use IsRepository;
@@ -23,7 +24,7 @@ abstract class Repository implements IModelRepository
     protected bool $usingToModel = false;
 
     /**
-     * @param  class-string  $modelClass
+     * @param class-string $modelClass
      *
      * @throws ArgumentNullException
      * @throws NotImplementedException

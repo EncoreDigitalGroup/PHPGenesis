@@ -2,7 +2,7 @@
 
 /*
  * Copyright (c) 2025. Encore Digital Group.
- * All Right Reserved.
+ * All Rights Reserved.
  */
 
 namespace PHPGenesis\Common\Support\Identifiers;

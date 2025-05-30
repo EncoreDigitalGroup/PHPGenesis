@@ -1,8 +1,8 @@
 <?php
 
 /*
- * Copyright (c) 2023-2024. Encore Digital Group.
- * All Right Reserved.
+ * Copyright (c) 2023-2025. Encore Digital Group.
+ * All Rights Reserved.
  */
 
 namespace PHPGenesis\Services\AmazonWebServices\SimpleEmailService;

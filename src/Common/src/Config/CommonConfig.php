@@ -11,7 +11,7 @@ use PHPGenesis\Common\Composer\Composer;
 use PHPGenesis\Common\Composer\Exceptions\PackageNotInstalledException;
 use PHPGenesis\Common\Config\Traits\ConfigUtils;
 use PHPGenesis\Logger\Config\LoggerConfig;
-use PHPGenesis\Services\AmazonWebServices\Config\AwsConfig;
+use PHPGenesis\CloudProviders\AmazonWebServices\Config\AwsConfig;
 
 class CommonConfig implements IModuleConfig
 {

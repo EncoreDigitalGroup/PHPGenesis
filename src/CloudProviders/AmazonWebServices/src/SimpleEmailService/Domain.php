@@ -10,7 +10,8 @@ namespace PHPGenesis\CloudProviders\AmazonWebServices\SimpleEmailService;
 use Aws\Exception\AwsException;
 use Aws\Result;
 use Aws\Ses\SesClient;
-use PHPGenesis\Services\AmazonWebServices\AwsClientConfiguration;
+use EncoreDigitalGroup\StdLib\Exceptions\ImproperBooleanReturnedException;
+use PHPGenesis\CloudProviders\AmazonWebServices\AwsClientConfiguration;
 
 class Domain
 {
@@ -35,13 +36,19 @@ class Domain
 
     public function verifyDomainDkim(): array|string
     {
-        $SesClient = self::getSesClient();
+        $sesClient = self::getSesClient();
         try {
-            $Result = $SesClient->verifyDomainDkim([
+            $result = $sesClient->verifyDomainDkim([
                 "Domain" => $this->domain,
             ]);
 
-            return json_decode(json_encode($Result["DkimTokens"]));
+            $encoded = json_encode($result["DkimTokens"]);
+
+            if (!$encoded) {
+                throw new ImproperBooleanReturnedException;
+            }
+
+            return json_decode($encoded);
         } catch (AwsException $e) {
             return $e->getMessage();
         }

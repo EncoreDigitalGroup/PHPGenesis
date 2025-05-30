@@ -8,7 +8,7 @@
 namespace PHPGenesis\CloudProviders\Cloudflare\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use PHPGenesis\Services\Cloudflare\Console\Commands\UpdateCloudflareDomainContactsCommand;
+use PHPGenesis\CloudProviders\Cloudflare\Console\Commands\UpdateCloudflareDomainContactsCommand;
 
 /** @experimental */
 class CloudflareServiceProvider extends ServiceProvider

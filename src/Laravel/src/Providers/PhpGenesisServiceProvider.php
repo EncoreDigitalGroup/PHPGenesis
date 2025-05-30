@@ -5,27 +5,27 @@
  * All Rights Reserved.
  */
 
-namespace PHPGenesis\Common\Laravel\Providers;
+namespace PHPGenesis\Laravel\Providers;
 
-use Disposable\Events\DisposeEvent;
-use Disposable\Events\Listeners\DisposableEventListener;
 use Illuminate\Foundation\Events\Terminating;
 use Illuminate\Queue\Events\JobProcessed;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Queue;
 use Illuminate\Support\ServiceProvider;
+use PHPGenesis\Disposable\Events\DisposeEvent;
+use PHPGenesis\Disposable\Events\Listeners\DisposableEventListener;
 
 class PhpGenesisServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
-        $this->mergeConfigFrom(__DIR__ . "/../Config/phpgenesis.php", "phpgenesis");
+        $this->mergeConfigFrom(__DIR__ . "/../../config/phpgenesis.php", "phpgenesis");
     }
 
     public function boot(): void
     {
         $this->publishes([
-            __DIR__ . "/../Config/phpgenesis.php" => config_path("phpgenesis.php"),
+            __DIR__ . "/../../config/phpgenesis.php" => config_path("phpgenesis.php"),
         ]);
 
         Event::listen(Terminating::class, DisposableEventListener::class);

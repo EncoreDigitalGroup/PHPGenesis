@@ -1,0 +1,24 @@
+{
+    "name": "phpgenesis/laravel",
+    "description": "Laravel specific functionality for PHPGenesis",
+    "license": "BSD-3-Clause",
+    "type": "library",
+    "require": {
+        "php": "^8.3",
+        "composer-runtime-api": "^2.0",
+        "composer/composer": "^2.0",
+        "encoredigitalgroup/stdlib": "^2.0",
+        "illuminate/queue": "^10|^11|^12",
+        "illuminate/database": "^10|^11|^12",
+        "illuminate/support": "^10|^11|^12"
+    },
+    "require-dev": {
+        "laravel/framework": "^10|^11|^12"
+    },
+    "autoload": {
+        "psr-4": {
+            "PHPGenesis\\Laravel\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}

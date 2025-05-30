@@ -5,7 +5,7 @@
  * All Rights Reserved.
  */
 
-namespace PHPGenesis\Common\Laravel\Providers;
+namespace PHPGenesis\Laravel\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

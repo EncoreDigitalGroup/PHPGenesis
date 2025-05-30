@@ -5,7 +5,7 @@
  * All Rights Reserved.
  */
 
-namespace PHPGenesis\Common\Resources\Rector;
+namespace PHPGenesis\DevUtilities\Rector\Rules;
 
 use PhpParser\Node;
 use PhpParser\Node\Scalar\String_;
@@ -23,7 +23,7 @@ final class ReplaceSingleQuotesWithDoubleRector extends AbstractRector
     }
 
     /**
-     * @param  String_  $node
+     * @param String_ $node
      */
     public function refactor(Node $node): ?Node
     {

@@ -5,6 +5,6 @@
  * All Rights Reserved.
  */
 
-namespace Disposable\Interfaces;
+namespace PHPGenesis\Laravel\Disposable\Interfaces;
 
 interface IDisposable {}

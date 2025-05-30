@@ -5,7 +5,7 @@
  * All Rights Reserved.
  */
 
-namespace Disposable\Events;
+namespace PHPGenesis\Laravel\Disposable\Events;
 
 use Illuminate\Foundation\Events\Dispatchable;
 

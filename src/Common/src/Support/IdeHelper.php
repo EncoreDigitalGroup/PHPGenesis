@@ -37,7 +37,7 @@ class IdeHelper
             && isset($composer->extra->phpgenesis->hasApplicationDirectory)
             && $composer->extra->phpgenesis->hasApplicationDirectory
         ) {
-            IdeHelper::publishToProjectRoot(phpgenesis_common_src(self::EDITOR_CONFIG_PATH), "../pint.json", $isPhpGenesis, $usingPhpGenesis);
+            IdeHelper::publishToProjectRoot(phpgenesis_common_src(self::PINT_PATH), "../pint.json", $isPhpGenesis, $usingPhpGenesis);
         }
 
         IdeHelper::publishToProjectRoot(phpgenesis_common_src(self::PINT_PATH), "pint.json", $isPhpGenesis, $usingPhpGenesis);

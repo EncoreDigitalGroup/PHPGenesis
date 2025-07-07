@@ -1,5 +1,0 @@
-* @onairmarc
-/composer.json @EncoreDigitalGroup/dependency-management
-/package.json @EncoreDigitalGroup/dependency-management
-/.github/ @onairmarc
-/.github/dependabot.yml @EncoreDigitalGroup/dependency-management

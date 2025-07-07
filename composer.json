@@ -34,6 +34,7 @@
         "illuminate/filesystem": "^10|^11|^12",
         "illuminate/http": "^10|^11|^12",
         "illuminate/log": "^10|^11|^12",
+        "illuminate/queue": "^10|^11|^12",
         "illuminate/support": "^10|^11|^12",
         "laravel/prompts": "^0.3",
         "monolog/monolog": "^3.6",
@@ -59,6 +60,7 @@
         "phpgenesis/common": "self.version",
         "phpgenesis/devutilities": "self.version",
         "phpgenesis/http": "self.version",
+        "phpgenesis/laravel": "self.version",
         "phpgenesis/logger": "self.version",
         "phpgenesis/open-feature": "self.version"
     },
@@ -67,18 +69,17 @@
     "autoload": {
         "psr-4": {
             "PHPGenesis\\CLI\\": "src/CLI/src/",
+            "PHPGenesis\\CloudProviders\\AmazonWebServices\\": "src/CloudProviders/AmazonWebServices/src/",
+            "PHPGenesis\\CloudProviders\\Cloudflare\\": "src/CloudProviders/Cloudflare/src/",
             "PHPGenesis\\Common\\": "src/Common/src/",
             "PHPGenesis\\DevUtilities\\": "src/DevUtilities/src/",
             "PHPGenesis\\Http\\": "src/Http/src/",
+            "PHPGenesis\\Laravel\\": "src/Laravel/src/",
             "PHPGenesis\\Logger\\": "src/Logger/src/",
-            "PHPGenesis\\OpenFeature\\": "src/OpenFeature/src/",
-            "PHPGenesis\\Services\\AmazonWebServices\\": "src/Services/AmazonWebServices/src/",
-            "PHPGenesis\\Services\\Cloudflare\\": "src/Services/Cloudflare/src/",
-            "PHPGenesis\\Services\\Cloudflare\\\\": "src/Services/Cloudflare/src/"
+            "PHPGenesis\\OpenFeature\\": "src/OpenFeature/src/"
         },
         "files": [
-            "src/Common/phpgenesis_helpers.php",
-            "src/Common/src/Helpers/helpers.php"
+            "src/Common/phpgenesis_helpers.php"
         ]
     },
     "config": {
@@ -94,7 +95,8 @@
     "extra": {
         "laravel": {
             "providers": [
-                "PHPGenesis\\Services\\Cloudflare\\Providers\\CloudflareServiceProvider"
+                "PHPGenesis\\CloudProviders\\Cloudflare\\Providers\\CloudflareServiceProvider",
+                "PHPGenesis\\Laravel\\Providers\\PHPGenesisServiceProvider"
             ]
         }
     },

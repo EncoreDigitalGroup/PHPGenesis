@@ -1,6 +1,6 @@
 {
-    "name": "phpgenesis/common",
-    "description": "Shared Functionality for PHPGenesis",
+    "name": "phpgenesis/laravel",
+    "description": "Laravel specific functionality for PHPGenesis",
     "license": "BSD-3-Clause",
     "type": "library",
     "require": {
@@ -8,7 +8,7 @@
         "composer-runtime-api": "^2.0",
         "composer/composer": "^2.0",
         "encoredigitalgroup/stdlib": "^2.0",
-        "illuminate/collections": "^10|^11|^12",
+        "illuminate/queue": "^10|^11|^12",
         "illuminate/database": "^10|^11|^12",
         "illuminate/support": "^10|^11|^12"
     },
@@ -17,16 +17,15 @@
     },
     "autoload": {
         "psr-4": {
-            "PHPGenesis\\Common\\": "src/"
-        },
-        "files": [
-            "phpgenesis_helpers.php"
-        ]
+            "PHPGenesis\\Laravel\\": "src/"
+        }
     },
-    "scripts": {
-        "post-autoload-dump": [
-            "PHPGenesis\\Common\\Composer\\Scripts::postAutoloadDump"
-        ]
+    "extra": {
+        "laravel": {
+            "providers": [
+                "PHPGenesis\\Laravel\\Providers\\PHPGenesisServiceProvider"
+            ]
+        }
     },
     "minimum-stability": "stable"
 }

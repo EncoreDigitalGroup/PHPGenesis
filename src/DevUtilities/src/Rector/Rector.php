@@ -7,7 +7,7 @@
 
 namespace PHPGenesis\DevUtilities\Rector;
 
-use PHPGenesis\Common\Resources\Rector\ReplaceSingleQuotesWithDoubleRector;
+use PHPGenesis\DevUtilities\Rector\Rules\ReplaceSingleQuotesWithDoubleRector;
 use Rector\CodeQuality\Rector\Assign\CombinedAssignRector;
 use Rector\CodeQuality\Rector\BooleanAnd\RemoveUselessIsObjectCheckRector;
 use Rector\CodeQuality\Rector\BooleanAnd\SimplifyEmptyArrayCheckRector;

@@ -16,7 +16,7 @@ Encore Digital Group has a number of PHP libraries, separate from PHPGenesis, th
 
 Using these libraries, PHPGenesis provides:
 
-- [Amazon Web Services](./src/Services/AmazonWebServices/README.md)
+- [Amazon Web Services](src/CloudProviders/AmazonWebServices/README.md)
 - [Common](./src/Common/README.md)
 - [Logger](./src/Logger/README.md)
 

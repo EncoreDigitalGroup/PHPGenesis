@@ -14,11 +14,10 @@ use PHPGenesis\Common\Composer\Composer;
 /** @internal */
 class Laravel
 {
-    const PACKAGE_VENDOR = "laravel";
+    public const PACKAGE_VENDOR = "laravel";
 
     public static function installed(string $packageName = "framework"): bool
     {
-
         if (Composer::installed(self::PACKAGE_VENDOR . "/" . $packageName)) {
             return true;
         }

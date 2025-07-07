@@ -2,7 +2,7 @@
 
 /*
  * Copyright (c) 2024-2025. Encore Digital Group.
- * All Rights Reserved.
+ * All Right Reserved.
  */
 
 namespace PHPGenesis\Logger;
@@ -25,7 +25,6 @@ class Logger implements ILogger
         } else {
             MonoLogger::debug($message, $context);
         }
-
     }
 
     public static function info(string $message, array $context = []): void

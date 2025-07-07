@@ -9,13 +9,13 @@ namespace PHPGenesis\Common\Composer;
 
 use Composer\InstalledVersions;
 use PHPGenesis\Common\Config\CommonConfig;
-use PHPGenesis\Common\Config\Packages;
+use PHPGenesis\Common\Config\Package;
 
 class Composer
 {
-    public static function installed(Packages|string $packageName, bool $global = false): bool
+    public static function installed(Package|string $packageName, bool $global = false): bool
     {
-        if ($packageName instanceof Packages) {
+        if ($packageName instanceof Package) {
             $packageName = $packageName->value;
         }
 

@@ -6,10 +6,10 @@
  */
 
 use Illuminate\Container\Container;
-use PHPGenesis\Common\Container\PhpGenesisContainer;
+use PHPGenesis\Common\Container\PHPGenesisContainer;
 
 it("Check if Laravel Exists", function (): void {
-    $container = new PhpGenesisContainer;
+    $container = new PHPGenesisContainer;
     expect($container->isLaravel())->toBeTrue()
         ->and($container::getInstance())->toBeInstanceOf(Container::class);
 });

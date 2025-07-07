@@ -2,14 +2,14 @@
 
 /*
  * Copyright (c) 2024-2025. Encore Digital Group.
- * All Rights Reserved.
+ * All Right Reserved.
  */
 
 namespace PHPGenesis\Logger\Config;
 
 use PHPGenesis\Common\Attributes\Internal;
 use PHPGenesis\Common\Config\IModuleConfig;
-use PHPGenesis\Common\Config\PhpGenesisConfig;
+use PHPGenesis\Common\Config\PHPGenesisConfig;
 use PHPGenesis\Common\Config\Traits\ConfigUtils;
 
 #[Internal]
@@ -22,12 +22,9 @@ class LoggerConfig implements IModuleConfig
     public string $name = "phpgenesis";
     public string $logFileName = "phpgenesis.log";
     public string $logLevel = "debug";
-    public LoggerBetaFeatures $betaFeatures;
 
     public function __construct()
     {
-        $this->betaFeatures = new LoggerBetaFeatures;
-
         $this->mergeConfigKeys();
     }
 
@@ -42,7 +39,7 @@ class LoggerConfig implements IModuleConfig
 
     public function mergeConfigKeys(): void
     {
-        $config = PhpGenesisConfig::get();
+        $config = PHPGenesisConfig::get();
 
         if (isset($config->logger)) {
             $config = $config->logger;
@@ -50,8 +47,6 @@ class LoggerConfig implements IModuleConfig
             $this->mergeConfigKey($config, "name");
             $this->mergeConfigKey($config, "logFileName");
             $this->mergeConfigKey($config, "logLevel");
-
-            $this->betaFeatures->mergeConfigKeys($config);
 
             static::$config = $this;
         }

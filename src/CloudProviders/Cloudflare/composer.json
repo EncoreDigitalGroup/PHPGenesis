@@ -1,0 +1,28 @@
+{
+    "name": "phpgenesis/cloudflare",
+    "description": "Cloudflare SDK for PHPGenesis",
+    "type": "library",
+    "license": "proprietary",
+    "require": {
+        "php": "^8.3",
+        "phpgenesis/common": "self.version"
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "PHPGenesis\\Common\\Composer\\Scripts::postAutoloadDump"
+        ]
+    },
+    "autoload": {
+        "psr-4": {
+            "PHPGenesis\\CloudProviders\\Cloudflare\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "PHPGenesis\\CloudProviders\\Cloudflare\\Providers\\CloudflareServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable"
+}

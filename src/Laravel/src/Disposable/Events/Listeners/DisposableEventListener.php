@@ -7,6 +7,7 @@
 
 namespace PHPGenesis\Laravel\Disposable\Events\Listeners;
 
+use EncoreDigitalGroup\StdLib\Objects\Support\StaticCache;
 use Illuminate\Foundation\Events\Terminating;
 use PHPGenesis\Laravel\Disposable\Events\DisposeEvent;
 use PHPGenesis\Laravel\Disposable\Interfaces\IDisposable;
@@ -18,6 +19,7 @@ class DisposableEventListener
     public function handle(DisposeEvent|Terminating $event): void
     {
         $this->cleanupDisposableClasses();
+        $this->flushStaticCache();
     }
 
     protected function cleanupDisposableClasses(): void
@@ -33,5 +35,10 @@ class DisposableEventListener
                 }
             }
         }
+    }
+
+    protected function flushStaticCache(): void
+    {
+        StaticCache::flush();
     }
 }

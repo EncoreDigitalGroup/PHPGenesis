@@ -2,7 +2,7 @@
 
 /*
  * Copyright (c) 2024-2025. Encore Digital Group.
- * All Rights Reserved.
+ * All Right Reserved.
  */
 
 namespace PHPGenesis\Logger\Config;
@@ -22,12 +22,9 @@ class LoggerConfig implements IModuleConfig
     public string $name = "phpgenesis";
     public string $logFileName = "phpgenesis.log";
     public string $logLevel = "debug";
-    public LoggerBetaFeatures $betaFeatures;
 
     public function __construct()
     {
-        $this->betaFeatures = new LoggerBetaFeatures;
-
         $this->mergeConfigKeys();
     }
 
@@ -50,8 +47,6 @@ class LoggerConfig implements IModuleConfig
             $this->mergeConfigKey($config, "name");
             $this->mergeConfigKey($config, "logFileName");
             $this->mergeConfigKey($config, "logLevel");
-
-            $this->betaFeatures->mergeConfigKeys($config);
 
             static::$config = $this;
         }

@@ -2,7 +2,7 @@
 
 /*
  * Copyright (c) 2024-2025. Encore Digital Group.
- * All Rights Reserved.
+ * All Right Reserved.
  */
 
 namespace PHPGenesis\Logger\Loggers;
@@ -27,10 +27,7 @@ class LaravelLoggerBuilder
 
             $this->container->singleton("log", function (): LogManager {
                 $logManager = new LogManager($this->container);
-
-                if (LoggerConfig::get()->betaFeatures->facade) {
-                    $this->mergeJsonConfig();
-                }
+                $this->mergeJsonConfig();
 
                 return $logManager;
             });

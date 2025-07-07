@@ -2,7 +2,7 @@
 
 /*
  * Copyright (c) 2024-2025. Encore Digital Group.
- * All Rights Reserved.
+ * All Right Reserved.
  */
 
 namespace PHPGenesis\Logger;
@@ -11,12 +11,12 @@ use Monolog\Level;
 
 class LogLevel
 {
-    const Level DEBUG = Level::Debug;
-    const Level INFO = Level::Info;
-    const Level NOTICE = Level::Notice;
-    const Level WARNING = Level::Warning;
-    const Level ERROR = Level::Error;
-    const Level CRITICAL = Level::Critical;
-    const Level ALERT = Level::Alert;
-    const Level EMERGENCY = Level::Emergency;
+    public const Level DEBUG = Level::Debug;
+    public const Level INFO = Level::Info;
+    public const Level NOTICE = Level::Notice;
+    public const Level WARNING = Level::Warning;
+    public const Level ERROR = Level::Error;
+    public const Level CRITICAL = Level::Critical;
+    public const Level ALERT = Level::Alert;
+    public const Level EMERGENCY = Level::Emergency;
 }

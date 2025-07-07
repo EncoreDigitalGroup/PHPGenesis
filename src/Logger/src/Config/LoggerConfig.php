@@ -9,7 +9,7 @@ namespace PHPGenesis\Logger\Config;
 
 use PHPGenesis\Common\Attributes\Internal;
 use PHPGenesis\Common\Config\IModuleConfig;
-use PHPGenesis\Common\Config\PhpGenesisConfig;
+use PHPGenesis\Common\Config\PHPGenesisConfig;
 use PHPGenesis\Common\Config\Traits\ConfigUtils;
 
 #[Internal]
@@ -42,7 +42,7 @@ class LoggerConfig implements IModuleConfig
 
     public function mergeConfigKeys(): void
     {
-        $config = PhpGenesisConfig::get();
+        $config = PHPGenesisConfig::get();
 
         if (isset($config->logger)) {
             $config = $config->logger;

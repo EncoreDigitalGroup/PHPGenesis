@@ -10,7 +10,7 @@ namespace PHPGenesis\Logger\Loggers;
 use Illuminate\Log\LogManager;
 use Illuminate\Support\Facades\Facade;
 use PHPGenesis\Common\Attributes\Internal;
-use PHPGenesis\Common\Container\PhpGenesisContainer;
+use PHPGenesis\Common\Container\PHPGenesisContainer;
 use PHPGenesis\Logger\Config\LoggerConfig;
 
 /** @internal */
@@ -18,12 +18,12 @@ use PHPGenesis\Logger\Config\LoggerConfig;
 class LaravelLoggerBuilder
 {
     protected static LaravelLoggerBuilder $instance;
-    protected PhpGenesisContainer $container;
+    protected PHPGenesisContainer $container;
 
     public function __construct()
     {
-        if (!PhpGenesisContainer::isLaravel()) {
-            $this->container = PhpGenesisContainer::getInstance();
+        if (!PHPGenesisContainer::isLaravel()) {
+            $this->container = PHPGenesisContainer::getInstance();
 
             $this->container->singleton("log", function (): LogManager {
                 $logManager = new LogManager($this->container);

@@ -7,4 +7,7 @@
 
 namespace PHPGenesis\Laravel\Disposable\Interfaces;
 
-interface IDisposable {}
+interface IDisposable
+{
+    public static function dispose(): void;
+}

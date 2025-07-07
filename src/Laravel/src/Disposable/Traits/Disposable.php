@@ -11,6 +11,5 @@ trait Disposable
 {
     public static function dispose(): void
     {
-        return;
     }
 }

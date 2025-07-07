@@ -7,7 +7,6 @@
 
 namespace PHPGenesis\Common\Actions;
 
-/** @experimental */
 abstract class Action
 {
     public static function dispatch(mixed ...$params): mixed

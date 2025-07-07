@@ -7,7 +7,7 @@
 
 namespace PHPGenesis\Common\Config;
 
-enum Packages: string
+enum Package: string
 {
     case AWS = "phpgenesis/aws";
     case Common = "phpgenesis/common";

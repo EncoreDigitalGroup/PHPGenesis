@@ -11,9 +11,9 @@ use Illuminate\Container\Container as IlluminateContainer;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
 
-class PhpGenesisContainer extends IlluminateContainer implements \Illuminate\Contracts\Foundation\Application
+class PHPGenesisContainer extends IlluminateContainer implements \Illuminate\Contracts\Foundation\Application
 {
-    public static function getInstance(): IlluminateContainer|PhpGenesisContainer
+    public static function getInstance(): IlluminateContainer|PHPGenesisContainer
     {
         if (static::isLaravelApplication()) {
             return parent::getInstance();

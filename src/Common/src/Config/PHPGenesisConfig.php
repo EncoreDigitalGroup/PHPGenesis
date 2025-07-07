@@ -10,7 +10,7 @@ namespace PHPGenesis\Common\Config;
 use PHPGenesis\Common\Support\DirectoryHelper;
 use stdClass;
 
-class PhpGenesisConfig
+class PHPGenesisConfig
 {
     public static object $config;
 

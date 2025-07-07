@@ -13,9 +13,9 @@ use PHPGenesis\Common\Attributes\Internal;
 /** @internal */
 class ComposerCommands
 {
-    const string INSTALL = "install";
-    const string UPDATE = "update";
-    const string REMOVE = "remove";
-    const string SHOW = "show";
-    const string DUMP_AUTOLOAD = "dump-autoload";
+    public const string INSTALL = "install";
+    public const string UPDATE = "update";
+    public const string REMOVE = "remove";
+    public const string SHOW = "show";
+    public const string DUMP_AUTOLOAD = "dump-autoload";
 }

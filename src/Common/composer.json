@@ -20,7 +20,6 @@
             "PHPGenesis\\Common\\": "src/"
         },
         "files": [
-            "src/Helpers/helpers.php",
             "phpgenesis_helpers.php"
         ]
     },

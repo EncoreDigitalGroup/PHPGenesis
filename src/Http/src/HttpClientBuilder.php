@@ -9,16 +9,16 @@ namespace PHPGenesis\Http;
 
 use Illuminate\Http\Client\Factory as HttpFactory;
 use Illuminate\Support\Facades\Facade;
-use PHPGenesis\Common\Container\PhpGenesisContainer;
+use PHPGenesis\Common\Container\PHPGenesisContainer;
 
 class HttpClientBuilder
 {
-    protected PhpGenesisContainer $container;
+    protected PHPGenesisContainer $container;
 
     public function __construct()
     {
-        if (!PhpGenesisContainer::isLaravel()) {
-            $this->container = PhpGenesisContainer::getInstance();
+        if (!PHPGenesisContainer::isLaravel()) {
+            $this->container = PHPGenesisContainer::getInstance();
 
             $this->container->singleton("http", function (): HttpFactory {
                 return new HttpFactory;

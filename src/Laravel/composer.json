@@ -20,5 +20,12 @@
             "PHPGenesis\\Laravel\\": "src/"
         }
     },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "PHPGenesis\\Laravel\\Providers\\PHPGenesisServiceProvider"
+            ]
+        }
+    },
     "minimum-stability": "stable"
 }

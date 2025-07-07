@@ -2,7 +2,7 @@
 
 /*
  * Copyright (c) 2024-2025. Encore Digital Group.
- * All Rights Reserved.
+ * All Right Reserved.
  */
 
 namespace PHPGenesis\Laravel\Providers;
@@ -15,7 +15,7 @@ use Illuminate\Support\ServiceProvider;
 use PHPGenesis\Laravel\Disposable\Events\DisposeEvent;
 use PHPGenesis\Laravel\Disposable\Events\Listeners\DisposableEventListener;
 
-class PhpGenesisServiceProvider extends ServiceProvider
+class PHPGenesisServiceProvider extends ServiceProvider
 {
     public function register(): void
     {

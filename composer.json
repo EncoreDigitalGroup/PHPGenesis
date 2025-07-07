@@ -79,8 +79,7 @@
             "PHPGenesis\\OpenFeature\\": "src/OpenFeature/src/"
         },
         "files": [
-            "src/Common/phpgenesis_helpers.php",
-            "src/Common/src/Helpers/helpers.php"
+            "src/Common/phpgenesis_helpers.php"
         ]
     },
     "config": {
@@ -96,7 +95,8 @@
     "extra": {
         "laravel": {
             "providers": [
-                "PHPGenesis\\CloudProviders\\Cloudflare\\Providers\\CloudflareServiceProvider"
+                "PHPGenesis\\CloudProviders\\Cloudflare\\Providers\\CloudflareServiceProvider",
+                "PHPGenesis\\Laravel\\Providers\\PHPGenesisServiceProvider"
             ]
         }
     },

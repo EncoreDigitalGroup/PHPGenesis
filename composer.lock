@@ -437,16 +437,16 @@
         },
         {
             "name": "composer/composer",
-            "version": "2.8.9",
+            "version": "2.8.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/composer.git",
-                "reference": "b4e6bff2db7ce756ddb77ecee958a0f41f42bd9d"
+                "reference": "53834f587d7ab2527eb237459d7b94d1fb9d4c5a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/composer/zipball/b4e6bff2db7ce756ddb77ecee958a0f41f42bd9d",
-                "reference": "b4e6bff2db7ce756ddb77ecee958a0f41f42bd9d",
+                "url": "https://api.github.com/repos/composer/composer/zipball/53834f587d7ab2527eb237459d7b94d1fb9d4c5a",
+                "reference": "53834f587d7ab2527eb237459d7b94d1fb9d4c5a",
                 "shasum": ""
             },
             "require": {
@@ -531,7 +531,7 @@
                 "irc": "ircs://irc.libera.chat:6697/composer",
                 "issues": "https://github.com/composer/composer/issues",
                 "security": "https://github.com/composer/composer/security/policy",
-                "source": "https://github.com/composer/composer/tree/2.8.9"
+                "source": "https://github.com/composer/composer/tree/2.8.10"
             },
             "funding": [
                 {
@@ -547,7 +547,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-05-13T12:01:37+00:00"
+            "time": "2025-07-10T17:08:33+00:00"
         },
         {
             "name": "composer/metadata-minifier",
@@ -1301,16 +1301,16 @@
         },
         {
             "name": "encoredigitalgroup/stdlib",
-            "version": "v2.8.1",
+            "version": "v2.8.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/EncoreDigitalGroup/stdlib.git",
-                "reference": "ce7f8a9eee296523b0d6cb7da051ada7e7e16c5b"
+                "reference": "fa069a8157628557f12a21551b39f26f4c995d82"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/EncoreDigitalGroup/stdlib/zipball/ce7f8a9eee296523b0d6cb7da051ada7e7e16c5b",
-                "reference": "ce7f8a9eee296523b0d6cb7da051ada7e7e16c5b",
+                "url": "https://api.github.com/repos/EncoreDigitalGroup/stdlib/zipball/fa069a8157628557f12a21551b39f26f4c995d82",
+                "reference": "fa069a8157628557f12a21551b39f26f4c995d82",
                 "shasum": ""
             },
             "require": {
@@ -1353,9 +1353,9 @@
             "description": "A collection of standard library classes and functions for PHP.",
             "support": {
                 "issues": "https://github.com/EncoreDigitalGroup/stdlib/issues",
-                "source": "https://github.com/EncoreDigitalGroup/stdlib/tree/v2.8.1"
+                "source": "https://github.com/EncoreDigitalGroup/stdlib/tree/v2.8.3"
             },
-            "time": "2025-07-05T22:03:12+00:00"
+            "time": "2025-07-12T13:01:28+00:00"
         },
         {
             "name": "fruitcake/php-cors",
@@ -1978,16 +1978,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v12.19.3",
+            "version": "v12.20.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "4e6ec689ef704bb4bd282f29d9dd658dfb4fb262"
+                "reference": "1b9a00f8caf5503c92aa436279172beae1a484ff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/4e6ec689ef704bb4bd282f29d9dd658dfb4fb262",
-                "reference": "4e6ec689ef704bb4bd282f29d9dd658dfb4fb262",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/1b9a00f8caf5503c92aa436279172beae1a484ff",
+                "reference": "1b9a00f8caf5503c92aa436279172beae1a484ff",
                 "shasum": ""
             },
             "require": {
@@ -2189,7 +2189,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2025-06-18T12:56:23+00:00"
+            "time": "2025-07-08T15:02:21+00:00"
         },
         {
             "name": "laravel/prompts",

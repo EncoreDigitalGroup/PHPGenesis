@@ -44,7 +44,7 @@ jobs:
                     GITHUB_TOKEN: ${{ secrets.GH_MONOREPO_SPLIT_TOKEN }}
                 with:
                     package_directory: 'src/${{ matrix.package.localPath }}'
-                    repository_organization: 'EncoreDigitalGroup'
+                    repository_organization: 'PHPGenesis'
                     repository_name: '${{ matrix.package.splitRepoName }}'
                     branch: main
                     tag: ${{ steps.previousTag.outputs.tag }}

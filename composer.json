@@ -49,7 +49,7 @@
         "nikic/php-parser": "^5",
         "pestphp/pest": "^3",
         "phpstan/extension-installer": "^1.0",
-        "symplify/monorepo-builder": "^11.2",
+        "symplify/monorepo-builder": "^12.1",
         "tightenco/duster": "^3.0",
         "tomasvotruba/cognitive-complexity": "^1.0"
     },

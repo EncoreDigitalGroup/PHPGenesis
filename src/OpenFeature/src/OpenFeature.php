@@ -82,7 +82,7 @@ class OpenFeature
     private static function enum(BackedEnum|string $value): string
     {
         if ($value instanceof BackedEnum) {
-            $value = Enum::string($value);
+            return Enum::string($value);
         }
 
         return $value;

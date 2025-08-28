@@ -7,13 +7,16 @@
 
 namespace PHPGenesis\OpenFeature;
 
+use BackedEnum;
+use EncoreDigitalGroup\StdLib\Objects\Enum;
 use OpenFeature\interfaces\flags\EvaluationContext;
 use OpenFeature\OpenFeatureAPI;
 
 class OpenFeature
 {
-    public static function bool(string $flagKey, bool $defaultValue = false, ?EvaluationContext $context = null): bool
+    public static function bool(BackedEnum|string $flagKey, bool $defaultValue = false, ?EvaluationContext $context = null): bool
     {
+        $flagKey = self::enum($flagKey);
         $api = OpenFeatureAPI::getInstance();
         $value = $api->getProvider()->resolveBooleanValue($flagKey, $defaultValue, $context)->getValue();
 
@@ -26,6 +29,7 @@ class OpenFeature
 
     public static function string(string $flagKey, string $defaultValue = "", ?EvaluationContext $context = null): string
     {
+        $flagKey = self::enum($flagKey);
         $api = OpenFeatureAPI::getInstance();
         $value = $api->getProvider()->resolveStringValue($flagKey, $defaultValue, $context)->getValue();
 
@@ -38,6 +42,7 @@ class OpenFeature
 
     public static function int(string $flagKey, int $defaultValue = 0, ?EvaluationContext $context = null): int
     {
+        $flagKey = self::enum($flagKey);
         $api = OpenFeatureAPI::getInstance();
         $value = $api->getProvider()->resolveIntegerValue($flagKey, $defaultValue, $context)->getValue();
 
@@ -50,6 +55,7 @@ class OpenFeature
 
     public static function float(string $flagKey, float $defaultValue = 0.00, ?EvaluationContext $context = null): float
     {
+        $flagKey = self::enum($flagKey);
         $api = OpenFeatureAPI::getInstance();
         $value = $api->getProvider()->resolveFloatValue($flagKey, $defaultValue, $context)->getValue();
 
@@ -62,6 +68,7 @@ class OpenFeature
 
     public static function object(string $flagKey, array $defaultValue = [], ?EvaluationContext $context = null): object|array
     {
+        $flagKey = self::enum($flagKey);
         $api = OpenFeatureAPI::getInstance();
         $value = $api->getProvider()->resolveObjectValue($flagKey, $defaultValue, $context)->getValue();
 
@@ -70,5 +77,14 @@ class OpenFeature
         }
 
         return $defaultValue;
+    }
+
+    private static function enum(BackedEnum|string $value): string
+    {
+        if ($value instanceof BackedEnum) {
+            $value = Enum::string($value);
+        }
+
+        return $value;
     }
 }

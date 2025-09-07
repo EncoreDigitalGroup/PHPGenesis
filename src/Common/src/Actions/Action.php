@@ -7,7 +7,7 @@
 
 namespace PHPGenesis\Common\Actions;
 
-abstract class Action
+abstract class Action implements IAction
 {
     public static function dispatch(mixed ...$params): mixed
     {
@@ -20,12 +20,13 @@ abstract class Action
         return null;
     }
 
-    public static function make(mixed ...$params): mixed
+    public static function make(mixed ...$params): static
     {
         return new static(...$params);
     }
 
-    abstract public function handle(): mixed;
+    /** @phpstan-ignore-next-line Allow undefined return type */
+    abstract public function handle();
 
     public function authorize(): bool
     {

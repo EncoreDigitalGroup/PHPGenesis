@@ -47,9 +47,9 @@
         "laravel/framework": "^10|^11|^12",
         "neronmoon/scriptsdev": "^0.1",
         "nikic/php-parser": "^5",
-        "pestphp/pest": "^3",
+        "pestphp/pest": "^4",
         "phpstan/extension-installer": "^1.0",
-        "symplify/monorepo-builder": "^11.2",
+        "symplify/monorepo-builder": "^12.2",
         "tightenco/duster": "^3.0",
         "tomasvotruba/cognitive-complexity": "^1.0"
     },

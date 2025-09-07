@@ -24,7 +24,7 @@ trait Actionable
         $reflection = new ReflectionClass($action);
         $attributes = $reflection->getAttributes(UnauthorizedActionOverride::class);
 
-        if (!empty($attributes)) {
+        if ($attributes !== []) {
             return $attributes[0]->newInstance()->value;
         }
 

@@ -54,6 +54,7 @@ trait Actionable
             if ($type instanceof ReflectionNamedType && !$type->isBuiltin()) {
                 try {
                     $dependencies[] = $container->make($type->getName());
+
                     continue;
                 } catch (Exception) {
                     // No-op
@@ -63,11 +64,13 @@ trait Actionable
             if ($paramsIndex < count($params)) {
                 $dependencies[] = $params[$paramsIndex];
                 $paramsIndex++;
+
                 continue;
             }
 
             if ($parameter->isDefaultValueAvailable()) {
                 $dependencies[] = $parameter->getDefaultValue();
+
                 continue;
             }
 

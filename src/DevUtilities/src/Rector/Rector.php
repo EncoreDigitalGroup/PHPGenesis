@@ -15,9 +15,8 @@ use Rector\CodeQuality\Rector\BooleanNot\ReplaceMultipleBooleanNotRector;
 use Rector\CodeQuality\Rector\BooleanNot\SimplifyDeMorganBinaryRector;
 use Rector\CodeQuality\Rector\Catch_\ThrowWithPreviousExceptionRector;
 use Rector\CodeQuality\Rector\Class_\CompleteDynamicPropertiesRector;
+use Rector\CodeQuality\Rector\Class_\ConvertStaticToSelfRector;
 use Rector\CodeQuality\Rector\Class_\InlineConstructorDefaultToPropertyRector;
-use Rector\CodeQuality\Rector\Class_\StaticToSelfStaticMethodCallOnFinalClassRector;
-use Rector\CodeQuality\Rector\ClassConstFetch\ConvertStaticPrivateConstantToSelfRector;
 use Rector\CodeQuality\Rector\ClassMethod\ExplicitReturnNullRector;
 use Rector\CodeQuality\Rector\ClassMethod\InlineArrayReturnAssignRector;
 use Rector\CodeQuality\Rector\ClassMethod\LocallyCalledStaticMethodToNonStaticRector;
@@ -235,14 +234,13 @@ class Rector
             ReplaceMultipleBooleanNotRector::class,
             SimplifyDeMorganBinaryRector::class,
             ThrowWithPreviousExceptionRector::class,
-            ConvertStaticPrivateConstantToSelfRector::class,
+            ConvertStaticToSelfRector::class,
             ExplicitReturnNullRector::class,
             InlineArrayReturnAssignRector::class,
             LocallyCalledStaticMethodToNonStaticRector::class,
             OptionalParametersAfterRequiredRector::class,
             CompleteDynamicPropertiesRector::class,
             InlineConstructorDefaultToPropertyRector::class,
-            StaticToSelfStaticMethodCallOnFinalClassRector::class,
             JoinStringConcatRector::class,
             SimplifyEmptyCheckOnEmptyArrayRector::class,
             InlineIfToExplicitIfRector::class,

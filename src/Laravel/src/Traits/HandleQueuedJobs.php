@@ -63,7 +63,7 @@ trait HandleQueuedJobs
             return true;
         }
 
-        return (bool)$this->hasExceededRetryUntil();
+        return (bool) $this->hasExceededRetryUntil();
     }
 
     private function hasExceededMaxTries(): bool

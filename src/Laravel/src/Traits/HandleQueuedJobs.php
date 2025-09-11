@@ -51,21 +51,16 @@ trait HandleQueuedJobs
         if ($this->hasExceededMaxTries()) {
             return true;
         }
-
-        if ($this->hasExceededRetryUntil()) {
-            return true;
-        }
-
-        return false;
+        return (bool) $this->hasExceededRetryUntil();
     }
 
     private function hasExceededMaxTries(): bool
     {
-        if (property_exists($this, 'tries') && is_int($this->tries)) {
+        if (property_exists($this, "tries") && is_int($this->tries)) {
             return $this->attempts() >= $this->tries;
         }
 
-        if (method_exists($this, 'maxTries')) {
+        if (method_exists($this, "maxTries")) {
             $maxTries = $this->maxTries();
             if (is_int($maxTries)) {
                 return $this->attempts() >= $maxTries;
@@ -77,7 +72,7 @@ trait HandleQueuedJobs
 
     private function hasExceededRetryUntil(): bool
     {
-        if (method_exists($this, 'retryUntil')) {
+        if (method_exists($this, "retryUntil")) {
             $retryUntil = $this->job->retryUntil();
             if (is_int($retryUntil)) {
                 $retryUntilCarbon = Carbon::createFromTimestamp($retryUntil);

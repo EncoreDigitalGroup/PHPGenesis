@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright (c) 2025. Encore Digital Group.
  * All Right Reserved.
@@ -11,9 +12,9 @@ use Illuminate\Queue\InteractsWithQueue;
 /** @phpstan-ignore-next-line trait.unused */
 trait HandleQueuedJobs
 {
-    private const int DEFAULT_BACKOFF = 30;
-
     use InteractsWithQueue;
+
+    private const int DEFAULT_BACKOFF = 30;
 
     protected function releaseWithBackoff(): void
     {

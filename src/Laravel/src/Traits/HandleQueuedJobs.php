@@ -8,6 +8,7 @@
 namespace PHPGenesis\Laravel\Traits;
 
 use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Support\Carbon;
 
 /** @phpstan-ignore-next-line trait.unused */
 trait HandleQueuedJobs
@@ -18,6 +19,11 @@ trait HandleQueuedJobs
 
     protected function releaseWithBackoff(): void
     {
+        if ($this->shouldStopRetrying()) {
+            $this->fail();
+            return;
+        }
+
         $backoff = self::DEFAULT_BACKOFF;
         if (method_exists($this, "backoff")) {
             $backoff = $this->backoff();
@@ -38,5 +44,47 @@ trait HandleQueuedJobs
         }
 
         $this->release($delay);
+    }
+
+    protected function shouldStopRetrying(): bool
+    {
+        if ($this->hasExceededMaxTries()) {
+            return true;
+        }
+
+        if ($this->hasExceededRetryUntil()) {
+            return true;
+        }
+
+        return false;
+    }
+
+    private function hasExceededMaxTries(): bool
+    {
+        if (property_exists($this, 'tries') && is_int($this->tries)) {
+            return $this->attempts() >= $this->tries;
+        }
+
+        if (method_exists($this, 'maxTries')) {
+            $maxTries = $this->maxTries();
+            if (is_int($maxTries)) {
+                return $this->attempts() >= $maxTries;
+            }
+        }
+
+        return false;
+    }
+
+    private function hasExceededRetryUntil(): bool
+    {
+        if (method_exists($this, 'retryUntil')) {
+            $retryUntil = $this->job->retryUntil();
+            if (is_int($retryUntil)) {
+                $retryUntilCarbon = Carbon::createFromTimestamp($retryUntil);
+                return Carbon::now()->gte($retryUntilCarbon);
+            }
+        }
+
+        return false;
     }
 }

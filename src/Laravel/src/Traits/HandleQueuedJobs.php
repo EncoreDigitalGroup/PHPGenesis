@@ -21,6 +21,7 @@ trait HandleQueuedJobs
     {
         if ($this->shouldStopRetrying()) {
             $this->fail();
+
             return;
         }
 
@@ -51,6 +52,7 @@ trait HandleQueuedJobs
         if ($this->hasExceededMaxTries()) {
             return true;
         }
+
         return (bool) $this->hasExceededRetryUntil();
     }
 
@@ -76,6 +78,7 @@ trait HandleQueuedJobs
             $retryUntil = $this->job->retryUntil();
             if (is_int($retryUntil)) {
                 $retryUntilCarbon = Carbon::createFromTimestamp($retryUntil);
+
                 return Carbon::now()->gte($retryUntilCarbon);
             }
         }

@@ -9,6 +9,7 @@ namespace PHPGenesis\Laravel\Traits;
 
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Support\Carbon;
+use Throwable;
 
 /** @phpstan-ignore-next-line trait.unused */
 trait HandleQueuedJobs
@@ -16,6 +17,15 @@ trait HandleQueuedJobs
     use InteractsWithQueue;
 
     private const int DEFAULT_BACKOFF = 30;
+
+    protected function releaseWithBackoffOrFail(): void
+    {
+        try {
+            $this->releaseWithBackoff();
+        } catch (Throwable $throwable) {
+            $this->fail($throwable);
+        }
+    }
 
     protected function releaseWithBackoff(): void
     {

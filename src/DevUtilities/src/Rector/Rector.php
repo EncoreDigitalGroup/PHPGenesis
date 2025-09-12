@@ -2,7 +2,7 @@
 
 /*
  * Copyright (c) 2024-2025. Encore Digital Group.
- * All Rights Reserved.
+ * All Right Reserved.
  */
 
 namespace PHPGenesis\DevUtilities\Rector;
@@ -99,6 +99,8 @@ use Rector\CodingStyle\Rector\String_\SymplifyQuoteEscapeRector;
 use Rector\CodingStyle\Rector\String_\UseClassKeywordForClassNameResolutionRector;
 use Rector\CodingStyle\Rector\Ternary\TernaryConditionVariableAssignmentRector;
 use Rector\CodingStyle\Rector\Use_\SeparateMultiUseImportsRector;
+use Rector\Config\RectorConfig;
+use Rector\Configuration\RectorConfigBuilder;
 use Rector\DeadCode\Rector\Array_\RemoveDuplicatedArrayKeyRector;
 use Rector\DeadCode\Rector\Assign\RemoveDoubleAssignRector;
 use Rector\DeadCode\Rector\Assign\RemoveUnusedVariableAssignRector;
@@ -223,6 +225,12 @@ use Rector\Visibility\Rector\ClassMethod\ExplicitPublicClassMethodRector;
 
 class Rector
 {
+    public static function configure(): RectorConfigBuilder
+    {
+        return RectorConfig::configure()
+            ->withRules(Rector::rules());
+    }
+
     public static function rules(array $rules = [], array $except = []): array
     {
         $allRules = array_merge([

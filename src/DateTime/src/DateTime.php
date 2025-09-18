@@ -9,5 +9,5 @@ namespace PHPGenesis\DateTime;
 
 use Illuminate\Support\Facades\Date;
 
-/** @inheritdoc */
+/** {@inheritdoc} */
 class DateTime extends Date {}

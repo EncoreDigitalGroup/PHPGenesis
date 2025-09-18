@@ -5,14 +5,13 @@
       <sourceFolder url="file://$MODULE_DIR$/src/CLI/src" isTestSource="false" packagePrefix="PHPGenesis\CLI\" />
       <sourceFolder url="file://$MODULE_DIR$/src/Common/src" isTestSource="false" packagePrefix="PHPGenesis\Common\" />
       <sourceFolder url="file://$MODULE_DIR$/src/Logger/src" isTestSource="false" packagePrefix="PHPGenesis\Logger\" />
-      <sourceFolder url="file://$MODULE_DIR$/src/Services/AmazonWebServices/src" isTestSource="false" packagePrefix="PHPGenesis\Services\AmazonWebServices\" />
       <sourceFolder url="file://$MODULE_DIR$/src/Http/src" isTestSource="false" packagePrefix="PHPGenesis\Http\" />
-      <sourceFolder url="file://$MODULE_DIR$/src/Services/Cloudflare/src" isTestSource="false" packagePrefix="PHPGenesis\Services\Cloudflare\" />
       <sourceFolder url="file://$MODULE_DIR$/src/OpenFeature/src" isTestSource="false" packagePrefix="PHPGenesis\OpenFeature\" />
       <sourceFolder url="file://$MODULE_DIR$/src/DevUtilities/src" isTestSource="false" packagePrefix="PHPGenesis\DevUtilities\" />
       <sourceFolder url="file://$MODULE_DIR$/src/CloudProviders/AmazonWebServices/src" isTestSource="false" packagePrefix="PHPGenesis\CloudProviders\AmazonWebServices\" />
       <sourceFolder url="file://$MODULE_DIR$/src/CloudProviders/Cloudflare/src" isTestSource="false" packagePrefix="PHPGenesis\CloudProviders\Cloudflare\" />
       <sourceFolder url="file://$MODULE_DIR$/src/Laravel/src" isTestSource="false" packagePrefix="PHPGenesis\Laravel\" />
+      <sourceFolder url="file://$MODULE_DIR$/src/DateTime/src" isTestSource="false" packagePrefix="PHPGenesis\DateTime\" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/brianium/paratest" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/carbonphp/carbon-doctrine-types" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />

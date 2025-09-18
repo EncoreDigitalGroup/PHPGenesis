@@ -19,6 +19,9 @@ jobs:
                     -   localPath: Common
                         splitRepoName: Common
 
+                    -   localPath: DateTime
+                        splitRepoName: DateTime
+
                     -   localPath: Laravel
                         splitRepoName: Laravel
 

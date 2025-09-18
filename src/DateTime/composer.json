@@ -1,0 +1,18 @@
+{
+    "name": "phpgenesis/datetime",
+    "description": "PHPGenesis Implementation of Laravel's Date Facade",
+    "license": "BSD-3-Clause",
+    "type": "library",
+    "require": {
+        "php": "^8.3",
+        "phpgenesis/common": "self.version",
+        "illuminate/container": "^10|^11|^12",
+        "illuminate/support": "^10|^11|^12"
+    },
+    "autoload": {
+        "psr-4": {
+            "PHPGenesis\\DateTime\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}

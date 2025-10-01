@@ -1,1 +1,29 @@
-name: Releaseon:    push:        tags:            - 'v[0-9]+.[0-9]+.[0-9]+'            - '!v[0-9]+.[0-9]+.[0-9]+-rc[0-9]+'    workflow_dispatch:jobs:    CreateRelease:        name: CreateRelease        uses: EncoreDigitalGroup/ci-workflows/.github/workflows/createRelease.yml@v1        with:            generateReleaseNotes: true            isDraft: false        secrets:            token: ${{ secrets.GITHUB_TOKEN }}    SplitMonorepo:        needs: [ CreateRelease ]        name: SplitMonorepo        uses: ./.github/workflows/splitMonorepo.yml        secrets:            GH_MONOREPO_SPLIT_TOKEN: "${{ secrets.GH_MONOREPO_SPLIT_TOKEN }}"
+name: Release
+
+on:
+    push:
+        tags:
+            - 'v[0-9]+.[0-9]+.[0-9]+'
+            - '!v[0-9]+.[0-9]+.[0-9]+-rc[0-9]+'
+    workflow_dispatch:
+
+jobs:
+    CreateRelease:
+        name: CreateRelease
+        runs-on: ubuntu-latest
+        steps:
+            -   name: Create Release
+                uses: EncoreDigitalGroup/ci-workflows/actions/github/createRelease@v2
+                with:
+                    repository: ${{ github.repository }}
+                    tagName: ${{ github.head_ref }}
+                    generateReleaseNotes: true
+                    isDraft: false
+                    token: ${{ secrets.GITHUB_TOKEN }}
+
+    SplitMonorepo:
+        needs: [ CreateRelease ]
+        name: SplitMonorepo
+        uses: ./.github/workflows/splitMonorepo.yml
+        secrets:
+            GH_MONOREPO_SPLIT_TOKEN: "${{ secrets.GH_MONOREPO_SPLIT_TOKEN }}"

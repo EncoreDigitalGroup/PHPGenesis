@@ -3500,16 +3500,16 @@
         },
         {
             "name": "open-feature/sdk",
-            "version": "2.0.12",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/open-feature/php-sdk.git",
-                "reference": "17e05109e478bc0d6b496203e96a25f9a1d4e0b8"
+                "reference": "af1de424cbe9dcaae0c8b17d92754ffcd28d5f2f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/open-feature/php-sdk/zipball/17e05109e478bc0d6b496203e96a25f9a1d4e0b8",
-                "reference": "17e05109e478bc0d6b496203e96a25f9a1d4e0b8",
+                "url": "https://api.github.com/repos/open-feature/php-sdk/zipball/af1de424cbe9dcaae0c8b17d92754ffcd28d5f2f",
+                "reference": "af1de424cbe9dcaae0c8b17d92754ffcd28d5f2f",
                 "shasum": ""
             },
             "require": {
@@ -3521,6 +3521,7 @@
                 "behat/behat": "^3.11",
                 "captainhook/captainhook": "^5.10",
                 "captainhook/plugin-composer": "^5.3",
+                "dg/bypass-finals": "^1.9",
                 "ergebnis/composer-normalize": "^2.25",
                 "hamcrest/hamcrest-php": "^2.0",
                 "mdwheele/zalgo": "^0.3.1",
@@ -3572,9 +3573,9 @@
             ],
             "support": {
                 "issues": "https://github.com/open-feature/php-sdk/issues",
-                "source": "https://github.com/open-feature/php-sdk/tree/2.0.12"
+                "source": "https://github.com/open-feature/php-sdk/tree/2.1.0"
             },
-            "time": "2025-09-04T03:27:31+00:00"
+            "time": "2025-09-27T20:49:52+00:00"
         },
         {
             "name": "phiki/phiki",

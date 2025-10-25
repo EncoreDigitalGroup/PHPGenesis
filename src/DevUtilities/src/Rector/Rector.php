@@ -167,8 +167,6 @@ use Rector\Privatization\Rector\Property\PrivatizeFinalClassPropertyRector;
 use Rector\Renaming\Rector\FuncCall\RenameFunctionRector;
 use Rector\Strict\Rector\BooleanNot\BooleanInBooleanNotRuleFixerRector;
 use Rector\Strict\Rector\If_\BooleanInIfConditionRuleFixerRector;
-use Rector\Strict\Rector\Ternary\BooleanInTernaryOperatorRuleFixerRector;
-use Rector\Strict\Rector\Ternary\DisallowedShortTernaryRuleFixerRector;
 use Rector\Symfony\CodeQuality\Rector\ClassMethod\ResponseReturnTypeControllerActionRector;
 use Rector\Transform\Rector\FuncCall\FuncCallToConstFetchRector;
 use Rector\TypeDeclaration\Rector\ArrowFunction\AddArrowFunctionReturnTypeRector;
@@ -384,8 +382,6 @@ class Rector
             PrivatizeFinalClassPropertyRector::class,
             RenameFunctionRector::class,
             BooleanInIfConditionRuleFixerRector::class,
-            BooleanInTernaryOperatorRuleFixerRector::class,
-            DisallowedShortTernaryRuleFixerRector::class,
             ResponseReturnTypeControllerActionRector::class,
             FuncCallToConstFetchRector::class,
             AddArrowFunctionReturnTypeRector::class,

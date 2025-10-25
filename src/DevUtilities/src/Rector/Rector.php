@@ -228,7 +228,9 @@ class Rector
     public static function configure(): RectorConfigBuilder
     {
         return RectorConfig::configure()
-            ->withRules(Rector::rules());
+            ->withRules(Rector::rules())
+            ->withImportNames()
+            ->withParallel(600);
     }
 
     public static function rules(array $rules = [], array $except = []): array

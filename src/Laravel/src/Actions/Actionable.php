@@ -49,8 +49,8 @@ trait Actionable
          * Then, attempt to use the provided value from the developer.
          * Finally, use the parameter's default value if defined.
          */
-        foreach ($constructor->getParameters() as $parameter) {
-            $type = $parameter->getType();
+        foreach ($constructor->getParameters() as $reflectionParameter) {
+            $type = $reflectionParameter->getType();
             if ($type instanceof ReflectionNamedType && !$type->isBuiltin()) {
                 try {
                     $dependencies[] = $container->make($type->getName());
@@ -68,8 +68,8 @@ trait Actionable
                 continue;
             }
 
-            if ($parameter->isDefaultValueAvailable()) {
-                $dependencies[] = $parameter->getDefaultValue();
+            if ($reflectionParameter->isDefaultValueAvailable()) {
+                $dependencies[] = $reflectionParameter->getDefaultValue();
 
                 continue;
             }

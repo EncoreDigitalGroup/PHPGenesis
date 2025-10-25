@@ -13,7 +13,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             -   name: Create Release
-                uses: EncoreDigitalGroup/ci-workflows/actions/github/createRelease@v2
+                uses: EncoreDigitalGroup/ci-workflows/actions/github/createRelease@v3
                 with:
                     repository: ${{ github.repository }}
                     tagName: ${{ github.head_ref }}

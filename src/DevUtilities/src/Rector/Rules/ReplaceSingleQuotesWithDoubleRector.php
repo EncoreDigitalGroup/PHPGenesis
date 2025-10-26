@@ -22,9 +22,7 @@ final class ReplaceSingleQuotesWithDoubleRector extends AbstractRector
         return [String_::class];
     }
 
-    /**
-     * @param  String_  $node
-     */
+    /** @param String_ $node */
     public function refactor(Node $node): ?Node
     {
         if ($node->getAttribute("kind") === String_::KIND_SINGLE_QUOTED) {

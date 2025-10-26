@@ -12,9 +12,7 @@ use Attribute;
 #[Attribute(Attribute::TARGET_CLASS)]
 class UnauthorizedActionOverride
 {
-    /**
-     * @param  mixed  $value  The value to return when authorization fails
-     */
+    /** @param  mixed  $value  The value to return when authorization fails */
     public function __construct(
         public readonly mixed $value = null
     ) {}

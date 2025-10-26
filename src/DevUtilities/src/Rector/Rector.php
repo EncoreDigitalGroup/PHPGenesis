@@ -7,6 +7,7 @@
 
 namespace PHPGenesis\DevUtilities\Rector;
 
+use PHPGenesis\DevUtilities\Rector\Rules\ApplySingleItemDocBlockStyleRector;
 use PHPGenesis\DevUtilities\Rector\Rules\ReplaceSingleQuotesWithDoubleRector;
 use Rector\CodeQuality\Rector\Assign\CombinedAssignRector;
 use Rector\CodeQuality\Rector\BooleanAnd\RemoveUselessIsObjectCheckRector;
@@ -234,6 +235,7 @@ class Rector
         $allRules = array_merge([
             AddVoidReturnTypeWhereNoReturnRector::class,
             ReplaceSingleQuotesWithDoubleRector::class,
+            ApplySingleItemDocBlockStyleRector::class,
             CombinedAssignRector::class,
             RemoveUselessIsObjectCheckRector::class,
             SimplifyEmptyArrayCheckRector::class,

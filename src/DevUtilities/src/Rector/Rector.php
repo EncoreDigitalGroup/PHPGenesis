@@ -176,7 +176,6 @@ use Rector\TypeDeclaration\Rector\Class_\MergeDateTimePropertyTypeDeclarationRec
 use Rector\TypeDeclaration\Rector\Class_\PropertyTypeFromStrictSetterGetterRector;
 use Rector\TypeDeclaration\Rector\Class_\ReturnTypeFromStrictTernaryRector;
 use Rector\TypeDeclaration\Rector\Class_\TypedPropertyFromCreateMockAssignRector;
-use Rector\TypeDeclaration\Rector\Class_\TypedPropertyFromJMSSerializerAttributeTypeRector;
 use Rector\TypeDeclaration\Rector\ClassMethod\AddMethodCallBasedStrictParamTypeRector;
 use Rector\TypeDeclaration\Rector\ClassMethod\AddParamTypeBasedOnPHPUnitDataProviderRector;
 use Rector\TypeDeclaration\Rector\ClassMethod\AddParamTypeFromPropertyTypeRector;
@@ -420,7 +419,6 @@ class Rector
             PropertyTypeFromStrictSetterGetterRector::class,
             ReturnTypeFromStrictTernaryRector::class,
             TypedPropertyFromCreateMockAssignRector::class,
-            TypedPropertyFromJMSSerializerAttributeTypeRector::class,
             AddClosureNeverReturnTypeRector::class,
             AddClosureVoidReturnTypeWhereNoReturnRector::class,
             ClosureReturnTypeRector::class,

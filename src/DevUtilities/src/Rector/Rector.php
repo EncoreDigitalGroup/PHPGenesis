@@ -8,6 +8,7 @@
 namespace PHPGenesis\DevUtilities\Rector;
 
 use PHPGenesis\DevUtilities\Rector\Rules\ApplySingleItemDocBlockStyleRector;
+use PHPGenesis\DevUtilities\Rector\Rules\ExpandSeeAnnotationClassNameRector;
 use PHPGenesis\DevUtilities\Rector\Rules\ReplaceSingleQuotesWithDoubleRector;
 use Rector\CodeQuality\Rector\Assign\CombinedAssignRector;
 use Rector\CodeQuality\Rector\BooleanAnd\RemoveUselessIsObjectCheckRector;
@@ -225,7 +226,7 @@ class Rector
     {
         return RectorConfig::configure()
             ->withRules(Rector::rules())
-            ->withImportNames(importDocBlockNames: false)
+            ->withImportNames()
             ->withParallel(600);
     }
 
@@ -235,6 +236,7 @@ class Rector
             AddVoidReturnTypeWhereNoReturnRector::class,
             ReplaceSingleQuotesWithDoubleRector::class,
             ApplySingleItemDocBlockStyleRector::class,
+            ExpandSeeAnnotationClassNameRector::class,
             CombinedAssignRector::class,
             RemoveUselessIsObjectCheckRector::class,
             SimplifyEmptyArrayCheckRector::class,

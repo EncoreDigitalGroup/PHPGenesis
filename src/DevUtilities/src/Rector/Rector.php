@@ -225,7 +225,7 @@ class Rector
     {
         return RectorConfig::configure()
             ->withRules(Rector::rules())
-            ->withImportNames()
+            ->withImportNames(importDocBlockNames: false)
             ->withParallel(600);
     }
 

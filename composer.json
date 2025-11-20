@@ -21,7 +21,7 @@
         }
     ],
     "require": {
-        "php": "^8.3",
+        "php": "^8.3|^8.4|^8.5",
         "composer-runtime-api": "^2.0",
         "aws/aws-sdk-php": "^3.284",
         "composer/composer": "^2.0",

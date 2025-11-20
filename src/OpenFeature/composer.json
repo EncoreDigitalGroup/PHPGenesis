@@ -1,22 +1,22 @@
 {
     "name": "phpgenesis/open-feature",
     "description": "PHPGenesis Implementation of OpenFeature SDK",
-    "type": "library",
     "license": "BSD-3-Clause",
+    "type": "library",
     "require": {
-        "php": "^8.3",
+        "php": "^8.3|^8.4|^8.5",
         "open-feature/sdk": "^2.0",
         "phpgenesis/common": "self.version"
-    },
-    "scripts": {
-        "post-autoload-dump": [
-            "PHPGenesis\\Common\\Composer\\Scripts::postAutoloadDump"
-        ]
     },
     "autoload": {
         "psr-4": {
             "PHPGenesis\\OpenFeature\\": "src/"
         }
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "PHPGenesis\\Common\\Composer\\Scripts::postAutoloadDump"
+        ]
     },
     "minimum-stability": "stable"
 }

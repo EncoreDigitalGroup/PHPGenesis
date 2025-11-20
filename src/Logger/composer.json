@@ -4,7 +4,7 @@
     "license": "BSD-3-Clause",
     "type": "library",
     "require": {
-        "php": "^8.3",
+        "php": "^8.3|^8.4|^8.5",
         "phpgenesis/common": "self.version",
         "illuminate/log": "^10|^11|^12",
         "monolog/monolog": "^3.6"

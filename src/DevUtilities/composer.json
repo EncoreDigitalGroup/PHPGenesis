@@ -7,7 +7,7 @@
     "license": "BSD-3-Clause",
     "type": "library",
     "require": {
-        "php": "^8.3",
+        "php": "^8.3|^8.4|^8.5",
         "phpgenesis/common": "self.version",
         "encoredigitalgroup/stdlib": "^2.0",
         "rector/rector": "^1|^2"

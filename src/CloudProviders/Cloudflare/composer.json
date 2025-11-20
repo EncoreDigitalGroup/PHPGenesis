@@ -1,16 +1,11 @@
 {
     "name": "phpgenesis/cloudflare",
     "description": "Cloudflare SDK for PHPGenesis",
+    "license": "BSD-3-Clause",
     "type": "library",
-    "license": "proprietary",
     "require": {
-        "php": "^8.3",
+        "php": "^8.3|^8.4|^8.5",
         "phpgenesis/common": "self.version"
-    },
-    "scripts": {
-        "post-autoload-dump": [
-            "PHPGenesis\\Common\\Composer\\Scripts::postAutoloadDump"
-        ]
     },
     "autoload": {
         "psr-4": {
@@ -23,6 +18,11 @@
                 "PHPGenesis\\CloudProviders\\Cloudflare\\Providers\\CloudflareServiceProvider"
             ]
         }
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "PHPGenesis\\Common\\Composer\\Scripts::postAutoloadDump"
+        ]
     },
     "minimum-stability": "stable"
 }

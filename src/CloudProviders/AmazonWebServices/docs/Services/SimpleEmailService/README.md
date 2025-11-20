@@ -1,5 +1,5 @@
 ---
-title: Overview
+title: Simple Email Service
 ---
 
 # Overview - AWS Simple Email Service

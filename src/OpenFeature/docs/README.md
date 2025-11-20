@@ -1,5 +1,5 @@
 ---
-title: Overview
+title: Open Feature
 ---
 
 # PHPGenesis/OpenFeature

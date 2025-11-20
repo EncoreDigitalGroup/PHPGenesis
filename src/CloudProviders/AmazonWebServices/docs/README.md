@@ -1,5 +1,5 @@
 ---
-title: Overview
+title: AWS
 ---
 
 # PHPGenesis/AWS
@@ -18,7 +18,6 @@ composer require phpgenesis/aws
 ### Configuration
 
 - [AwsConfig](./Configuration.md)
-
 
 ### Usage
 

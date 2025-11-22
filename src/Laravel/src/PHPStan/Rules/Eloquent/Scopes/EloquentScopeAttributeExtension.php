@@ -58,14 +58,14 @@ readonly class EloquentScopeAttributeExtension implements MethodsClassReflection
             return false;
         }
 
-        return $this->findScopeMethod($classReflection, $methodName) !== null;
+        return $this->findScopeMethod($classReflection, $methodName) instanceof ReflectionMethod;
     }
 
     public function getMethod(ClassReflection $classReflection, string $methodName): MethodReflection
     {
         $scopeMethod = $this->findScopeMethod($classReflection, $methodName);
 
-        if ($scopeMethod === null) {
+        if (!$scopeMethod instanceof ReflectionMethod) {
             throw new ShouldNotHappenException(
                 "Scope method {$methodName} not found on {$classReflection->getName()}"
             );
@@ -78,9 +78,7 @@ readonly class EloquentScopeAttributeExtension implements MethodsClassReflection
         );
     }
 
-    /**
-     * Find a method on the class that has the #[Scope] attribute.
-     */
+    /** Find a method on the class that has the #[Scope] attribute. */
     private function findScopeMethod(ClassReflection $classReflection, string $methodName): ?ReflectionMethod
     {
         $nativeReflection = $classReflection->getNativeReflection();

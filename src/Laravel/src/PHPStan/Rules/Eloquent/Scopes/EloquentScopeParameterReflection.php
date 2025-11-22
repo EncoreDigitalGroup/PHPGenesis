@@ -26,9 +26,7 @@ use PHPStan\Type\StringType;
 use PHPStan\Type\Type;
 use PHPStan\Type\TypeCombinator;
 
-/**
- * Represents a parameter reflection for scope method parameters.
- */
+/** Represents a parameter reflection for scope method parameters. */
 readonly class EloquentScopeParameterReflection implements ParameterReflection
 {
     public function __construct(private ReflectionParameter $parameter) {}
@@ -52,15 +50,15 @@ readonly class EloquentScopeParameterReflection implements ParameterReflection
 
             // Handle built-in types
             $type = match ($typeName) {
-                'string' => new StringType,
-                'int' => new IntegerType,
-                'float' => new FloatType,
-                'bool' => new BooleanType,
-                'array' => new ArrayType(
+                "string" => new StringType,
+                "int" => new IntegerType,
+                "float" => new FloatType,
+                "bool" => new BooleanType,
+                "array" => new ArrayType(
                     new MixedType,
                     new MixedType
                 ),
-                'mixed' => new MixedType,
+                "mixed" => new MixedType,
                 default => new ObjectType($typeName),
             };
 

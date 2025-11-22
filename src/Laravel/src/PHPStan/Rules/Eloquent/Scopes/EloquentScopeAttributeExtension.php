@@ -2,7 +2,7 @@
 
 /*
  * Copyright (c) 2025. Encore Digital Group.
- * All Right Reserved.
+ * All Rights Reserved.
  */
 
 declare(strict_types=1);
@@ -19,28 +19,7 @@ use PHPStan\ShouldNotHappenException;
 use ReflectionAttribute;
 use ReflectionMethod;
 
-/**
- * PHPStan extension to recognize Laravel's #[Scope] attribute on Eloquent models.
- *
- * This extension allows PHPStan to understand that methods annotated with the #[Scope]
- * attribute can be called statically on Eloquent models, even though they are defined
- * as instance methods.
- *
- * Example:
- * ```php
- * class User extends Model
- * {
- *     #[Scope]
- *     public function active(Builder $query): Builder
- *     {
- *         return $query->where('is_active', true);
- *     }
- * }
- *
- * // This will now be recognized by PHPStan:
- * User::active()->get();
- * ```
- */
+/** @internal */
 readonly class EloquentScopeAttributeExtension implements MethodsClassReflectionExtension
 {
     public function __construct(

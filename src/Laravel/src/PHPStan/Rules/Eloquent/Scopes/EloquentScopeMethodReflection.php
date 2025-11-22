@@ -2,7 +2,7 @@
 
 /*
  * Copyright (c) 2025. Encore Digital Group.
- * All Right Reserved.
+ * All Rights Reserved.
  */
 
 declare(strict_types=1);
@@ -10,7 +10,6 @@ declare(strict_types=1);
 namespace PHPGenesis\Laravel\PHPStan\Rules\Eloquent\Scopes;
 
 use Illuminate\Database\Eloquent\Builder;
-use PHPStan\BetterReflection\Reflection\ReflectionParameter;
 use PHPStan\Reflection\ClassMemberReflection;
 use PHPStan\Reflection\ClassReflection;
 use PHPStan\Reflection\FunctionVariant;
@@ -18,21 +17,17 @@ use PHPStan\Reflection\MethodReflection;
 use PHPStan\Reflection\ParameterReflection;
 use PHPStan\TrinaryLogic;
 use PHPStan\Type\Generic\GenericObjectType;
+use PHPStan\Type\Generic\TemplateTypeMap;
 use PHPStan\Type\ObjectType;
 use PHPStan\Type\Type;
 use ReflectionMethod;
 
-/**
- * Represents a method reflection for Eloquent scope methods.
- *
- * This class wraps a scope method and makes it appear to PHPStan as if it can be
- * called statically, returning a Builder instance.
- */
+/** @internal */
 readonly class EloquentScopeMethodReflection implements MethodReflection
 {
     public function __construct(
-        private string $methodName,
-        private ClassReflection $classReflection,
+        private string           $methodName,
+        private ClassReflection  $classReflection,
         private ReflectionMethod $scopeMethod
     ) {}
 
@@ -43,7 +38,6 @@ readonly class EloquentScopeMethodReflection implements MethodReflection
 
     public function isStatic(): bool
     {
-        // Scope methods can be called statically
         return true;
     }
 
@@ -85,7 +79,7 @@ readonly class EloquentScopeMethodReflection implements MethodReflection
 
         return [
             new FunctionVariant(
-                [],
+                TemplateTypeMap::createEmpty(),
                 null,
                 $parameters,
                 false,
@@ -127,7 +121,7 @@ readonly class EloquentScopeMethodReflection implements MethodReflection
     /**
      * Extract parameters from the scope method, excluding the first parameter (Builder $query).
      *
-     * @return ParameterReflection[]
+     * @return list<ParameterReflection>
      */
     private function getParametersFromScopeMethod(): array
     {
@@ -136,9 +130,9 @@ readonly class EloquentScopeMethodReflection implements MethodReflection
         // Remove the first parameter (Builder $query)
         array_shift($parameters);
 
-        return array_map(
-            fn (ReflectionParameter $param): ParameterReflection => new EloquentScopeParameterReflection($param),
+        return array_values(array_map(
+            fn(\ReflectionParameter $param): ParameterReflection => new EloquentScopeParameterReflection($param),
             $parameters
-        );
+        ));
     }
 }

@@ -2,14 +2,14 @@
 
 /*
  * Copyright (c) 2025. Encore Digital Group.
- * All Right Reserved.
+ * All Rights Reserved.
  */
 
 namespace PHPGenesis\Laravel\PHPStan\Rules\Eloquent\Scopes;
 
-use PHPStan\BetterReflection\Reflection\ReflectionNamedType;
-use PHPStan\BetterReflection\Reflection\ReflectionParameter;
 use PHPStan\Reflection\ParameterReflection;
+use ReflectionNamedType;
+use ReflectionParameter;
 use PHPStan\Reflection\PassedByReference;
 use PHPStan\Type\ArrayType;
 use PHPStan\Type\BooleanType;
@@ -26,7 +26,7 @@ use PHPStan\Type\StringType;
 use PHPStan\Type\Type;
 use PHPStan\Type\TypeCombinator;
 
-/** Represents a parameter reflection for scope method parameters. */
+/** @internal */
 readonly class EloquentScopeParameterReflection implements ParameterReflection
 {
     public function __construct(private ReflectionParameter $parameter) {}

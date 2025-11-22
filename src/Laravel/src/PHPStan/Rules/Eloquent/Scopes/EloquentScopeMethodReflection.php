@@ -9,6 +9,7 @@ declare(strict_types=1);
 
 namespace PHPGenesis\Laravel\PHPStan\Rules\Eloquent\Scopes;
 
+use ReflectionParameter;
 use Illuminate\Database\Eloquent\Builder;
 use PHPStan\Reflection\ClassMemberReflection;
 use PHPStan\Reflection\ClassReflection;
@@ -131,7 +132,7 @@ readonly class EloquentScopeMethodReflection implements MethodReflection
         array_shift($parameters);
 
         return array_values(array_map(
-            fn(\ReflectionParameter $param): ParameterReflection => new EloquentScopeParameterReflection($param),
+            fn(ReflectionParameter $param): ParameterReflection => new EloquentScopeParameterReflection($param),
             $parameters
         ));
     }

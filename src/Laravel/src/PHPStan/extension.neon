@@ -1,0 +1,5 @@
+services:
+    -
+        class: PHPGenesis\Laravel\PHPStan\Rules\Eloquent\Scopes\EloquentScopeAttributeExtension
+        tags:
+            - phpstan.broker.methodsClassReflectionExtension

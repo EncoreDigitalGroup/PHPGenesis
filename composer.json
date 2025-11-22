@@ -100,6 +100,11 @@
                 "PHPGenesis\\CloudProviders\\Cloudflare\\Providers\\CloudflareServiceProvider",
                 "PHPGenesis\\Laravel\\Providers\\PHPGenesisServiceProvider"
             ]
+        },
+        "phpstan": {
+            "includes": [
+                "src/Laravel/src/PHPStan/extension.neon"
+            ]
         }
     },
     "scripts": {

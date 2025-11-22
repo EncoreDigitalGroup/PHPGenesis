@@ -25,6 +25,11 @@
             "providers": [
                 "PHPGenesis\\Laravel\\Providers\\PHPGenesisServiceProvider"
             ]
+        },
+        "phpstan": {
+            "includes": [
+                "src/PHPStan/extension.neon"
+            ]
         }
     },
     "minimum-stability": "stable"

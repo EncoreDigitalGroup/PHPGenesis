@@ -1,11 +1,11 @@
 <?php
+
 /*
  * Copyright (c) 2025. Encore Digital Group.
  * All Right Reserved.
  */
 
 namespace PHPGenesis\Laravel\PHPStan\Rules\Eloquent\Scopes;
-
 
 use PHPStan\BetterReflection\Reflection\ReflectionNamedType;
 use PHPStan\BetterReflection\Reflection\ReflectionParameter;
@@ -69,7 +69,7 @@ readonly class EloquentScopeParameterReflection implements ParameterReflection
             return $type;
         }
 
-        return new MixedType();
+        return new MixedType;
     }
 
     public function passedByReference(): PassedByReference
@@ -95,7 +95,7 @@ readonly class EloquentScopeParameterReflection implements ParameterReflection
             is_int($defaultValue) => new ConstantIntegerType($defaultValue),
             is_float($defaultValue) => new ConstantFloatType($defaultValue),
             is_bool($defaultValue) => new ConstantBooleanType($defaultValue),
-            is_null($defaultValue) => new NullType(),
+            is_null($defaultValue) => new NullType,
             default => null,
         };
     }

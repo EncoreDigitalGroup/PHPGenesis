@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright (c) 2025. Encore Digital Group.
  * All Right Reserved.
@@ -30,8 +31,8 @@ use ReflectionMethod;
 readonly class EloquentScopeMethodReflection implements MethodReflection
 {
     public function __construct(
-        private string           $methodName,
-        private ClassReflection  $classReflection,
+        private string $methodName,
+        private ClassReflection $classReflection,
         private ReflectionMethod $scopeMethod
     ) {}
 
@@ -136,7 +137,7 @@ readonly class EloquentScopeMethodReflection implements MethodReflection
         array_shift($parameters);
 
         return array_map(
-            fn(ReflectionParameter $param): ParameterReflection => new EloquentScopeParameterReflection($param),
+            fn (ReflectionParameter $param): ParameterReflection => new EloquentScopeParameterReflection($param),
             $parameters
         );
     }

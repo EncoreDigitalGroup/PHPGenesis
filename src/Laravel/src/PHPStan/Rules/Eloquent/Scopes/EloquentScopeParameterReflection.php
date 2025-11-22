@@ -8,8 +8,6 @@
 namespace PHPGenesis\Laravel\PHPStan\Rules\Eloquent\Scopes;
 
 use PHPStan\Reflection\ParameterReflection;
-use ReflectionNamedType;
-use ReflectionParameter;
 use PHPStan\Reflection\PassedByReference;
 use PHPStan\Type\ArrayType;
 use PHPStan\Type\BooleanType;
@@ -25,6 +23,8 @@ use PHPStan\Type\ObjectType;
 use PHPStan\Type\StringType;
 use PHPStan\Type\Type;
 use PHPStan\Type\TypeCombinator;
+use ReflectionNamedType;
+use ReflectionParameter;
 
 /** @internal */
 readonly class EloquentScopeParameterReflection implements ParameterReflection

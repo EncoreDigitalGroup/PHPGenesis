@@ -9,7 +9,6 @@ declare(strict_types=1);
 
 namespace PHPGenesis\Laravel\PHPStan\Rules\Eloquent\Scopes;
 
-use ReflectionParameter;
 use Illuminate\Database\Eloquent\Builder;
 use PHPStan\Reflection\ClassMemberReflection;
 use PHPStan\Reflection\ClassReflection;
@@ -22,13 +21,14 @@ use PHPStan\Type\Generic\TemplateTypeMap;
 use PHPStan\Type\ObjectType;
 use PHPStan\Type\Type;
 use ReflectionMethod;
+use ReflectionParameter;
 
 /** @internal */
 readonly class EloquentScopeMethodReflection implements MethodReflection
 {
     public function __construct(
-        private string           $methodName,
-        private ClassReflection  $classReflection,
+        private string $methodName,
+        private ClassReflection $classReflection,
         private ReflectionMethod $scopeMethod
     ) {}
 
@@ -132,7 +132,7 @@ readonly class EloquentScopeMethodReflection implements MethodReflection
         array_shift($parameters);
 
         return array_values(array_map(
-            fn(ReflectionParameter $param): ParameterReflection => new EloquentScopeParameterReflection($param),
+            fn (ReflectionParameter $param): ParameterReflection => new EloquentScopeParameterReflection($param),
             $parameters
         ));
     }

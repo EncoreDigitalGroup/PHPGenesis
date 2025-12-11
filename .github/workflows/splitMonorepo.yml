@@ -6,6 +6,12 @@ on:
             GH_MONOREPO_SPLIT_TOKEN:
                 description: "GitHub Access Token"
                 required: true
+    workflow_dispatch:
+        inputs:
+            version:
+                description: "Version tag to use for the split"
+                required: true
+                type: string
 
 permissions: write-all
 
@@ -34,15 +40,19 @@ jobs:
                     -   localPath: DevUtilities
                         splitRepoName: DevUtilities
 
-                    -   localPath: Services/AmazonWebServices
+                    -   localPath: CloudProviders/AmazonWebServices
                         splitRepoName: AmazonWebServices
         steps:
             -   uses: actions/checkout@v3
+                with:
+                    ref: ${{ github.event_name == 'workflow_dispatch' && inputs.version || '' }}
+                    fetch-depth: 0
             -   id: previousTag
+                if: github.event_name != 'workflow_dispatch'
                 uses: 'WyriHaximus/github-action-get-previous-tag@master'
 
             -   name: Monorepo Split of ${{ matrix.package }}
-                uses: danharrin/monorepo-split-github-action@v2.3.0
+                uses: danharrin/monorepo-split-github-action@v2.4.0
                 env:
                     GITHUB_TOKEN: ${{ secrets.GH_MONOREPO_SPLIT_TOKEN }}
                 with:
@@ -50,6 +60,6 @@ jobs:
                     repository_organization: 'PHPGenesis'
                     repository_name: '${{ matrix.package.splitRepoName }}'
                     branch: main
-                    tag: ${{ steps.previousTag.outputs.tag }}
+                    tag: ${{ inputs.version || steps.previousTag.outputs.tag }}
                     user_name: 'GenesisBot'
                     user_email: 'ghbot@phpgenesis.com'

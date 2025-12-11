@@ -8,6 +8,7 @@
 namespace PHPGenesis\CloudProviders\Cloudflare\Console\Commands;
 
 use Illuminate\Console\Command;
+use Illuminate\Http\Client\Response;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Http;
 
@@ -48,6 +49,7 @@ class UpdateCloudflareDomainContactsCommand extends Command
 
     private function fetchDomains(): array
     {
+        /** @var Response $response */
         $response = Http::withHeaders([
             "X-Auth-Email" => $this->email,
             "X-Auth-Key" => $this->apiKey,
@@ -87,6 +89,7 @@ class UpdateCloudflareDomainContactsCommand extends Command
             "billing" => $contact,
         ];
 
+        /** @var Response $response */
         $response = Http::withHeaders([
             "X-Auth-Email" => $this->email,
             "X-Auth-Key" => $this->apiKey,

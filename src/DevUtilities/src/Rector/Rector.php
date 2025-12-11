@@ -97,7 +97,6 @@ use Rector\CodingStyle\Rector\If_\NullableCompareToNullRector;
 use Rector\CodingStyle\Rector\Property\SplitGroupedPropertiesRector;
 use Rector\CodingStyle\Rector\Stmt\NewlineAfterStatementRector;
 use Rector\CodingStyle\Rector\Stmt\RemoveUselessAliasInUseStatementRector;
-use Rector\CodingStyle\Rector\String_\SymplifyQuoteEscapeRector;
 use Rector\CodingStyle\Rector\String_\UseClassKeywordForClassNameResolutionRector;
 use Rector\CodingStyle\Rector\Ternary\TernaryConditionVariableAssignmentRector;
 use Rector\CodingStyle\Rector\Use_\SeparateMultiUseImportsRector;
@@ -318,7 +317,6 @@ class Rector
             NullableCompareToNullRector::class,
             SplitGroupedPropertiesRector::class,
             RemoveUselessAliasInUseStatementRector::class,
-            SymplifyQuoteEscapeRector::class,
             UseClassKeywordForClassNameResolutionRector::class,
             TernaryConditionVariableAssignmentRector::class,
             RemoveDuplicatedArrayKeyRector::class,
@@ -435,7 +433,9 @@ class Rector
             ExplicitPublicClassMethodRector::class,
         ], $rules);
 
-        return array_diff($allRules, $except);
+        $filteredRules = array_diff($allRules, $except);
+
+        return array_filter($filteredRules, fn (string $class): bool => class_exists($class));
     }
 
     public static function skip(array $rules = []): array

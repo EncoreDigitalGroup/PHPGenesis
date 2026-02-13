@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Copyright (c) 2024-2025. Encore Digital Group.
+ * Copyright (c) 2024-2026. Encore Digital Group.
  * All Right Reserved.
  */
 
@@ -25,6 +25,10 @@ class DisposableEventListener
 
         /** @var class-string $class */
         foreach ($allClasses as $class) {
+            if (is_null($class)) {
+                continue;
+            }
+
             if (in_array(IDisposable::class, class_implements($class))) {
                 try {
                     $class::dispose();

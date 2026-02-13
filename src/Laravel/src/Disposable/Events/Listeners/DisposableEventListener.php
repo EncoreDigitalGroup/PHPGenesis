@@ -7,10 +7,10 @@
 
 namespace PHPGenesis\Laravel\Disposable\Events\Listeners;
 
-use Exception;
 use Illuminate\Foundation\Events\Terminating;
 use PHPGenesis\Laravel\Disposable\Events\DisposeEvent;
 use PHPGenesis\Laravel\Disposable\Interfaces\IDisposable;
+use Throwable;
 
 class DisposableEventListener
 {
@@ -32,7 +32,7 @@ class DisposableEventListener
             if (in_array(IDisposable::class, class_implements($class))) {
                 try {
                     $class::dispose();
-                } catch (Exception) {
+                } catch (Throwable) {
                     //No-op
                 }
             }

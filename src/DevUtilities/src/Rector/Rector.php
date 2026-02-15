@@ -235,6 +235,7 @@ class Rector
             AddVoidReturnTypeWhereNoReturnRector::class,
             ReplaceSingleQuotesWithDoubleRector::class,
             ApplySingleItemDocBlockStyleRector::class,
+            SeparateMultiUseImportsRector::class,
             ExpandSeeAnnotationClassNameRector::class,
             CombinedAssignRector::class,
             RemoveUselessIsObjectCheckRector::class,

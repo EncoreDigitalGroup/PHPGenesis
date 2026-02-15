@@ -436,7 +436,7 @@ class Rector
 
         $filteredRules = array_diff($allRules, $except);
 
-        return array_filter($filteredRules, fn(string $class): bool => class_exists($class));
+        return array_filter($filteredRules, fn (string $class): bool => class_exists($class));
     }
 
     public static function skip(array $rules = []): array
